@@ -1,0 +1,344 @@
+/* =========================================
+   INTRO — NEUTRAL / NATURALEZA TRANQUILA
+   ========================================= */
+
+.intro-scene {
+    color: var(--scene-text);
+
+    background:
+        radial-gradient(circle at 50% 20%,
+            rgba(255, 255, 255, 0.5),
+            transparent 38%),
+        linear-gradient(180deg,
+            var(--scene-bg) 0%,
+            var(--scene-bg-secondary) 100%);
+}
+
+
+/* =========================================
+   PAISAJE
+   ========================================= */
+
+.intro-landscape {
+    position: absolute;
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+.intro-sun {
+    position: absolute;
+
+    width: 240px;
+    height: 240px;
+
+    top: 7%;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(255, 251, 235, 0.8) 0%,
+            rgba(231, 211, 177, 0.28) 42%,
+            transparent 70%);
+
+    filter: blur(2px);
+}
+
+
+/* =========================================
+   COLINAS
+   ========================================= */
+
+.intro-hill {
+    position: absolute;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    border-radius:
+        50% 50% 0 0;
+
+    transform-origin:
+        bottom center;
+}
+
+.intro-hill--back {
+    width: 130%;
+    height: 250px;
+
+    bottom: -130px;
+
+    background:
+        rgba(156, 127, 95, 0.12);
+}
+
+.intro-hill--front {
+    width: 150%;
+    height: 220px;
+
+    bottom: -145px;
+
+    background:
+        rgba(90, 70, 54, 0.11);
+}
+
+
+/* =========================================
+   PLANTAS PROVISIONALES
+   ========================================= */
+
+.intro-plant {
+    position: absolute;
+
+    width: 80px;
+    height: 170px;
+
+    bottom: -5px;
+
+    transform-origin:
+        bottom center;
+
+    opacity: 0.7;
+}
+
+.intro-plant--left {
+    left: 2%;
+}
+
+.intro-plant--right {
+    right: 1%;
+
+    transform:
+        scaleX(-1);
+}
+
+.intro-plant-stem {
+    position: absolute;
+
+    width: 4px;
+    height: 145px;
+
+    left: 38px;
+    bottom: -10px;
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(90, 70, 54, 0.42);
+}
+
+.intro-plant-leaf {
+    position: absolute;
+
+    width: 45px;
+    height: 21px;
+
+    background:
+        rgba(156, 127, 95, 0.4);
+}
+
+.intro-plant-leaf--one {
+    left: 4px;
+    bottom: 68px;
+
+    border-radius:
+        100% 10% 100% 10%;
+
+    transform:
+        rotate(15deg);
+}
+
+.intro-plant-leaf--two {
+    left: 38px;
+    bottom: 105px;
+
+    border-radius:
+        10% 100% 10% 100%;
+
+    transform:
+        rotate(-16deg);
+}
+
+
+/* =========================================
+   CONTENIDO
+   ========================================= */
+
+.intro-content {
+    position: relative;
+    z-index: 5;
+
+    width: min(calc(100% - 44px),
+            430px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+}
+
+.intro-eyebrow {
+    margin-bottom: 22px;
+
+    color:
+        var(--scene-muted);
+
+    font-size: 0.68rem;
+
+    font-weight: 500;
+
+    letter-spacing: 0.28em;
+}
+
+.intro-content h1 {
+    color:
+        var(--scene-text);
+
+    font-family:
+        var(--font-primary);
+
+    font-size:
+        clamp(2.2rem,
+            9vw,
+            3.55rem);
+
+    font-weight: 500;
+
+    line-height: 1.03;
+
+    letter-spacing: -0.045em;
+}
+
+.intro-content p {
+    margin-top: 22px;
+
+    color:
+        var(--scene-muted);
+
+    font-family:
+        var(--font-special);
+
+    font-size: 1rem;
+
+    font-weight: 300;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================
+   ENTRADA
+   ========================================= */
+
+.intro-enter {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    margin-top: 38px;
+
+    padding:
+        14px 21px;
+
+    border:
+        1px solid var(--scene-border);
+
+    border-radius:
+        var(--radius-round);
+
+    background:
+        var(--scene-surface);
+
+    backdrop-filter:
+        blur(10px);
+
+    color:
+        var(--scene-text);
+
+    font-family:
+        var(--font-primary);
+
+    font-size: 0.78rem;
+
+    font-weight: 500;
+
+    letter-spacing: 0.05em;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 35px rgba(90, 70, 54, 0.05);
+
+    transition:
+        background 250ms ease,
+        border-color 250ms ease;
+
+    -webkit-tap-highlight-color:
+        transparent;
+}
+
+.intro-enter:hover {
+    background:
+        rgba(255, 255, 255, 0.55);
+
+    border-color:
+        rgba(90, 70, 54, 0.18);
+}
+
+.intro-enter-symbol {
+    display: inline-block;
+
+    color:
+        var(--scene-accent);
+
+    font-size: 1rem;
+}
+
+
+/* =========================================
+   NOTA INFERIOR
+   ========================================= */
+
+.intro-small-note {
+    position: absolute;
+
+    z-index: 5;
+
+    bottom:
+        max(25px,
+            env(safe-area-inset-bottom));
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 100%;
+
+    color:
+        var(--scene-muted);
+
+    font-family:
+        var(--font-special);
+
+    font-size: 0.68rem;
+
+    font-style: italic;
+
+    text-align: center;
+
+    letter-spacing: 0.03em;
+
+    pointer-events: none;
+}

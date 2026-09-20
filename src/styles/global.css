@@ -1,0 +1,3892 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+html {
+  background: #11100c;
+}
+
+body {
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  background: #11100c;
+  color: #f7f2df;
+
+  overflow: hidden;
+}
+
+button {
+  font: inherit;
+}
+
+.app {
+  width: 100%;
+  min-height: 100dvh;
+}
+
+.scene {
+  position: fixed;
+  inset: 0;
+
+  width: 100%;
+  height: 100dvh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.scene-content {
+  width: min(100% - 40px, 420px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+.scene h1 {
+  font-size: clamp(2rem, 9vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.scene h2 {
+  font-size: clamp(1.7rem, 7vw, 2.7rem);
+  line-height: 1.1;
+}
+
+.scene p {
+  margin-top: 18px;
+
+  max-width: 320px;
+
+  font-size: 0.95rem;
+  line-height: 1.7;
+
+  color: rgba(247, 242, 223, 0.65);
+}
+
+.eyebrow {
+  margin-bottom: 20px;
+
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.primary-button,
+.secondary-button {
+  border: 0;
+  border-radius: 999px;
+
+  padding: 14px 26px;
+
+  cursor: pointer;
+
+  transition:
+    background 200ms ease,
+    color 200ms ease;
+}
+
+.primary-button {
+  margin-top: 36px;
+
+  background: #f3cf54;
+  color: #332b0c;
+}
+
+.secondary-button {
+  background: rgba(255, 255, 255, 0.08);
+  color: #f7f2df;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+
+  margin-top: 36px;
+}
+
+.actions .primary-button {
+  margin-top: 0;
+}
+
+.small-flower {
+  margin-bottom: 30px;
+
+  font-size: 3rem;
+}
+
+.garden-preview {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+
+  margin-bottom: 36px;
+
+  font-size: 2.4rem;
+}
+
+.journey-scene {
+  color: var(--scene-text);
+
+  background:
+    radial-gradient(circle at 50% 30%,
+      var(--scene-glow),
+      transparent 42%),
+    linear-gradient(180deg,
+      var(--scene-bg) 0%,
+      var(--scene-bg-secondary) 100%);
+}
+
+.garden-scene {
+  color: var(--scene-text);
+
+  background:
+    radial-gradient(circle at 50% 105%,
+      var(--scene-glow),
+      transparent 52%),
+    radial-gradient(circle at 50% 18%,
+      var(--scene-surface),
+      transparent 45%),
+    linear-gradient(180deg,
+      var(--scene-bg) 0%,
+      var(--scene-bg-secondary) 100%);
+
+  transition:
+    background 2.5s var(--ease-soft),
+    color 2s var(--ease-soft);
+}
+
+/* =========================================
+   AMBIENTE
+   ========================================= */
+
+.scene {
+  isolation: isolate;
+  padding: max(24px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left));
+}
+
+.scene-content,
+.journey-content {
+  position: relative;
+  z-index: 2;
+}
+
+.ambient-light {
+  position: absolute;
+  z-index: 0;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(10px);
+}
+
+
+.ambient-light--journey {
+  width: 320px;
+  height: 320px;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  background: radial-gradient(circle, rgba(242, 203, 74, 0.1), transparent 68%);
+}
+
+
+/* =========================================
+   JOURNEY
+   ========================================= */
+
+.journey-content {
+  width: min(100%, 420px);
+}
+
+.journey-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+.journey-number {
+  margin-bottom: 18px;
+
+  font-size: 0.7rem;
+  letter-spacing: 0.28em;
+}
+
+.journey-step h2 {
+  font-size: clamp(1.8rem, 8vw, 2.9rem);
+
+  line-height: 1.08;
+
+  letter-spacing: -0.035em;
+}
+
+.journey-step p {
+  margin-top: 18px;
+
+  max-width: 285px;
+
+  line-height: 1.7;
+}
+
+.scene-back-button {
+  position: absolute;
+
+  z-index: 10;
+
+  top: max(20px, env(safe-area-inset-top));
+
+  left: max(20px, env(safe-area-inset-left));
+
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  color: rgba(247, 242, 223, 0.65);
+
+  cursor: pointer;
+
+  font-size: 1.1rem;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================================
+   PUNTO DE DESCUBRIMIENTO
+   ========================================= */
+
+.discovery-point {
+  position: relative;
+
+  width: 100px;
+  height: 100px;
+
+  margin-top: 52px;
+
+  display: grid;
+  place-items: center;
+
+  border: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  touch-action: manipulation;
+
+  -webkit-tap-highlight-color:
+    transparent;
+}
+
+.discovery-core {
+  position: relative;
+
+  z-index: 4;
+
+  width: 13px;
+  height: 13px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(circle,
+      #ffffff 0%,
+      #dcecff 45%,
+      #9bc9e7 100%);
+
+  box-shadow:
+    0 0 8px rgba(220, 236, 255, 0.9),
+    0 0 20px rgba(92, 170, 213, 0.55);
+}
+
+.discovery-glow {
+  position: absolute;
+
+  z-index: 2;
+
+  width: 55px;
+  height: 55px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(circle,
+      rgba(213, 236, 255, 0.45) 0%,
+      rgba(92, 170, 213, 0.18) 42%,
+      transparent 72%);
+
+  filter: blur(2px);
+}
+
+.discovery-ring {
+  position: absolute;
+
+  z-index: 1;
+
+  width: 42px;
+  height: 42px;
+
+  border:
+    1px solid rgba(188, 213, 241, 0.35);
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 18px rgba(92, 170, 213, 0.12);
+}
+
+/* =========================================
+   FLOR
+   ========================================= */
+
+.discovered-flower {
+  margin-bottom: 25px;
+
+  color: #f3cf54;
+
+  font-size: 2.2rem;
+
+  text-shadow: 0 0 20px rgba(243, 207, 84, 0.45);
+}
+
+.flower-button {
+  position: relative;
+
+  width: 90px;
+  height: 90px;
+
+  margin-top: 44px;
+
+  border: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+.flower-center {
+  position: absolute;
+
+  z-index: 3;
+
+  width: 27px;
+  height: 27px;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: #c58b2c;
+
+  box-shadow: 0 0 15px rgba(197, 139, 44, 0.35);
+}
+
+.petal {
+  position: absolute;
+
+  z-index: 2;
+
+  width: 25px;
+  height: 39px;
+
+  top: 50%;
+  left: 50%;
+
+  margin-left: -12.5px;
+  margin-top: -38px;
+
+  border-radius: 60% 60% 45% 45%;
+
+  background: linear-gradient(180deg, #f9df72 0%, #eabf3d 100%);
+
+  transform-origin: 50% 38px;
+}
+
+.petal-1 {
+  transform: rotate(0deg);
+}
+
+.petal-2 {
+  transform: rotate(60deg);
+}
+
+.petal-3 {
+  transform: rotate(120deg);
+}
+
+.petal-4 {
+  transform: rotate(180deg);
+}
+
+.petal-5 {
+  transform: rotate(240deg);
+}
+
+.petal-6 {
+  transform: rotate(300deg);
+}
+
+
+
+/* =========================================
+   ENTRADA AL JARDÍN
+   ========================================= */
+
+.garden-scene {
+  background:
+    radial-gradient(circle at 50% 110%,
+      rgba(115, 132, 55, 0.2),
+      transparent 47%),
+    radial-gradient(circle at 50% 30%,
+      rgba(238, 202, 77, 0.045),
+      transparent 35%),
+    #11100c;
+}
+
+.garden-ambient {
+  position: absolute;
+
+  width: 500px;
+  height: 260px;
+
+  left: 50%;
+  bottom: -150px;
+
+  transform: translateX(-50%);
+
+  border-radius: 50%;
+
+  background:
+    rgba(115, 132, 55, 0.08);
+
+  filter: blur(45px);
+
+  pointer-events: none;
+}
+
+.garden-content {
+  position: relative;
+  z-index: 2;
+
+  width: min(100%, 420px);
+
+  text-align: center;
+}
+
+.garden-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.garden-stage h2 {
+  font-size:
+    clamp(1.8rem, 8vw, 2.9rem);
+
+  line-height: 1.08;
+
+  letter-spacing: -0.035em;
+}
+
+.garden-stage p {
+  max-width: 290px;
+
+  margin-top: 18px;
+
+  line-height: 1.7;
+
+  color:
+    rgba(247, 242, 223, 0.62);
+}
+
+
+/* =========================================
+   SEMILLA
+   ========================================= */
+
+.seed-button {
+  position: relative;
+
+  width: 115px;
+  height: 115px;
+
+  margin-top: 38px;
+
+  display: grid;
+  place-items: center;
+
+  border: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  touch-action: none;
+
+  -webkit-tap-highlight-color:
+    transparent;
+}
+
+
+.seed {
+  position: relative;
+
+  z-index: 4;
+
+  width: 25px;
+  height: 34px;
+
+  border-radius:
+    58% 42% 55% 45%;
+
+  transform:
+    rotate(20deg);
+
+  background:
+    linear-gradient(145deg,
+      #a77c48,
+      #67472d);
+
+  box-shadow:
+    inset -4px -5px 7px rgba(47, 29, 17, 0.22),
+    inset 3px 3px 5px rgba(255, 220, 171, 0.12),
+    0 8px 22px rgba(0, 0, 0, 0.24);
+}
+
+
+.seed-button--holding .seed {
+  box-shadow:
+    0 0 14px rgba(239, 205, 90, 0.25),
+    0 0 35px rgba(239, 205, 90, 0.1);
+}
+
+.seed-glow {
+  position: absolute;
+
+  z-index: 1;
+
+  width: 75px;
+  height: 75px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(circle,
+      rgba(235, 190, 116, 0.24),
+      rgba(199, 133, 71, 0.08) 45%,
+      transparent 72%);
+
+  filter: blur(2px);
+}
+
+.seed-button--holding .seed-glow {
+  transform: scale(2.8);
+
+  opacity: 1;
+}
+
+.garden-hint {
+  margin-top: 15px;
+
+  font-size: 0.67rem;
+
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+}
+
+
+/* =========================================
+   BROTE
+   ========================================= */
+
+.sprout {
+  position: relative;
+
+  width: 90px;
+  height: 105px;
+
+  margin-bottom: 38px;
+}
+
+.sprout-stem {
+  position: absolute;
+
+  width: 4px;
+  height: 70px;
+
+  left: 50%;
+  bottom: 0;
+
+  transform:
+    translateX(-50%);
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(180deg,
+      #aab864,
+      #66743b);
+}
+
+.sprout-leaf {
+  position: absolute;
+
+  z-index: 2;
+
+  width: 39px;
+  height: 24px;
+
+  top: 27px;
+
+  background:
+    linear-gradient(135deg,
+      #abb965,
+      #67753c);
+}
+
+.sprout-leaf--left {
+  right: 44px;
+
+  border-radius:
+    100% 10% 100% 10%;
+
+  transform-origin:
+    right bottom;
+}
+
+.sprout-leaf--right {
+  left: 44px;
+
+  border-radius:
+    10% 100% 10% 100%;
+
+  transform-origin:
+    left bottom;
+}
+
+.garden-next-hint {
+  margin-top: 38px;
+
+  font-size: 0.68rem;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+}
+
+/* =========================================
+   DESLIZAR / DESCUBRIMIENTO
+   ========================================= */
+
+.swipe-discovery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 42px;
+}
+
+.swipe-handle {
+  display: grid;
+  place-items: center;
+
+  width: 54px;
+  height: 54px;
+
+  border: 1px solid rgba(243, 207, 84, 0.18);
+
+  border-radius: 50%;
+
+  background:
+    rgba(243, 207, 84, 0.055);
+
+  color:
+    rgba(243, 207, 84, 0.75);
+
+  font-size: 1.1rem;
+
+  cursor: grab;
+
+  touch-action: none;
+
+  user-select: none;
+
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color:
+    transparent;
+}
+
+.swipe-handle:active {
+  cursor: grabbing;
+}
+
+.swipe-hint {
+  margin-top: 13px;
+
+  color:
+    rgba(247, 242, 223, 0.4);
+
+  font-size: 0.65rem;
+
+  letter-spacing: 0.13em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   CAMINO REVELADO
+   ========================================= */
+
+.revealed-path {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+
+  text-align: center;
+}
+
+.path-light {
+  position: absolute;
+
+  z-index: -1;
+
+  width: 280px;
+  height: 280px;
+
+  top: 50%;
+  left: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(circle,
+      rgba(239, 205, 90, 0.11) 0%,
+      rgba(239, 205, 90, 0.035) 45%,
+      transparent 72%);
+
+  filter: blur(4px);
+
+  pointer-events: none;
+}
+
+.revealed-path h2 {
+  font-size:
+    clamp(1.8rem, 8vw, 2.9rem);
+
+  line-height: 1.08;
+
+  letter-spacing: -0.035em;
+}
+
+.revealed-path p {
+  max-width: 290px;
+
+  margin-top: 18px;
+
+  color:
+    rgba(247, 242, 223, 0.6);
+
+  line-height: 1.7;
+}
+
+.path-end-mark {
+  margin-top: 45px;
+
+  color: #f3cf54;
+
+  font-size: 1.5rem;
+
+  text-shadow:
+    0 0 16px rgba(243, 207, 84, 0.55);
+}
+
+
+
+/* =========================================
+   LUZ GUÍA
+   ========================================= */
+
+.mystery-area {
+  position: relative;
+
+  width: 240px;
+  height: 175px;
+
+  margin-top: 35px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.mystery-light-button {
+  width: 60px;
+  height: 60px;
+
+  display: grid;
+  place-items: center;
+
+  border: 0;
+  padding: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  touch-action: manipulation;
+
+  -webkit-tap-highlight-color:
+    transparent;
+}
+
+.mystery-light {
+  display: block;
+
+  color: #f3cf54;
+
+  font-size: 1.35rem;
+
+  text-shadow:
+    0 0 8px rgba(243, 207, 84, 0.9),
+    0 0 20px rgba(243, 207, 84, 0.55),
+    0 0 40px rgba(243, 207, 84, 0.2);
+}
+
+
+/* =========================================
+   FINAL DEL RECORRIDO DE LA LUZ
+   ========================================= */
+
+.light-complete {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 42px;
+}
+
+.light-final-symbol {
+  position: relative;
+  z-index: 2;
+
+  color: #f7d96a;
+
+  font-size: 1.55rem;
+
+  text-shadow:
+    0 0 12px rgba(247, 217, 106, 0.85),
+    0 0 30px rgba(247, 217, 106, 0.45);
+}
+
+.light-final-glow {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 150px;
+  height: 150px;
+
+  transform:
+    translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(circle,
+      rgba(239, 205, 90, 0.13),
+      rgba(239, 205, 90, 0.04) 45%,
+      transparent 72%);
+
+  pointer-events: none;
+}
+
+.light-complete p {
+  margin-top: 25px;
+
+  max-width: 260px;
+
+  color:
+    rgba(247, 242, 223, 0.65);
+
+  font-size: 0.87rem;
+}
+
+
+/* =========================================
+   JARDÍN DESPIERTO
+   ========================================= */
+
+.garden-scene {
+  transition:
+    background 2.5s ease;
+}
+
+.garden-scene--awakened {
+  /* reservado para efectos posteriores */
+}
+
+/* =========================================
+   TRANSICIÓN AL PRIMER AMBIENTE
+   ========================================= */
+
+.garden-scene--entered {
+  /* reservado para efectos posteriores */
+}
+
+
+/* =========================================
+   PRIMER AMBIENTE
+   ========================================= */
+
+.environment-stage {
+  position: fixed;
+  inset: 0;
+
+  width: 100%;
+  height: 100dvh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.environment-backdrop {
+  position: absolute;
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   LUZ GENERAL
+   ========================================= */
+
+.environment-halo {
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  top: 5%;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(circle,
+      rgba(239, 205, 90, 0.12) 0%,
+      rgba(239, 205, 90, 0.035) 40%,
+      transparent 70%);
+
+  filter: blur(8px);
+}
+
+
+/* =========================================
+   LUZ GUÍA
+   ========================================= */
+
+.environment-guide-light {
+  position: absolute;
+
+  z-index: 4;
+
+  top: 23%;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  color: #f7d96a;
+
+  font-size: 1.45rem;
+
+  text-shadow:
+    0 0 10px rgba(247, 217, 106, 0.95),
+    0 0 25px rgba(247, 217, 106, 0.5),
+    0 0 50px rgba(247, 217, 106, 0.2);
+}
+
+
+/* =========================================
+   SUELO
+   ========================================= */
+
+.environment-ground {
+  position: absolute;
+
+  z-index: 1;
+
+  left: 50%;
+  bottom: -170px;
+
+  width: 150%;
+  height: 310px;
+
+  transform:
+    translateX(-50%);
+
+  transform-origin:
+    bottom center;
+
+  border-radius:
+    50% 50% 0 0;
+
+  background:
+    radial-gradient(ellipse at top,
+      rgba(92, 113, 48, 0.28),
+      rgba(38, 48, 26, 0.35) 55%,
+      rgba(18, 22, 14, 0.7) 100%);
+
+  filter: blur(2px);
+}
+
+
+/* =========================================
+   PLANTAS EN SILUETA
+   ========================================= */
+
+.environment-plant {
+  position: absolute;
+
+  z-index: 2;
+
+  bottom: 0;
+
+  width: 90px;
+  height: 210px;
+
+  opacity: 0.7;
+}
+
+.environment-plant--left {
+  left: -8px;
+
+  transform:
+    rotate(-7deg);
+}
+
+.environment-plant--right {
+  right: -10px;
+
+  transform:
+    scaleX(-1) rotate(-5deg);
+}
+
+.environment-stem {
+  position: absolute;
+
+  width: 4px;
+  height: 170px;
+
+  left: 45px;
+  bottom: -5px;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(180deg,
+      rgba(117, 139, 67, 0.55),
+      rgba(49, 62, 30, 0.85));
+
+  transform:
+    rotate(7deg);
+}
+
+.environment-leaf {
+  position: absolute;
+
+  width: 55px;
+  height: 24px;
+
+  background:
+    linear-gradient(135deg,
+      rgba(109, 132, 62, 0.75),
+      rgba(42, 56, 27, 0.85));
+
+  border-radius:
+    100% 10% 100% 10%;
+}
+
+.environment-leaf--a {
+  left: 2px;
+  bottom: 62px;
+
+  transform:
+    rotate(17deg);
+}
+
+.environment-leaf--b {
+  left: 42px;
+  bottom: 106px;
+
+  transform:
+    rotate(145deg);
+}
+
+.environment-leaf--c {
+  left: 10px;
+  bottom: 145px;
+
+  transform:
+    rotate(-4deg) scale(0.72);
+}
+
+
+/* =========================================
+   TEXTO DEL NUEVO AMBIENTE
+   ========================================= */
+
+.environment-copy {
+  position: relative;
+
+  z-index: 5;
+
+  width: min(calc(100% - 48px),
+      390px);
+
+  text-align: center;
+
+  pointer-events: none;
+}
+
+.environment-copy .journey-number {
+  display: block;
+
+  margin-bottom: 20px;
+
+  opacity: 0.42;
+}
+
+.environment-copy h2 {
+  font-size:
+    clamp(2rem,
+      9vw,
+      3.2rem);
+
+  line-height: 1.05;
+
+  letter-spacing: -0.04em;
+}
+
+.environment-copy p {
+  margin:
+    18px auto 0;
+
+  max-width: 280px;
+
+  color:
+    rgba(247,
+      242,
+      223,
+      0.55);
+
+  line-height: 1.7;
+}
+
+/* =========================================
+   SENDERO
+   ========================================= */
+
+.garden-path {
+  position: absolute;
+
+  z-index: 2;
+
+  width: 115px;
+  height: 430px;
+
+  left: 50%;
+  bottom: -180px;
+
+  transform:
+    translateX(-50%) perspective(300px) rotateX(58deg);
+
+  transform-origin:
+    bottom center;
+
+  border-radius:
+    50% 50% 20% 20%;
+
+  background:
+    linear-gradient(180deg,
+      rgba(214, 190, 112, 0.02),
+      rgba(214, 190, 112, 0.09));
+
+  filter: blur(2px);
+}
+
+
+/* =========================================
+   LUZ GUÍA - NUEVA POSICIÓN
+   ========================================= */
+
+.environment-guide-light {
+  position: absolute;
+
+  z-index: 8;
+
+  top: 20%;
+  left: calc(50% - 12px);
+
+  color: #f7d96a;
+
+  font-size: 1.4rem;
+
+  text-shadow:
+    0 0 10px rgba(247, 217, 106, 0.95),
+    0 0 25px rgba(247, 217, 106, 0.55),
+    0 0 50px rgba(247, 217, 106, 0.2);
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   PRIMERA FLOR
+   ========================================= */
+
+.first-flower-area {
+  position: absolute;
+
+  z-index: 7;
+
+  right: 13%;
+  bottom: 15%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.first-flower {
+  position: relative;
+
+  width: 100px;
+  height: 135px;
+
+  border: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  touch-action: manipulation;
+
+  -webkit-tap-highlight-color:
+    transparent;
+}
+
+.first-flower-glow {
+  position: absolute;
+
+  width: 90px;
+  height: 90px;
+
+  left: 50%;
+  top: 0;
+
+  transform:
+    translateX(-50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(circle,
+      rgba(242, 205, 79, 0.2),
+      rgba(242, 205, 79, 0.05) 45%,
+      transparent 72%);
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   TALLO
+   ========================================= */
+
+.flower-stem-small {
+  position: absolute;
+
+  width: 4px;
+  height: 80px;
+
+  left: 50%;
+  bottom: 0;
+
+  transform:
+    translateX(-50%);
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(180deg,
+      #8ea04e,
+      #53662d);
+}
+
+
+/* =========================================
+   CAPULLO
+   ========================================= */
+
+.flower-bud {
+  position: absolute;
+
+  width: 62px;
+  height: 62px;
+
+  left: 50%;
+  top: 5px;
+
+  transform:
+    translateX(-50%);
+}
+
+.bud-petal {
+  position: absolute;
+
+  width: 30px;
+  height: 46px;
+
+  left: 16px;
+  top: 8px;
+
+  transform-origin:
+    center bottom;
+
+  border-radius:
+    70% 70% 45% 45%;
+
+  background:
+    linear-gradient(180deg,
+      #f4d966,
+      #d9ab35);
+}
+
+.bud-petal--left {
+  transform:
+    rotate(-10deg);
+}
+
+.bud-petal--center {
+  z-index: 2;
+}
+
+.bud-petal--right {
+  transform:
+    rotate(10deg);
+}
+
+
+/* =========================================
+   CENTRO
+   ========================================= */
+
+.flower-heart {
+  position: absolute;
+
+  z-index: 5;
+
+  width: 17px;
+  height: 17px;
+
+  left: 50%;
+  top: 31px;
+
+  transform:
+    translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: #b77828;
+
+  box-shadow:
+    0 0 15px rgba(244, 217, 102, 0.35);
+}
+
+
+/* =========================================
+   PRIMER DESCUBRIMIENTO
+   ========================================= */
+
+.first-discovery {
+  position: absolute;
+
+  top: 145px;
+
+  width: 180px;
+
+  text-align: center;
+}
+
+.first-discovery span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color:
+    rgba(247, 242, 223, 0.3);
+
+  font-size: 0.58rem;
+
+  letter-spacing: 0.15em;
+}
+
+.first-discovery p {
+  margin: 0;
+
+  color:
+    rgba(247, 242, 223, 0.62);
+
+  font-size: 0.78rem;
+
+  line-height: 1.5;
+}
+
+/* =========================================
+   ONDA DE LA PRIMERA FLOR
+   ========================================= */
+
+.garden-ripple-origin {
+  position: absolute;
+
+  z-index: 3;
+
+  right: 13%;
+  bottom: 22%;
+
+  width: 20px;
+  height: 20px;
+
+  pointer-events: none;
+}
+
+.garden-ripple {
+  position: absolute;
+
+  inset: 0;
+
+  border: 1px solid rgba(244, 217, 102, 0.3);
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 12px rgba(244, 217, 102, 0.08);
+
+  pointer-events: none;
+}
+
+.garden-ripple--two {
+  border-color:
+    rgba(154, 177, 88, 0.18);
+}
+
+/* =========================================
+   SEÑAL LEJANA
+   ========================================= */
+
+.distant-signal {
+  position: absolute;
+
+  z-index: 6;
+
+  left: 17%;
+  top: 34%;
+
+  width: 70px;
+  height: 70px;
+
+  display: grid;
+  place-items: center;
+
+  border: 0;
+  padding: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  touch-action: manipulation;
+
+  -webkit-tap-highlight-color:
+    transparent;
+}
+
+.distant-signal-glow {
+  position: absolute;
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(circle,
+      rgba(194, 214, 105, 0.17),
+      rgba(194, 214, 105, 0.04) 45%,
+      transparent 72%);
+}
+
+.distant-signal-core {
+  position: relative;
+  z-index: 2;
+
+  color:
+    rgba(218, 226, 145, 0.85);
+
+  font-size: 1.7rem;
+
+  line-height: 1;
+
+  text-shadow:
+    0 0 9px rgba(190, 211, 98, 0.65),
+    0 0 24px rgba(190, 211, 98, 0.25);
+}
+
+/* =========================================
+   DESCUBRIMIENTO 02 — RAÍCES
+   ========================================= */
+
+.roots-discovery {
+  position: absolute;
+  inset: 0;
+
+  z-index: 5;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   RESPLANDOR DEL SUELO
+   ========================================= */
+
+.roots-soil-glow {
+  position: absolute;
+
+  left: 50%;
+  bottom: -80px;
+
+  width: 420px;
+  height: 280px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(ellipse,
+      rgba(161, 178, 81, 0.14),
+      rgba(112, 132, 59, 0.06) 42%,
+      transparent 72%);
+
+  filter: blur(12px);
+}
+
+
+/* =========================================
+   SISTEMA DE RAÍCES
+   ========================================= */
+
+.roots-system {
+  position: absolute;
+
+  z-index: 2;
+
+  left: 50%;
+  bottom: -30px;
+
+  width: min(100%,
+      430px);
+
+  height: 320px;
+
+  transform:
+    translateX(-50%);
+}
+
+.root-segment {
+  position: absolute;
+
+  display: block;
+
+  height: 2px;
+
+  border-radius: 999px;
+
+  transform-origin:
+    left center;
+
+  background:
+    linear-gradient(90deg,
+      rgba(172, 146, 82, 0.8),
+      rgba(113, 92, 53, 0.42));
+
+  box-shadow:
+    0 0 7px rgba(189, 164, 91, 0.1);
+}
+
+.root-segment--main {
+  width: 170px;
+
+  left: 48%;
+  top: 35px;
+}
+
+.root-segment--branch-a {
+  width: 115px;
+
+  left: 58%;
+  top: 148px;
+}
+
+.root-segment--branch-b {
+  width: 95px;
+
+  left: 42%;
+  top: 160px;
+}
+
+.root-segment--branch-c {
+  width: 90px;
+
+  left: 65%;
+  top: 218px;
+}
+
+.root-segment--branch-d {
+  width: 80px;
+
+  left: 35%;
+  top: 230px;
+}
+
+
+/* =========================================
+   TEXTO
+   ========================================= */
+
+.roots-copy {
+  position: absolute;
+
+  z-index: 6;
+
+  top: 26%;
+  left: 50%;
+
+  width: min(calc(100% - 55px),
+      340px);
+
+  transform:
+    translateX(-50%);
+
+  text-align: center;
+}
+
+.roots-number {
+  display: block;
+
+  margin-bottom: 15px;
+
+  color:
+    rgba(247, 242, 223, 0.6);
+
+  font-size: 0.6rem;
+
+  letter-spacing: 0.16em;
+}
+
+.roots-copy h3 {
+  font-size:
+    clamp(1.7rem,
+      7vw,
+      2.5rem);
+
+  line-height: 1.1;
+
+  letter-spacing: -0.03em;
+
+  font-weight: 600;
+}
+
+.roots-copy p {
+  margin:
+    15px auto 0;
+
+  max-width: 280px;
+
+  color:
+    rgba(247, 242, 223, 0.62);
+
+  font-size: 0.88rem;
+
+  line-height: 1.65;
+}
+
+.roots-copy .roots-final-line {
+  margin-top: 22px;
+
+  color:
+    rgba(244, 226, 158, 0.8);
+}
+
+/* =========================================
+   DESCUBRIMIENTO 03 — CUIDADO
+   ========================================= */
+
+.care-discovery {
+  position: absolute;
+  inset: 0;
+
+  z-index: 9;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   GOTA
+   ========================================= */
+
+.care-drop {
+  position: absolute;
+
+  z-index: 10;
+
+  top: 19%;
+  left: calc(50% - 35px);
+
+  width: 70px;
+  height: 70px;
+
+  display: grid;
+  place-items: center;
+
+  border: 0;
+  padding: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  pointer-events: auto;
+
+  touch-action: manipulation;
+
+  -webkit-tap-highlight-color:
+    transparent;
+}
+
+.care-drop-glow {
+  position: absolute;
+
+  width: 55px;
+  height: 55px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(circle,
+      rgba(173, 205, 202, 0.2),
+      rgba(173, 205, 202, 0.05) 45%,
+      transparent 72%);
+}
+
+.care-drop-shape {
+  position: relative;
+
+  z-index: 2;
+
+  width: 18px;
+  height: 24px;
+
+  border-radius:
+    70% 45% 65% 50%;
+
+  transform:
+    rotate(45deg);
+
+  background:
+    linear-gradient(145deg,
+      rgba(201, 224, 218, 0.95),
+      rgba(116, 162, 158, 0.75));
+
+  box-shadow:
+    0 0 10px rgba(180, 215, 207, 0.35),
+    0 0 24px rgba(180, 215, 207, 0.12);
+}
+
+
+/* =========================================
+   RESPUESTA DEL SUELO
+   ========================================= */
+
+.care-water-response {
+  position: absolute;
+
+  z-index: 4;
+
+  left: 50%;
+  bottom: 13%;
+
+  width: 40px;
+  height: 18px;
+
+  transform:
+    translateX(-50%);
+
+  border: 1px solid rgba(171, 199, 134, 0.42);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   CRECIMIENTO
+   ========================================= */
+
+.care-growth {
+  position: absolute;
+
+  z-index: 6;
+
+  left: 50%;
+  bottom: 6%;
+
+  width: min(calc(100% - 40px),
+      430px);
+
+  height: 130px;
+
+  transform:
+    translateX(-50%);
+
+  pointer-events: none;
+}
+
+.care-sprout {
+  position: absolute;
+
+  width: 42px;
+  height: 65px;
+
+  transform-origin:
+    bottom center;
+}
+
+.care-sprout--one {
+  left: 19%;
+  bottom: 6px;
+}
+
+.care-sprout--two {
+  left: 47%;
+  bottom: 18px;
+
+  transform:
+    scale(0.82);
+}
+
+.care-sprout--three {
+  right: 16%;
+  bottom: 3px;
+
+  transform:
+    scale(1.08);
+}
+
+.care-sprout-stem {
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: 3px;
+  height: 48px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(180deg,
+      #9dac5a,
+      #55682e);
+}
+
+.care-sprout-leaf {
+  position: absolute;
+
+  top: 14px;
+
+  width: 23px;
+  height: 14px;
+
+  background:
+    linear-gradient(135deg,
+      #9eae5e,
+      #607438);
+}
+
+.care-sprout-leaf--left {
+  right: 20px;
+
+  border-radius:
+    100% 10% 100% 10%;
+
+  transform:
+    rotate(8deg);
+}
+
+.care-sprout-leaf--right {
+  left: 20px;
+
+  border-radius:
+    10% 100% 10% 100%;
+
+  transform:
+    rotate(-8deg);
+}
+
+
+/* =========================================
+   RAÍCES MÁS FUERTES
+   ========================================= */
+
+.roots-discovery--care-1 .root-segment {
+  filter:
+    brightness(1.08);
+}
+
+.roots-discovery--care-2 .root-segment {
+  filter:
+    brightness(1.17);
+
+  box-shadow:
+    0 0 8px rgba(186, 164, 91, 0.13);
+}
+
+.roots-discovery--care-3 .root-segment {
+  filter:
+    brightness(1.28);
+
+  box-shadow:
+    0 0 10px rgba(193, 173, 99, 0.18);
+}
+
+
+/* =========================================
+   TEXTO 03
+   ========================================= */
+
+.care-copy {
+  position: absolute;
+
+  z-index: 12;
+
+  top: 24%;
+  left: 50%;
+
+  width: min(calc(100% - 50px),
+      350px);
+
+  transform:
+    translateX(-50%);
+
+  text-align: center;
+
+  pointer-events: none;
+}
+
+.care-number {
+  display: block;
+
+  margin-bottom: 15px;
+
+  color:
+    rgba(247, 242, 223, 0.58);
+
+  font-size: 0.6rem;
+
+  letter-spacing: 0.16em;
+}
+
+.care-copy h3 {
+  font-size:
+    clamp(1.7rem,
+      7vw,
+      2.5rem);
+
+  line-height: 1.08;
+
+  letter-spacing: -0.03em;
+
+  font-weight: 600;
+}
+
+.care-copy p {
+  margin:
+    16px auto 0;
+
+  max-width: 285px;
+
+  color:
+    rgba(247, 242, 223, 0.6);
+
+  font-size: 0.88rem;
+
+  line-height: 1.65;
+}
+
+.care-values {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+
+  margin-top: 24px;
+
+  color:
+    rgba(222, 211, 152, 0.72);
+
+  font-size: 0.7rem;
+
+  letter-spacing: 0.08em;
+}
+
+.care-values span {
+  position: relative;
+}
+
+.care-values span:not(:last-child)::after {
+  content: "·";
+
+  position: absolute;
+
+  right: -12px;
+
+  color:
+    rgba(247, 242, 223, 0.2);
+}
+
+.care-copy .care-final-line {
+  margin-top: 25px;
+
+  color:
+    rgba(239, 224, 167, 0.78);
+}
+
+/* =========================================
+   CRECIMIENTO DE LA RELACIÓN
+   ========================================= */
+
+.relationship-growth {
+  position: absolute;
+  inset: 0;
+
+  z-index: 9;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   RAÍCES
+   ========================================= */
+
+.relationship-roots-glow {
+  position: absolute;
+
+  left: 50%;
+  bottom: -75px;
+
+  width: 430px;
+  height: 270px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(ellipse,
+      rgba(158, 176, 82, 0.14),
+      rgba(103, 123, 56, 0.05) 45%,
+      transparent 72%);
+
+  filter: blur(12px);
+}
+
+.relationship-roots {
+  position: absolute;
+
+  left: 50%;
+  bottom: -20px;
+
+  width: min(100%,
+      430px);
+
+  height: 300px;
+
+  transform:
+    translateX(-50%);
+}
+
+
+.relationship-root--main {
+  width: 170px;
+
+  left: 48%;
+  top: 30px;
+}
+
+.relationship-root--a {
+  width: 115px;
+
+  left: 59%;
+  top: 138px;
+}
+
+.relationship-root--b {
+  width: 100px;
+
+  left: 42%;
+  top: 155px;
+}
+
+.relationship-root--c {
+  width: 90px;
+
+  left: 64%;
+  top: 205px;
+}
+
+.relationship-roots--level-1 .relationship-root {
+  filter:
+    brightness(1.08);
+}
+
+.relationship-roots--level-2 .relationship-root {
+  filter:
+    brightness(1.18);
+}
+
+.relationship-roots--level-3 .relationship-root {
+  filter:
+    brightness(1.3);
+
+  box-shadow:
+    0 0 9px rgba(198, 177, 99, 0.18);
+}
+
+
+/* =========================================
+   TEXTO
+   ========================================= */
+
+.relationship-growth-copy {
+  position: absolute;
+
+  z-index: 12;
+
+  left: 50%;
+
+  width: min(calc(100% - 55px),
+      340px);
+
+  transform:
+    translateX(-50%);
+
+  text-align: center;
+
+  pointer-events: none;
+}
+
+.relationship-growth-copy--intro {
+  top: 29%;
+}
+
+.relationship-growth-copy--final {
+  top: 25%;
+}
+
+.relationship-growth-copy p {
+  margin:
+    13px auto 0;
+
+  max-width: 285px;
+
+  color:
+    rgba(247, 242, 223, 0.62);
+
+  font-size: 0.88rem;
+
+  line-height: 1.65;
+}
+
+.relationship-growth-copy .relationship-soft-line {
+  margin-top: 20px;
+
+  color:
+    rgba(239, 222, 158, 0.78);
+}
+
+
+/* =========================================
+   GOTA
+   ========================================= */
+
+.relationship-drop {
+  position: absolute;
+
+  z-index: 15;
+
+  top: 18%;
+  left: calc(50% - 35px);
+
+  width: 70px;
+  height: 70px;
+
+  display: grid;
+  place-items: center;
+
+  border: 0;
+  padding: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  pointer-events: auto;
+
+  touch-action: manipulation;
+
+  -webkit-tap-highlight-color:
+    transparent;
+}
+
+.relationship-drop-glow {
+  position: absolute;
+
+  width: 55px;
+  height: 55px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(circle,
+      rgba(177, 208, 202, 0.18),
+      rgba(177, 208, 202, 0.04) 48%,
+      transparent 72%);
+}
+
+.relationship-drop-shape {
+  width: 18px;
+  height: 24px;
+
+  transform:
+    rotate(45deg);
+
+  border-radius:
+    70% 45% 65% 50%;
+
+  background:
+    linear-gradient(145deg,
+      rgba(206, 226, 221, 0.96),
+      rgba(111, 160, 155, 0.75));
+
+  box-shadow:
+    0 0 10px rgba(181, 216, 207, 0.35);
+}
+
+
+/* =========================================
+   ONDA DEL AGUA
+   ========================================= */
+
+.relationship-water-wave {
+  position: absolute;
+
+  z-index: 4;
+
+  left: 50%;
+  bottom: 13%;
+
+  width: 38px;
+  height: 17px;
+
+  transform:
+    translateX(-50%);
+
+  border: 1px solid rgba(172, 201, 137, 0.42);
+
+  border-radius: 50%;
+}
+
+
+/* =========================================
+   NUEVOS BROTES
+   ========================================= */
+
+.relationship-sprouts {
+  position: absolute;
+
+  z-index: 7;
+
+  left: 50%;
+  bottom: 5%;
+
+  width: min(calc(100% - 40px),
+      430px);
+
+  height: 120px;
+
+  transform:
+    translateX(-50%);
+
+  pointer-events: none;
+}
+
+.relationship-sprout {
+  position: absolute;
+
+  width: 42px;
+  height: 65px;
+
+  transform-origin:
+    bottom center;
+}
+
+.relationship-sprout--one {
+  left: 20%;
+  bottom: 3px;
+}
+
+.relationship-sprout--two {
+  left: 48%;
+  bottom: 16px;
+}
+
+.relationship-sprout--three {
+  right: 17%;
+  bottom: 1px;
+}
+
+.relationship-sprout-stem {
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: 3px;
+  height: 47px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(#9eae5e,
+      #56682f);
+}
+
+.relationship-sprout-leaf {
+  position: absolute;
+
+  top: 14px;
+
+  width: 23px;
+  height: 14px;
+
+  background:
+    linear-gradient(135deg,
+      #9eae5e,
+      #607438);
+}
+
+.relationship-sprout-leaf--left {
+  right: 20px;
+
+  border-radius:
+    100% 10% 100% 10%;
+}
+
+.relationship-sprout-leaf--right {
+  left: 20px;
+
+  border-radius:
+    10% 100% 10% 100%;
+}
+
+
+/* =========================================
+   CIERRE
+   ========================================= */
+
+.relationship-values {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+
+  margin-top: 21px;
+
+  color:
+    rgba(222, 211, 152, 0.72);
+
+  font-size: 0.7rem;
+
+  letter-spacing: 0.07em;
+}
+
+.relationship-values span {
+  position: relative;
+}
+
+.relationship-values span:not(:last-child)::after {
+  content: "·";
+
+  position: absolute;
+
+  right: -12px;
+
+  opacity: 0.3;
+}
+
+.relationship-growth-copy .relationship-final-line {
+  margin-top: 22px;
+
+  color:
+    rgba(239, 224, 167, 0.82);
+
+  font-size: 1rem;
+}
+
+/* =========================================
+   RECUERDOS
+   ========================================= */
+
+.memories-discovery {
+    position: absolute;
+    inset: 0;
+
+    z-index: 20;
+
+    pointer-events: none;
+}
+
+/* =========================================
+   PUNTOS
+   ========================================= */
+
+.memory-point {
+    position: absolute;
+
+    width: 72px;
+    height: 72px;
+
+    display: grid;
+    place-items: center;
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    pointer-events: auto;
+
+    -webkit-tap-highlight-color:
+        transparent;
+}
+
+.memory-point--one {
+    left: 14%;
+    top: 28%;
+}
+
+.memory-point--two {
+    right: 15%;
+    top: 39%;
+}
+
+.memory-point--three {
+    left: 43%;
+    bottom: 14%;
+}
+
+.memory-point-glow {
+    position: absolute;
+
+    width: 52px;
+    height: 52px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(
+                248,
+                211,
+                91,
+                0.35
+            ),
+            transparent 72%
+        );
+
+    filter: blur(3px);
+}
+
+.memory-point-core {
+    position: relative;
+
+    z-index: 2;
+
+    color:
+        #f4d45c;
+
+    font-size: 1rem;
+
+    text-shadow:
+        0 0 12px
+        rgba(
+            244,
+            212,
+            92,
+            0.65
+        );
+}
+
+.memory-point--found .memory-point-core {
+  font-size: 0.9rem;
+
+  opacity: 0.55;
+}
+
+/* =========================================
+   FONDO AL ABRIR RECUERDO
+   ========================================= */
+
+.memory-overlay {
+    position: fixed;
+    inset: 0;
+
+    z-index: 80;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        28px
+        20px;
+
+    background:
+        rgba(
+            18,
+            25,
+            18,
+            0.42
+        );
+
+    backdrop-filter:
+        blur(9px);
+
+    pointer-events: auto;
+}
+
+/* =========================================
+   TARJETA
+   ========================================= */
+
+.memory-card {
+    position: relative;
+
+    width: min(
+        100%,
+        360px
+    );
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.15
+        );
+
+    border-radius: 26px;
+
+    background:
+        rgba(
+            250,
+            245,
+            226,
+            0.92
+        );
+
+    color: #4c4034;
+
+    box-shadow:
+        0 25px 80px
+        rgba(
+            0,
+            0,
+            0,
+            0.22
+        );
+
+    pointer-events: auto;
+}
+
+/* =========================================
+   FOTO
+   ========================================= */
+
+.memory-image-wrapper {
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    overflow: hidden;
+
+    background:
+        rgba(
+            0,
+            0,
+            0,
+            0.08
+        );
+}
+
+.memory-image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* =========================================
+   CONTENIDO
+   ========================================= */
+
+.memory-card-content {
+    padding:
+        23px
+        25px
+        28px;
+
+    text-align: left;
+}
+
+.memory-eyebrow {
+    color:
+        rgba(
+            76,
+            64,
+            52,
+            0.55
+        );
+
+    font-family:
+        var(--font-special);
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+}
+
+.memory-card h3 {
+    margin:
+        9px
+        0
+        0;
+
+    font-size:
+        clamp(
+            1.45rem,
+            6vw,
+            2rem
+        );
+
+    line-height: 1.1;
+
+    font-weight: 500;
+
+    letter-spacing:
+        -0.035em;
+}
+
+.memory-card p {
+    margin:
+        13px
+        0
+        0;
+
+    color:
+        rgba(
+            76,
+            64,
+            52,
+            0.72
+        );
+
+    font-family:
+        var(--font-special);
+
+    font-size: 0.87rem;
+
+    line-height: 1.55;
+}
+
+/* =========================================
+   CERRAR
+   ========================================= */
+
+.memory-close {
+    position: absolute;
+
+    top: 12px;
+    right: 12px;
+
+    width: 36px;
+    height: 36px;
+
+    display: grid;
+    place-items: center;
+
+    padding: 0;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.34
+        );
+
+    border-radius: 50%;
+
+    background:
+        rgba(
+            20,
+            20,
+            20,
+            0.32
+        );
+
+    color: white;
+
+    font-size: 1.25rem;
+
+    cursor: pointer;
+
+    backdrop-filter:
+        blur(8px);
+}
+
+/* =========================================
+   TONOS DIFERENTES
+   ========================================= */
+
+.memory-card--fun {
+    transform:
+        rotate(-1deg);
+}
+
+.memory-card--warm {
+    background:
+        rgba(
+            255,
+            246,
+            220,
+            0.94
+        );
+}
+
+.memory-card--emotional {
+    background:
+        rgba(
+            247,
+            240,
+            229,
+            0.96
+        );
+}
+
+/* =========================================
+   RECUERDO REVELADO
+   ========================================= */
+
+.memory-reveal {
+  position: absolute;
+
+  z-index: 20;
+
+  top: 38%;
+  left: 50%;
+
+  width: min(calc(100% - 60px),
+      330px);
+
+  transform:
+    translateX(-50%);
+
+  text-align: center;
+
+  pointer-events: none;
+}
+
+.memory-reveal-light {
+  position: absolute;
+
+  z-index: -1;
+
+  top: 50%;
+  left: 50%;
+
+  width: 220px;
+  height: 140px;
+
+  transform:
+    translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(ellipse,
+      rgba(238, 207, 103, 0.11),
+      transparent 70%);
+
+  filter: blur(8px);
+}
+
+.memory-reveal p {
+  margin: 0;
+
+  color:
+    rgba(247, 242, 223, 0.8);
+
+  font-size: 1rem;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================
+   CIERRE DE RECUERDOS
+   ========================================= */
+
+.memories-ending {
+  position: absolute;
+
+  z-index: 20;
+
+  top: 37%;
+  left: 50%;
+
+  width: min(calc(100% - 55px),
+      330px);
+
+  transform:
+    translateX(-50%);
+
+  text-align: center;
+
+  pointer-events: none;
+}
+
+.memories-ending p {
+  margin: 0 0 12px;
+
+  color:
+    rgba(247, 242, 223, 0.58);
+
+  font-size: 0.86rem;
+}
+
+.memories-ending strong {
+  display: block;
+
+  color:
+    rgba(244, 229, 176, 0.88);
+
+  font-size:
+    clamp(1.4rem,
+      6vw,
+      2rem);
+
+  line-height: 1.25;
+
+  font-weight: 500;
+
+  letter-spacing: -0.02em;
+}
+
+/* =========================================
+   CONSTELACIÓN DE RECUERDOS
+   ========================================= */
+
+.memory-constellation {
+  position: absolute;
+  inset: 0;
+
+  z-index: 18;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   PUNTOS
+   ========================================= */
+
+.constellation-point {
+  position: absolute;
+
+  z-index: 3;
+
+  color:
+    rgba(245, 219, 122, 0.85);
+
+  font-size: 1rem;
+
+  text-shadow:
+    0 0 10px rgba(245, 219, 122, 0.5);
+}
+
+.constellation-point--one {
+  left: 25%;
+  top: 30%;
+}
+
+.constellation-point--two {
+  right: 24%;
+  top: 34%;
+}
+
+.constellation-point--three {
+  left: 46%;
+  top: 48%;
+}
+
+
+/* =========================================
+   LÍNEAS
+   ========================================= */
+
+.constellation-line {
+  position: absolute;
+
+  z-index: 2;
+
+  height: 1px;
+
+  transform-origin:
+    left center;
+
+  background:
+    linear-gradient(90deg,
+      rgba(244, 218, 121, 0.1),
+      rgba(244, 218, 121, 0.5),
+      rgba(244, 218, 121, 0.1));
+}
+
+.constellation-line--one {
+  width: 43%;
+
+  left: 27%;
+  top: 32%;
+
+  transform:
+    rotate(6deg);
+}
+
+.constellation-line--two {
+  width: 27%;
+
+  left: 27%;
+  top: 32%;
+
+  transform:
+    rotate(48deg);
+}
+
+.constellation-line--three {
+  width: 27%;
+
+  left: 50%;
+  top: 48%;
+
+  transform:
+    rotate(-43deg);
+}
+
+
+/* =========================================
+   CENTRO
+   ========================================= */
+
+.constellation-center {
+  position: absolute;
+
+  z-index: 5;
+
+  left: 50%;
+  top: 40%;
+
+  width: 90px;
+  height: 90px;
+
+  display: grid;
+  place-items: center;
+
+  transform:
+    translate(-50%, -50%);
+}
+
+.constellation-center-glow {
+  position: absolute;
+
+  width: 85px;
+  height: 85px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(circle,
+      rgba(244, 218, 121, 0.2),
+      rgba(244, 218, 121, 0.05) 45%,
+      transparent 72%);
+}
+
+.constellation-center-core {
+  position: relative;
+  z-index: 2;
+
+  color: #f4da79;
+
+  font-size: 1.5rem;
+
+  text-shadow:
+    0 0 10px rgba(244, 218, 121, 0.8),
+    0 0 30px rgba(244, 218, 121, 0.35);
+}
+
+
+/* =========================================
+   TEXTO
+   ========================================= */
+
+.constellation-copy {
+  position: absolute;
+
+  z-index: 6;
+
+  top: 57%;
+  left: 50%;
+
+  width: min(calc(100% - 55px),
+      330px);
+
+  transform:
+    translateX(-50%);
+
+  text-align: center;
+}
+
+.constellation-copy p {
+  margin: 0;
+
+  color:
+    rgba(247, 242, 223, 0.55);
+
+  font-size: 0.85rem;
+}
+
+.constellation-copy strong {
+  display: block;
+
+  margin-top: 13px;
+
+  color:
+    rgba(244, 229, 176, 0.86);
+
+  font-size:
+    clamp(1.25rem,
+      5.5vw,
+      1.8rem);
+
+  line-height: 1.3;
+
+  font-weight: 500;
+
+  letter-spacing: -0.02em;
+}
+
+/* =========================================
+   SIGNIFICADO
+   ========================================= */
+
+.meaning-discovery {
+  position: absolute;
+  inset: 0;
+
+  z-index: 25;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  pointer-events: none;
+}
+
+.meaning-light {
+  position: absolute;
+
+  width: 330px;
+  height: 330px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(circle,
+      rgba(244, 217, 107, 0.11),
+      transparent 70%);
+
+  filter: blur(8px);
+}
+
+.meaning-copy {
+  position: relative;
+  z-index: 2;
+
+  width: min(calc(100% - 55px),
+      350px);
+
+  text-align: center;
+}
+
+.meaning-copy p {
+  margin: 0;
+
+  color:
+    rgba(247, 242, 223, 0.55);
+
+  line-height: 1.6;
+}
+
+.meaning-copy h3 {
+  margin-top: 18px;
+
+  font-size:
+    clamp(1.8rem,
+      8vw,
+      2.8rem);
+
+  line-height: 1.08;
+
+  letter-spacing: -0.035em;
+
+  font-weight: 600;
+}
+
+.meaning-copy .meaning-final-line {
+  margin-top: 24px;
+
+  color:
+    rgba(244, 229, 176, 0.78);
+}
+
+.meaning-symbol {
+  display: block;
+
+  margin-top: 35px;
+
+  color: #f4da79;
+
+  font-size: 1.3rem;
+
+  text-shadow:
+    0 0 15px rgba(244, 218, 121, 0.6);
+}
+
+
+/* =========================================
+   JARDÍN FINAL — PLACEHOLDER
+   ========================================= */
+
+.final-garden {
+  position: absolute;
+  inset: 0;
+
+  z-index: 30;
+
+  overflow: hidden;
+
+  color: var(--scene-text);
+
+  background:
+    radial-gradient(circle at 50% 75%,
+      var(--scene-glow),
+      transparent 55%),
+    linear-gradient(180deg,
+      var(--scene-bg) 0%,
+      var(--scene-bg-secondary) 100%);
+}
+
+.final-garden-light {
+  position: absolute;
+
+  width: 600px;
+  height: 500px;
+
+  left: 50%;
+  bottom: -180px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(ellipse,
+      rgba(239, 203, 73, 0.16),
+      transparent 68%);
+}
+
+.final-garden-flowers {
+  position: absolute;
+  inset: 0;
+}
+
+.final-flower {
+  position: absolute;
+
+  width: 65px;
+  height: 145px;
+
+  transform-origin:
+    bottom center;
+}
+
+.final-flower--one {
+  left: 8%;
+  bottom: 0;
+}
+
+.final-flower--two {
+  left: 24%;
+  bottom: -10px;
+}
+
+.final-flower--three {
+  left: 39%;
+  bottom: 15px;
+}
+
+.final-flower--four {
+  left: 53%;
+  bottom: -5px;
+}
+
+.final-flower--five {
+  right: 23%;
+  bottom: 22px;
+}
+
+.final-flower--six {
+  right: 9%;
+  bottom: -4px;
+}
+
+.final-flower--seven {
+  left: 47%;
+  bottom: 110px;
+
+  transform:
+    scale(0.75);
+}
+
+.final-flower-stem {
+  position: absolute;
+
+  width: 4px;
+  height: 105px;
+
+  left: 50%;
+  bottom: 0;
+
+  transform:
+    translateX(-50%);
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(#98a94d,
+      #55652c);
+}
+
+.final-flower-head {
+  position: absolute;
+
+  z-index: 2;
+
+  width: 48px;
+  height: 38px;
+
+  left: 50%;
+  top: 3px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius:
+    60% 60% 45% 45%;
+
+  background: #efc94b;
+
+  box-shadow:
+    -18px 8px 0 -5px #e5b936,
+    18px 8px 0 -5px #f1cf58;
+}
+
+.final-flower-center {
+  position: absolute;
+
+  width: 15px;
+  height: 15px;
+
+  left: 50%;
+  top: 55%;
+
+  transform:
+    translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: #b87d28;
+}
+
+.final-garden-copy {
+  position: absolute;
+
+  z-index: 5;
+
+  top: 26%;
+  left: 50%;
+
+  width: min(calc(100% - 50px),
+      360px);
+
+  transform:
+    translateX(-50%);
+
+  text-align: center;
+}
+
+.final-garden-copy p {
+  margin: 0;
+
+  color:
+    rgba(247, 242, 223, 0.55);
+
+  line-height: 1.6;
+}
+
+.final-garden-copy h2 {
+  margin-top: 18px;
+
+  font-size:
+    clamp(2rem,
+      9vw,
+      3.3rem);
+
+  line-height: 1.03;
+
+  letter-spacing: -0.04em;
+}
+
+
+/* centro interactivo */
+
+.constellation-center--button {
+  border: 0;
+  padding: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  pointer-events: auto;
+
+  touch-action: manipulation;
+
+  -webkit-tap-highlight-color:
+    transparent;
+}
+
+/* =========================================
+   FINAL VIVO
+   ========================================= */
+
+.final-floating-lights {
+  position: absolute;
+  inset: 0;
+
+  z-index: 4;
+
+  pointer-events: none;
+}
+
+.final-floating-light {
+  position: absolute;
+
+  color:
+    rgba(246, 218, 111, 0.8);
+
+  font-size: 0.85rem;
+
+  text-shadow:
+    0 0 8px rgba(246, 218, 111, 0.7),
+    0 0 20px rgba(246, 218, 111, 0.25);
+}
+
+.final-light--one {
+  left: 18%;
+  top: 28%;
+}
+
+.final-light--two {
+  right: 20%;
+  top: 34%;
+}
+
+.final-light--three {
+  left: 34%;
+  top: 60%;
+}
+
+.final-light--four {
+  right: 31%;
+  top: 19%;
+}
+
+
+/* =========================================
+   CONTINUACIÓN
+   ========================================= */
+
+.final-continuation {
+  margin-top: 30px;
+}
+
+.final-continuation p {
+  color:
+    rgba(247, 242, 223, 0.6);
+
+  font-size: 0.9rem;
+
+  line-height: 1.65;
+}
+
+.final-continuation-symbol {
+  display: block;
+
+  margin: 20px auto;
+
+  color: #f4da79;
+
+  font-size: 1.25rem;
+
+  text-shadow:
+    0 0 12px rgba(244, 218, 121, 0.65),
+    0 0 30px rgba(244, 218, 121, 0.25);
+}
+
+.final-continuation strong {
+  display: block;
+
+  color:
+    rgba(244, 229, 176, 0.86);
+
+  font-size:
+    clamp(1.05rem,
+      4.5vw,
+      1.35rem);
+
+  line-height: 1.45;
+
+  font-weight: 500;
+}
+
+
+/* =========================================
+   VOLVER AL INICIO
+   ========================================= */
+
+.scene-back-button--home {
+  color:
+    rgba(244, 218, 121, 0.8);
+
+  border-color:
+    rgba(244, 218, 121, 0.14);
+
+  background:
+    rgba(244, 218, 121, 0.045);
+
+  font-size: 1.25rem;
+}
+
+.final-home-hint {
+  position: absolute;
+
+  z-index: 10;
+
+  top:
+    max(31px,
+      env(safe-area-inset-top));
+
+  left: 78px;
+
+  color:
+    rgba(247, 242, 223, 0.55);
+
+  font-size: 0.62rem;
+
+  letter-spacing: 0.06em;
+
+  pointer-events: none;
+}
+
+/* =========================================
+   SEMILLA — PAISAJE NOCTURNO
+   ========================================= */
+
+.garden-night-landscape {
+  position: absolute;
+  inset: 0;
+
+  z-index: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+
+/* horizonte */
+
+.garden-night-horizon {
+  position: absolute;
+
+  left: 50%;
+  bottom: -185px;
+
+  width: 155%;
+  height: 320px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius:
+    50% 50% 0 0;
+
+  background:
+    radial-gradient(ellipse at top,
+      rgba(36, 82, 89, 0.25),
+      rgba(9, 38, 49, 0.52) 45%,
+      transparent 72%);
+}
+
+
+/* =========================================
+   PRIMER INDICIO DE AMANECER
+   ========================================= */
+
+.garden-dawn-hint {
+  position: absolute;
+
+  width: 520px;
+  height: 220px;
+
+  left: 50%;
+  bottom: -90px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius: 50%;
+
+  opacity: 0;
+
+  background:
+    radial-gradient(ellipse,
+      rgba(242, 177, 107, 0.27) 0%,
+      rgba(221, 139, 79, 0.1) 38%,
+      transparent 70%);
+
+  filter: blur(15px);
+}
+
+
+/* =========================================
+   HIERBAS EN SOMBRA
+   ========================================= */
+
+.garden-night-grass {
+  position: absolute;
+
+  bottom: -7px;
+
+  width: 85px;
+  height: 145px;
+
+  opacity: 0.26;
+}
+
+.garden-night-grass--left {
+  left: -13px;
+}
+
+.garden-night-grass--right {
+  right: -13px;
+
+  transform:
+    scaleX(-1);
+}
+
+.garden-night-grass span {
+  position: absolute;
+
+  width: 3px;
+
+  bottom: 0;
+
+  border-radius: 999px;
+
+  background:
+    rgba(72, 113, 105, 0.58);
+
+  transform-origin:
+    bottom center;
+}
+
+.garden-night-grass span:nth-child(1) {
+  height: 125px;
+
+  left: 18px;
+
+  transform:
+    rotate(-13deg);
+}
+
+.garden-night-grass span:nth-child(2) {
+  height: 150px;
+
+  left: 40px;
+
+  transform:
+    rotate(4deg);
+}
+
+.garden-night-grass span:nth-child(3) {
+  height: 108px;
+
+  left: 62px;
+
+  transform:
+    rotate(15deg);
+}
+
+.sprout-wrapper {
+  position: relative;
+}
+
+.growth-aura {
+  position: absolute;
+
+  z-index: 0;
+
+  width: 175px;
+  height: 115px;
+
+  left: 50%;
+  bottom: -28px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(ellipse,
+      rgba(239, 186, 107, 0.2),
+      rgba(171, 150, 79, 0.08) 45%,
+      transparent 72%);
+
+  filter: blur(10px);
+
+  pointer-events: none;
+}
+
+.sprout {
+  position: relative;
+
+  z-index: 2;
+}
+
+.garden-environment {
+    background: transparent;
+}
+
+.meaning-name {
+    display: block;
+
+    margin-top: 24px;
+
+    color:
+        var(--scene-accent);
+
+    font-family:
+        var(--font-special);
+
+    font-size:
+        clamp(
+            1.2rem,
+            5vw,
+            1.55rem
+        );
+
+    font-weight: 500;
+
+    letter-spacing: 0.12em;
+}
+
+.meaning-continuation {
+    margin-top: 32px;
+}
+
+.meaning-continuation > span {
+    display: block;
+
+    margin-bottom: 18px;
+
+    color:
+        var(--scene-accent);
+
+    text-shadow:
+        0 0 15px
+        var(--scene-glow);
+}
+
+.meaning-continuation p {
+    margin: 0;
+
+    color:
+        var(--scene-muted);
+
+    line-height: 1.65;
+}
+
+.meaning-continuation strong {
+    display: block;
+
+    margin-top: 18px;
+
+    color:
+        var(--scene-text);
+
+    font-family:
+        var(--font-special);
+
+    font-size:
+        clamp(
+            1.05rem,
+            4.5vw,
+            1.35rem
+        );
+
+    font-weight: 400;
+
+    line-height: 1.5;
+}

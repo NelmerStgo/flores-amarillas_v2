@@ -1,0 +1,173 @@
+/* =========================================
+   FLORES AMARILLAS — SISTEMA VISUAL
+   ========================================= */
+
+:root {
+    /* Tipografía */
+    --font-primary:
+        "Montserrat",
+        system-ui,
+        sans-serif;
+
+    --font-special:
+        "Josefin Sans",
+        "Montserrat",
+        sans-serif;
+
+    /* Radios */
+    --radius-small: 12px;
+    --radius-medium: 22px;
+    --radius-round: 999px;
+
+    /* Ritmo */
+    --ease-soft:
+        cubic-bezier(0.22, 1, 0.36, 1);
+
+    /* Se sobrescriben según escena */
+    --scene-bg: #11100c;
+    --scene-bg-secondary: #17160f;
+
+    --scene-text: #f7f2df;
+    --scene-muted:
+        rgba(247, 242, 223, 0.6);
+
+    --scene-accent: #f3cf54;
+
+    --scene-surface:
+        rgba(255, 255, 255, 0.05);
+
+    --scene-border:
+        rgba(255, 255, 255, 0.08);
+
+    --scene-glow:
+        rgba(243, 207, 84, 0.15);
+}
+
+
+/* =========================================
+   1. NEUTRAL / NATURALEZA TRANQUILA
+   ========================================= */
+
+.theme-neutral {
+    --scene-bg: #f7f3ea;
+    --scene-bg-secondary: #e3d7c5;
+
+    --scene-text: #5a4636;
+    --scene-muted:
+        rgba(90, 70, 54, 0.62);
+
+    --scene-accent: #9c7f5f;
+
+    --scene-surface:
+        rgba(255, 255, 255, 0.38);
+
+    --scene-border:
+        rgba(90, 70, 54, 0.12);
+
+    --scene-glow:
+        rgba(200, 176, 143, 0.35);
+}
+
+
+/* =========================================
+   2. NOCHE
+   ========================================= */
+
+.theme-night {
+    --scene-bg: #000b0f;
+    --scene-bg-secondary: #052033;
+
+    --scene-text: #e8f1f7;
+    --scene-muted:
+        rgba(188, 213, 241, 0.62);
+
+    --scene-accent: #bcd5f1;
+
+    --scene-surface:
+        rgba(9, 113, 166, 0.08);
+
+    --scene-border:
+        rgba(188, 213, 241, 0.11);
+
+    --scene-glow:
+        rgba(9, 113, 166, 0.22);
+}
+
+
+/* =========================================
+   3. AMANECER
+   ========================================= */
+
+.theme-dawn {
+    --scene-bg: #f5dec5;
+    --scene-bg-secondary: #dda477;
+
+    --scene-text: #533e32;
+
+    --scene-muted:
+        rgba(83, 62, 50, 0.62);
+
+    --scene-accent: #c98950;
+
+    --scene-surface:
+        rgba(255, 244, 222, 0.25);
+
+    --scene-border:
+        rgba(104, 70, 48, 0.1);
+
+    --scene-glow:
+        rgba(240, 177, 104, 0.3);
+}
+
+
+/* =========================================
+   4. DÍA VIVO
+   ========================================= */
+
+.theme-day {
+    --scene-bg: #8fcce0;
+    --scene-bg-secondary: #d9e8a9;
+
+    --scene-text: #26452f;
+
+    --scene-muted:
+        rgba(38, 69, 47, 0.62);
+
+    --scene-accent: #e3b62d;
+
+    --scene-surface:
+        rgba(255, 255, 255, 0.2);
+
+    --scene-border:
+        rgba(39, 77, 49, 0.1);
+
+    --scene-glow:
+        rgba(244, 202, 66, 0.3);
+}
+
+
+
+/* =========================================
+   5. ATARDECER
+   ========================================= */
+
+.theme-sunset {
+    --scene-bg: #f4cb72;
+    --scene-bg-secondary: #bd7388;
+
+    --scene-text: #533545;
+
+    --scene-muted:
+        rgba(83, 53, 69, 0.65);
+
+    --scene-accent: #7e527d;
+
+    --scene-surface:
+        rgba(255, 239, 213, 0.22);
+
+    --scene-border:
+        rgba(91, 50, 71, 0.12);
+
+    --scene-glow:
+        rgba(238, 137, 103, 0.34);
+}

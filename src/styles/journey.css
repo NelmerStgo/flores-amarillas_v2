@@ -1,0 +1,380 @@
+/* =========================================
+   JOURNEY — NOCHE
+   ========================================= */
+
+.journey-scene {
+    color: var(--scene-text);
+
+    background:
+        radial-gradient(circle at 50% 72%,
+            rgba(9, 113, 166, 0.14),
+            transparent 36%),
+        radial-gradient(circle at 75% 12%,
+            rgba(188, 213, 241, 0.07),
+            transparent 26%),
+        linear-gradient(180deg,
+            var(--scene-bg) 0%,
+            var(--scene-bg-secondary) 100%);
+}
+
+
+/* =========================================
+   CIELO
+   ========================================= */
+
+.journey-sky {
+    position: absolute;
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+.journey-moon-glow {
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    top: -100px;
+    right: -110px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(188, 213, 241, 0.15) 0%,
+            rgba(188, 213, 241, 0.04) 42%,
+            transparent 70%);
+
+    filter: blur(5px);
+}
+
+
+/* =========================================
+   ESTRELLAS
+   ========================================= */
+
+.journey-star {
+    position: absolute;
+
+    display: block;
+
+    width: 3px;
+    height: 3px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(220, 235, 248, 0.75);
+
+    box-shadow:
+        0 0 7px rgba(188, 213, 241, 0.5);
+}
+
+.journey-star--1 {
+    left: 14%;
+    top: 18%;
+}
+
+.journey-star--2 {
+    left: 76%;
+    top: 25%;
+}
+
+.journey-star--3 {
+    left: 24%;
+    top: 38%;
+}
+
+.journey-star--4 {
+    right: 13%;
+    top: 49%;
+}
+
+.journey-star--5 {
+    left: 62%;
+    top: 12%;
+}
+
+.journey-star--6 {
+    left: 9%;
+    top: 61%;
+}
+
+
+/* =========================================
+   SUELO / HORIZONTE
+   ========================================= */
+
+.journey-horizon {
+    position: absolute;
+
+    z-index: 0;
+
+    left: 50%;
+    bottom: -185px;
+
+    width: 150%;
+    height: 330px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius:
+        50% 50% 0 0;
+
+    background:
+        radial-gradient(ellipse at top,
+            rgba(18, 69, 91, 0.45),
+            rgba(4, 28, 41, 0.8) 58%,
+            rgba(0, 11, 15, 0.95));
+}
+
+
+/* =========================================
+   VEGETACIÓN EN SILUETA
+   ========================================= */
+
+.journey-grass {
+    position: absolute;
+
+    z-index: 1;
+
+    bottom: -5px;
+
+    width: 75px;
+    height: 145px;
+
+    opacity: 0.38;
+
+    transform-origin:
+        bottom center;
+}
+
+.journey-grass--left {
+    left: -12px;
+}
+
+.journey-grass--right {
+    right: -10px;
+
+    transform:
+        scaleX(-1);
+}
+
+.journey-grass-stem {
+    position: absolute;
+
+    width: 3px;
+    height: 125px;
+
+    left: 37px;
+    bottom: 0;
+
+    border-radius: 999px;
+
+    background:
+        rgba(74, 116, 124, 0.6);
+
+    transform:
+        rotate(7deg);
+}
+
+.journey-grass-leaf {
+    position: absolute;
+
+    width: 43px;
+    height: 17px;
+
+    background:
+        rgba(65, 107, 115, 0.56);
+}
+
+.journey-grass-leaf--one {
+    left: 2px;
+    bottom: 47px;
+
+    border-radius:
+        100% 10% 100% 10%;
+
+    transform:
+        rotate(16deg);
+}
+
+.journey-grass-leaf--two {
+    left: 35px;
+    bottom: 83px;
+
+    border-radius:
+        10% 100% 10% 100%;
+
+    transform:
+        rotate(-13deg);
+}
+
+
+/* =========================================
+   CONTENIDO
+   ========================================= */
+
+.journey-content {
+    position: relative;
+
+    z-index: 5;
+
+    width: min(calc(100% - 44px),
+            420px);
+}
+
+.journey-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+}
+
+.journey-number {
+    margin-bottom: 18px;
+
+    color:
+        var(--scene-muted);
+
+    font-size: 0.62rem;
+
+    font-weight: 500;
+
+    letter-spacing: 0.22em;
+}
+
+.journey-step h2 {
+    color:
+        var(--scene-text);
+
+    font-family:
+        var(--font-primary);
+
+    font-size:
+        clamp(1.9rem,
+            8vw,
+            2.9rem);
+
+    font-weight: 500;
+
+    line-height: 1.08;
+
+    letter-spacing: -0.035em;
+}
+
+.journey-step p {
+    margin-top: 18px;
+
+    max-width: 290px;
+
+    color:
+        var(--scene-muted);
+
+    font-family:
+        var(--font-special);
+
+    font-size: 0.95rem;
+
+    font-weight: 300;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   LUZ DESCUBRIBLE
+   ========================================= */
+
+.discovery-point {
+    position: relative;
+
+    width: 86px;
+    height: 86px;
+
+    margin-top: 56px;
+
+    display: grid;
+    place-items: center;
+
+    border: 0;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    -webkit-tap-highlight-color:
+        transparent;
+}
+
+.discovery-core {
+    position: relative;
+
+    z-index: 3;
+
+    width: 11px;
+    height: 11px;
+
+    border-radius: 50%;
+
+    background:
+        #dcecff;
+
+    box-shadow:
+        0 0 7px rgba(220, 236, 255, 0.95),
+        0 0 20px rgba(92, 170, 213, 0.72),
+        0 0 50px rgba(9, 113, 166, 0.32);
+}
+
+.discovery-glow {
+    position: absolute;
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(188, 213, 241, 0.32),
+            transparent 72%);
+}
+
+.discovery-hint {
+    margin-top: 11px;
+
+    color:
+        rgba(188, 213, 241, 0.43);
+
+    font-family:
+        var(--font-special);
+
+    font-size: 0.61rem;
+
+    letter-spacing: 0.13em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   FLOR DESCUBIERTA
+   ========================================= */
+
+.discovered-flower {
+    margin-bottom: 27px;
+
+    color:
+        var(--scene-accent);
+
+    font-size: 2rem;
+
+    text-shadow:
+        0 0 15px rgba(188, 213, 241, 0.42),
+        0 0 35px rgba(9, 113, 166, 0.24);
+}
