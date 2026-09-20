@@ -8,6 +8,7 @@ import "./styles/themes.css";
 import "./styles/intro.css";
 import "./styles/journey.css";
 import "./styles/garden-environment.css";
+import "./styles/art.css";
 
 createRoot(
   document.getElementById("root")!,

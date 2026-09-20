@@ -1,0 +1,183 @@
+/* =========================================
+   CAPA ARTÍSTICA GLOBAL DEL JARDÍN
+   ========================================= */
+
+.artistic-backdrop {
+    position: absolute;
+    inset: 0;
+
+    z-index: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+.artistic-backdrop-image {
+    position: absolute;
+    inset: -3%;
+
+    width: 106%;
+    height: 106%;
+
+    object-fit: cover;
+    object-position: center;
+
+    will-change:
+        transform,
+        opacity;
+}
+
+
+/* =========================================
+   AMANECER
+   ========================================= */
+
+.artistic-backdrop--dawn .artistic-backdrop-image {
+    filter:
+        brightness(0.68) saturate(0.72) sepia(0.08);
+}
+
+.artistic-backdrop--dawn .artistic-backdrop-veil {
+    background:
+        linear-gradient(180deg,
+            rgba(14, 18, 14, 0.56),
+            rgba(74, 61, 36, 0.3) 55%,
+            rgba(217, 163, 94, 0.16));
+}
+
+
+/* =========================================
+   DÍA VIVO
+   ========================================= */
+
+.artistic-backdrop--day .artistic-backdrop-image {
+    filter:
+        brightness(0.84) saturate(0.9);
+}
+
+.artistic-backdrop--day .artistic-backdrop-veil {
+    background:
+        linear-gradient(180deg,
+            rgba(38, 62, 50, 0.2),
+            rgba(230, 210, 127, 0.08) 58%,
+            rgba(51, 80, 48, 0.15));
+}
+
+
+/* =========================================
+   ATARDECER
+   ========================================= */
+
+.artistic-backdrop--sunset .artistic-backdrop-image {
+    filter:
+        brightness(0.76) saturate(0.92);
+}
+
+.artistic-backdrop--sunset .artistic-backdrop-veil {
+    background:
+        linear-gradient(180deg,
+            rgba(57, 40, 52, 0.18),
+            rgba(142, 82, 76, 0.16) 52%,
+            rgba(34, 27, 29, 0.32));
+}
+
+
+/* =========================================
+   VELO
+   ========================================= */
+
+.artistic-backdrop-veil {
+    position: absolute;
+    inset: 0;
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   LUZ VIVA
+   ========================================= */
+
+.artistic-backdrop-light {
+    position: absolute;
+
+    z-index: 3;
+
+    width: min(85vw,
+            650px);
+
+    aspect-ratio: 1;
+
+    left: 50%;
+    top: 45%;
+
+    transform:
+        translate(-50%,
+            -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(255,
+                223,
+                148,
+                0.18),
+            transparent 68%);
+
+    filter: blur(20px);
+}
+
+
+/* =========================================
+   LAS CAPAS CSS ANTERIORES AHORA
+   SON COMPLEMENTARIAS
+   ========================================= */
+
+.garden-backdrop {
+    z-index: 1;
+
+    opacity: 0.38;
+}
+
+.garden-hill {
+    opacity: 0.52;
+}
+
+.garden-ground {
+    opacity: 0.52;
+}
+
+.garden-foliage {
+    opacity: 0.72;
+}
+
+
+/* El final deja visible el paisaje */
+.final-garden {
+    background:
+        linear-gradient(180deg,
+            rgba(255, 255, 255, 0.03),
+            rgba(52, 32, 40, 0.16));
+}
+
+
+/* =========================================
+   FIXES LEGACY
+   ========================================= */
+
+.relationship-growth {
+    overflow: visible;
+}
+
+.relationship-roots {
+    height: auto;
+}
+
+.relationship-care .care-drop {
+    position: relative;
+
+    top: auto;
+    left: auto;
+}

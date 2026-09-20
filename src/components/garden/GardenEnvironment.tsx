@@ -7,6 +7,10 @@ import MeaningDiscovery from "./MeaningDiscovery";
 import FinalGarden from "./FinalGarden";
 import GardenBackdrop from "./GardenBackdrop";
 
+import ArtisticBackdrop, {
+    type ArtisticPhase,
+} from "./ArtisticBackdrop";
+
 interface GardenEnvironmentProps {
     introDone: boolean;
 
@@ -32,6 +36,8 @@ interface GardenEnvironmentProps {
     onOpenMeaning: () => void;
 }
 
+
+
 function GardenEnvironment({
     introDone,
 
@@ -54,6 +60,15 @@ function GardenEnvironment({
     finalGardenVisible,
     onOpenMeaning,
 }: GardenEnvironmentProps) {
+
+    const artisticPhase: ArtisticPhase =
+        finalGardenVisible ||
+            meaningOpen
+            ? "sunset"
+            : memoriesVisible
+                ? "day"
+                : "dawn";
+
     return (
         <motion.div
             key="environment-stage"
@@ -68,8 +83,12 @@ function GardenEnvironment({
                 duration: 2,
             }}
         >
+            <ArtisticBackdrop
+                phase={artisticPhase}
+            />
+
             <GardenBackdrop />
-            
+
             <div
                 className="environment-backdrop"
                 aria-hidden="true"

@@ -296,7 +296,7 @@ export function useGardenJourney() {
 
         const timer = window.setTimeout(() => {
             setFinalGardenVisible(true);
-        }, 5200);
+        }, 8000);
 
         return () => {
             window.clearTimeout(timer);
