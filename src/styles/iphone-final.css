@@ -1,0 +1,1022 @@
+/* ==========================================================
+   FLORES AMARILLAS
+   PASS FINAL MOBILE
+   Target principal:
+   iPhone 16 / iPhone 16 Pro
+   ========================================================== */
+
+html,
+body,
+#root {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+    overscroll-behavior: none;
+    -webkit-text-size-adjust: 100%;
+}
+
+.scene,
+.environment-stage {
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+
+    overflow: hidden;
+}
+
+
+/* ==========================================================
+   SAFE AREA IPHONE
+   ========================================================== */
+
+.scene {
+    padding-top:
+        max(16px,
+            env(safe-area-inset-top));
+
+    padding-right:
+        max(16px,
+            env(safe-area-inset-right));
+
+    padding-bottom:
+        max(20px,
+            env(safe-area-inset-bottom));
+
+    padding-left:
+        max(16px,
+            env(safe-area-inset-left));
+}
+
+
+/* ==========================================================
+   INTRO MODAL
+   ========================================================== */
+
+.intro-welcome-overlay {
+    position: fixed;
+    inset: 0;
+
+    z-index: 500;
+
+    display: grid;
+    place-items: center;
+
+    padding:
+        max(22px,
+            env(safe-area-inset-top)) 20px max(25px,
+            env(safe-area-inset-bottom));
+
+    background:
+        rgba(24, 20, 18, 0.52);
+
+    backdrop-filter:
+        blur(13px);
+}
+
+.intro-welcome-card {
+    width:
+        min(calc(100vw - 44px),
+            330px);
+
+    padding: 13px 13px 17px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.3);
+
+    border-radius: 28px;
+
+    background:
+        rgba(249, 244, 231, 0.97);
+
+    box-shadow:
+        0 26px 85px rgba(0, 0, 0, 0.35);
+}
+
+.intro-welcome-image {
+    width: 100%;
+    max-height: 55dvh;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+}
+
+.intro-welcome-close {
+    min-width: 145px;
+    min-height: 48px;
+
+    margin-top: 14px;
+
+    border:
+        1px solid rgba(65, 46, 35, 0.13);
+
+    border-radius: 999px;
+
+    background:
+        rgba(255, 255, 255, 0.94);
+
+    color: #453528;
+
+    font-size: 0.86rem;
+    font-weight: 600;
+}
+
+
+/* ==========================================================
+   CONTENIDO MÓVIL
+   ========================================================== */
+
+.intro-content,
+.journey-content,
+.environment-copy,
+.meaning-copy,
+.final-garden-copy {
+    width:
+        min(calc(100vw - 34px),
+            368px);
+}
+
+
+/* ==========================================================
+   JOURNEY
+   ========================================================== */
+
+.discovery-point {
+    min-width: 96px;
+    min-height: 96px;
+
+    animation:
+        iphone-wander 6.2s ease-in-out infinite;
+}
+
+@keyframes iphone-wander {
+    0% {
+        translate: 0 0;
+    }
+
+    20% {
+        translate: 34px -12px;
+    }
+
+    42% {
+        translate: -30px 16px;
+    }
+
+    66% {
+        translate: 26px 26px;
+    }
+
+    84% {
+        translate: -14px 8px;
+    }
+
+    100% {
+        translate: 0 0;
+    }
+}
+
+.flower-button {
+    animation:
+        journey-flower 5.4s ease-in-out infinite;
+}
+
+@keyframes journey-flower {
+
+    0%,
+    100% {
+        translate: 0 0;
+        rotate: 0deg;
+    }
+
+    35% {
+        translate: 25px -8px;
+        rotate: 7deg;
+    }
+
+    68% {
+        translate: -22px 12px;
+        rotate: -6deg;
+    }
+}
+
+
+/* ==========================================================
+   FLOR PRINCIPAL
+   ========================================================== */
+
+.main-flower-stage {
+    position: absolute;
+
+    z-index: 12;
+
+    left: 50%;
+    bottom: 8%;
+
+    width: 190px;
+    height: 265px;
+
+    margin-left: -95px;
+
+    pointer-events: none;
+}
+
+.first-flower-wrapper {
+    position: absolute;
+
+    left: 0;
+    right: auto;
+    bottom: 0;
+
+    width: 190px;
+    height: 265px;
+
+    margin: 0;
+
+    transform: none;
+
+    pointer-events: none;
+}
+
+.first-flower {
+    left: 50%;
+    bottom: 0;
+
+    width: 150px;
+    height: 230px;
+
+    margin-left: -75px;
+
+    transform: none;
+
+    pointer-events: auto;
+}
+
+.first-flower-head {
+    scale: 1.32;
+}
+
+.first-flower-glow {
+    width: 150px;
+    height: 150px;
+
+    left: 50%;
+    top: -16px;
+
+    margin-left: -75px;
+
+    transform: none;
+
+    background:
+        radial-gradient(circle,
+            rgba(255, 225, 113, 0.65),
+            rgba(245, 191, 66, 0.2) 46%,
+            transparent 72%);
+}
+
+.first-flower-copy {
+    position: absolute;
+
+    left: 50%;
+    right: auto;
+    top: -26px;
+
+    width: 230px;
+
+    margin-left: -115px;
+
+    transform: none;
+
+    text-align: center;
+}
+
+
+/* ==========================================================
+   SEÑAL SIGUIENTE
+   ========================================================== */
+
+.distant-signal {
+    left: 50%;
+    top: 34%;
+
+    width: 94px;
+    height: 94px;
+
+    margin-left: -47px;
+
+    transform: none;
+}
+
+.distant-signal-glow {
+    width: 76px;
+    height: 76px;
+}
+
+.distant-signal-core {
+    font-size: 2.3rem;
+
+    color: #f7d85e;
+
+    text-shadow:
+        0 0 12px rgba(247, 216, 94, 1),
+        0 0 30px rgba(247, 216, 94, 0.8),
+        0 0 65px rgba(247, 216, 94, 0.55);
+}
+
+
+/* ==========================================================
+   RELACIÓN / RAÍCES
+   ========================================================== */
+
+.relationship-growth-content {
+    width:
+        min(calc(100vw - 28px),
+            390px);
+
+    height: 76dvh;
+}
+
+.relationship-copy {
+    width:
+        min(calc(100vw - 42px),
+            340px);
+}
+
+.relationship-roots {
+    left: 50%;
+
+    bottom: 5%;
+
+    width: 350px;
+    height: 260px;
+
+    margin-left: -175px;
+
+    transform: none;
+}
+
+.relationship-roots svg {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+}
+
+.relationship-roots path {
+    stroke:
+        rgba(151, 104, 53, 0.88);
+
+    stroke-width: 4;
+}
+
+.relationship-care {
+    left: 50%;
+    top: 42%;
+
+    width: 290px;
+
+    margin-left: -145px;
+
+    transform: none;
+
+    text-align: center;
+}
+
+.relationship-care .care-drop {
+    position: relative;
+
+    top: auto;
+    left: auto;
+
+    width: 78px;
+    height: 78px;
+
+    margin:
+        13px auto 4px;
+
+    display: grid;
+    place-items: center;
+}
+
+.care-live-words {
+    width: 255px;
+
+    margin:
+        12px auto 0;
+}
+
+
+/* ==========================================================
+   RECUERDOS
+   ========================================================== */
+
+.memory-point {
+    width: 96px;
+    height: 96px;
+
+    display: grid;
+    place-items: center;
+}
+
+.memory-point--one {
+    left: 7%;
+    top: 23%;
+}
+
+.memory-point--two {
+    right: 6%;
+    top: 43%;
+}
+
+.memory-point--three {
+    left: 50%;
+    bottom: 12%;
+
+    margin-left: -48px;
+}
+
+.memory-point-glow {
+    width: 82px;
+    height: 82px;
+}
+
+.memory-point-core {
+    font-size: 1.55rem;
+}
+
+.memory-point::after {
+    content: "";
+
+    position: absolute;
+
+    width: 54px;
+    height: 54px;
+
+    border:
+        1px solid rgba(255, 225, 114, 0.5);
+
+    border-radius: 50%;
+
+    animation:
+        memory-pulse 2.1s ease-in-out infinite;
+}
+
+@keyframes memory-pulse {
+
+    0%,
+    100% {
+        scale: 0.8;
+        opacity: 0.25;
+    }
+
+    50% {
+        scale: 1.25;
+        opacity: 0.9;
+    }
+}
+
+
+/* ==========================================================
+   CONSTELACIÓN
+   ========================================================== */
+
+.memory-constellation {
+    position: absolute;
+    inset: 0;
+}
+
+.constellation-center {
+    left: 50%;
+    top: 39%;
+
+    width: 86px;
+    height: 86px;
+
+    margin-left: -43px;
+    margin-top: -43px;
+
+    transform: none;
+}
+
+.constellation-center--button {
+    padding: 0;
+
+    border:
+        1px solid rgba(255, 227, 138, 0.42);
+
+    border-radius: 50%;
+
+    background:
+        rgba(38, 36, 23, 0.3);
+
+    backdrop-filter:
+        blur(9px);
+
+    box-shadow:
+        0 0 24px rgba(255, 221, 104, 0.27);
+}
+
+.constellation-center-glow {
+    width: 76px;
+    height: 76px;
+}
+
+.constellation-center-core {
+    font-size: 1.6rem;
+}
+
+.constellation-copy {
+    top: 54%;
+
+    width:
+        min(calc(100vw - 48px),
+            335px);
+}
+
+.constellation-copy strong {
+    font-size:
+        clamp(1.12rem,
+            5vw,
+            1.45rem);
+}
+
+
+/* ==========================================================
+   MEANING
+   ========================================================== */
+
+.meaning-copy {
+    width:
+        min(calc(100vw - 40px),
+            350px);
+
+    padding:
+        21px 17px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(180deg,
+            rgba(23, 25, 20, 0.17),
+            rgba(21, 23, 18, 0.36));
+
+    backdrop-filter:
+        blur(4px);
+
+    text-shadow:
+        0 2px 18px rgba(0, 0, 0, 0.72);
+}
+
+.meaning-name {
+    width: 105px;
+    height: 105px;
+
+    margin:
+        17px auto 0;
+}
+
+
+/* ==========================================================
+   FINAL
+   ========================================================== */
+
+.final-garden-copy {
+    top: 12%;
+
+    width:
+        min(calc(100vw - 38px),
+            355px);
+
+    padding:
+        18px 15px;
+
+    border-radius: 26px;
+
+    background:
+        linear-gradient(180deg,
+            rgba(27, 23, 20, 0.2),
+            rgba(25, 21, 18, 0.36));
+
+    backdrop-filter:
+        blur(4px);
+}
+
+.final-garden-copy h2 {
+    font-size:
+        clamp(1.65rem,
+            7vw,
+            2.15rem);
+}
+
+.final-garden-copy p,
+.final-continuation p,
+.final-continuation strong {
+    font-size: 0.88rem;
+
+    line-height: 1.5;
+}
+
+.final-garden-flowers {
+    bottom: 0;
+}
+
+.final-flower {
+    bottom: -20px;
+}
+
+.final-flower--one {
+    left: -2%;
+    scale: 0.76;
+}
+
+.final-flower--two {
+    left: 13%;
+    scale: 0.93;
+}
+
+.final-flower--three {
+    left: 29%;
+    bottom: -8px;
+
+    scale: 1.05;
+}
+
+.final-flower--four {
+    left: 47%;
+    bottom: -18px;
+
+    scale: 0.88;
+}
+
+.final-flower--five {
+    right: 18%;
+    bottom: -4px;
+
+    scale: 1.08;
+}
+
+.final-flower--six {
+    right: 1%;
+
+    scale: 0.82;
+}
+
+.final-flower--seven {
+    left: 47%;
+    bottom: 65px;
+
+    scale: 0.52;
+}
+
+.final-home-hint {
+    top: auto;
+
+    bottom:
+        max(17px,
+            env(safe-area-inset-bottom));
+
+    left: 50%;
+
+    width: 220px;
+
+    translate: -50% 0;
+
+    text-align: center;
+}
+
+
+/* ==========================================================
+   IPHONE 16 / 16 PRO
+   ========================================================== */
+
+@media (min-width: 390px) and (max-width: 410px) and (min-height: 820px) {
+    .intro-content h1 {
+        font-size: 2.65rem;
+    }
+
+    .journey-step h2 {
+        font-size: 1.92rem;
+    }
+
+    .environment-copy h2 {
+        font-size: 2.2rem;
+    }
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+   ========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .discovery-point,
+    .flower-button,
+    .memory-point::after {
+        animation: none;
+    }
+}
+
+/* ==========================================================
+   DECORACIÓN VIVA
+   ========================================================== */
+
+.garden-decor {
+    position: absolute;
+    inset: 0;
+
+    z-index: 3;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+.decor-item {
+    position: absolute;
+
+    display: block;
+
+    object-fit: contain;
+
+    user-select: none;
+}
+
+
+/* mariposa superior derecha */
+
+.decor-butterfly--botanical {
+    width: 72px;
+
+    top:
+        max(9%,
+            calc(env(safe-area-inset-top) + 48px));
+
+    right: -5px;
+
+    opacity: 0.72;
+}
+
+
+/* mariposa superior izquierda */
+
+.decor-butterfly--yellow {
+    width: 56px;
+
+    top: 24%;
+    left: 5%;
+
+    opacity: 0.68;
+}
+
+
+/* estrellas */
+
+.decor-sparkles {
+    width: 47px;
+
+    top: 16%;
+    right: 21%;
+
+    opacity: 0.7;
+}
+
+
+/* flor con catarinas */
+
+.decor-ladybug {
+    width: 105px;
+
+    left: -18px;
+    bottom: 1%;
+
+    transform-origin:
+        bottom center;
+}
+
+
+/* abejitas */
+
+.decor-bees {
+    width: 74px;
+
+    right: 8%;
+    bottom: 22%;
+
+    opacity: 0.82;
+}
+
+
+/* margaritas */
+
+.decor-daisies {
+    width: 135px;
+
+    left: -30px;
+    bottom: -5px;
+
+    transform-origin:
+        bottom center;
+}
+
+
+/* flor amarilla */
+
+.decor-yellow-flower {
+    width: 78px;
+
+    right: 0;
+    bottom: 12%;
+
+    transform-origin:
+        bottom center;
+}
+
+
+/* final: girasoles protagonistas */
+
+.decor-sunflowers {
+    width: 185px;
+
+    right: -43px;
+    bottom: -6px;
+
+    z-index: 4;
+
+    transform-origin:
+        bottom center;
+}
+
+
+/* final: flores amarillas izquierda */
+
+.decor-yellow-roses {
+    width: 122px;
+
+    left: -24px;
+    bottom: 2%;
+
+    z-index: 4;
+}
+
+
+/* casa hongo */
+
+.decor-mushroom-house {
+    width: 89px;
+
+    left: 8%;
+    bottom: 18%;
+
+    z-index: 2;
+}
+
+
+/* caracol */
+
+.decor-snail {
+    width: 72px;
+
+    left: 32%;
+    bottom:
+        max(18px,
+            env(safe-area-inset-bottom));
+
+    z-index: 5;
+}
+
+
+/* ==========================================================
+   FINAL: RETIRAR PARTE DEL JARDÍN CSS ARTIFICIAL
+   Los assets pasan a ser protagonistas.
+   ========================================================== */
+
+.garden-decor--final~.garden-backdrop {
+    opacity: 0.22;
+}
+
+.final-garden-flowers {
+    opacity: 0.45;
+}
+
+.final-flower--one,
+.final-flower--four,
+.final-flower--six {
+    display: none;
+}
+
+
+/* ==========================================================
+   TARGET IPHONE 16 / PRO
+   ========================================================== */
+
+@media (min-width: 390px) and (max-width: 410px) {
+    .decor-butterfly--botanical {
+        width: 68px;
+        right: -2px;
+    }
+
+    .decor-butterfly--yellow {
+        width: 53px;
+    }
+
+    .decor-sunflowers {
+        width: 178px;
+
+        right: -39px;
+    }
+
+    .decor-mushroom-house {
+        width: 83px;
+    }
+
+    .decor-snail {
+        width: 68px;
+    }
+}
+
+.relationship-parent-plant {
+    position: absolute;
+
+    z-index: 3;
+
+    left: 50%;
+    bottom: 28%;
+
+    width: 90px;
+    height: 180px;
+
+    margin-left: -45px;
+
+    pointer-events: none;
+}
+
+.relationship-parent-stem {
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: 5px;
+    height: 135px;
+
+    margin-left: -2.5px;
+
+    border-radius: 999px;
+
+    transform-origin:
+        bottom center;
+
+    background:
+        linear-gradient(180deg,
+            #a6b760,
+            #57672f);
+}
+
+.relationship-parent-flower {
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+
+    width: 66px;
+    height: 56px;
+
+    margin-left: -33px;
+
+    border-radius:
+        55% 55% 45% 45%;
+
+    background:
+        #f0cb4e;
+
+    box-shadow:
+        -23px 9px 0 -8px #e5bb38,
+        23px 9px 0 -8px #f3d661,
+        0 0 26px rgba(240, 203, 78, 0.22);
+}
+
+.relationship-parent-flower i {
+    position: absolute;
+
+    width: 19px;
+    height: 19px;
+
+    left: 50%;
+    top: 52%;
+
+    translate: -50% -50%;
+
+    border-radius: 50%;
+
+    background:
+        #b87d28;
+}

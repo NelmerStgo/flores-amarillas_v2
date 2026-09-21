@@ -11,6 +11,10 @@ import ArtisticBackdrop, {
     type ArtisticPhase,
 } from "./ArtisticBackdrop";
 
+import GardenDecor, {
+    type GardenDecorPhase,
+} from "./GardenDecor";
+
 interface GardenEnvironmentProps {
     introDone: boolean;
 
@@ -69,6 +73,17 @@ function GardenEnvironment({
                 ? "day"
                 : "dawn";
 
+    const decorPhase: GardenDecorPhase =
+        finalGardenVisible
+            ? "final"
+            : meaningOpen
+                ? "meaning"
+                : memoriesVisible
+                    ? "memories"
+                    : rootsDiscoveryOpen
+                        ? "relationship"
+                        : "arrival";
+
     return (
         <motion.div
             key="environment-stage"
@@ -85,6 +100,10 @@ function GardenEnvironment({
         >
             <ArtisticBackdrop
                 phase={artisticPhase}
+            />
+
+            <GardenDecor
+                phase={decorPhase}
             />
 
             <GardenBackdrop />
@@ -278,12 +297,39 @@ function GardenEnvironment({
                 )}
             </AnimatePresence>
 
-            {introDone && (
-                <FirstFlower
-                    isOpen={firstFlowerOpen}
-                    onOpen={onFirstFlowerOpen}
-                />
-            )}
+            <AnimatePresence>
+                {introDone &&
+                    !rootsDiscoveryOpen &&
+                    !memoriesVisible &&
+                    !meaningOpen &&
+                    !finalGardenVisible && (
+                        <motion.div
+                            key="main-flower"
+                            className="main-flower-stage"
+                            initial={{
+                                opacity: 0,
+                                scale: 0.9,
+                            }}
+                            animate={{
+                                opacity: 1,
+                                scale: 1,
+                            }}
+                            exit={{
+                                opacity: 0,
+                                scale: 0.9,
+                                y: 20,
+                            }}
+                            transition={{
+                                duration: 0.45,
+                            }}
+                        >
+                            <FirstFlower
+                                isOpen={firstFlowerOpen}
+                                onOpen={onFirstFlowerOpen}
+                            />
+                        </motion.div>
+                    )}
+            </AnimatePresence>
 
             {/* Ondas */}
             <AnimatePresence>

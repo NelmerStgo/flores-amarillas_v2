@@ -1,6 +1,12 @@
-import { motion } from "motion/react";
+import { useState } from "react";
+import {
+    AnimatePresence,
+    motion,
+} from "motion/react";
 
 import Scene from "../components/Scene";
+
+import holaGato from "../assets/memories/hola-gato.jpg";
 
 interface IntroSceneProps {
     onContinue: () => void;
@@ -9,12 +15,94 @@ interface IntroSceneProps {
 function IntroScene({
     onContinue,
 }: IntroSceneProps) {
+    const [welcomeOpen, setWelcomeOpen] =
+        useState(true);
+
     return (
         <Scene
             theme="neutral"
             className="intro-scene"
         >
-            {/* Fondo artístico */}
+            <AnimatePresence>
+                {welcomeOpen && (
+                    <motion.div
+                        className="intro-welcome-overlay"
+                        initial={{
+                            opacity: 0,
+                        }}
+                        animate={{
+                            opacity: 1,
+                        }}
+                        exit={{
+                            opacity: 0,
+                        }}
+                    >
+                        <motion.div
+                            className="intro-welcome-card"
+                            role="dialog"
+                            aria-modal="true"
+                            aria-label="Saludo para LISS"
+                            initial={{
+                                opacity: 0,
+                                scale: 0.88,
+                                y: 22,
+                            }}
+                            animate={{
+                                opacity: 1,
+                                scale: 1,
+                                y: 0,
+                            }}
+                            exit={{
+                                opacity: 0,
+                                scale: 0.94,
+                                y: 12,
+                            }}
+                            transition={{
+                                duration: 0.55,
+                                ease: [
+                                    0.22,
+                                    1,
+                                    0.36,
+                                    1,
+                                ],
+                            }}
+                        >
+                            <img
+                                src={holaGato}
+                                alt=""
+                                className="intro-welcome-image"
+                            />
+
+                            <motion.button
+                                type="button"
+                                className="intro-welcome-close"
+                                onClick={() =>
+                                    setWelcomeOpen(false)
+                                }
+                                aria-label="Cerrar saludo"
+                                animate={{
+                                    scale: [
+                                        1,
+                                        1.06,
+                                        1,
+                                    ],
+                                }}
+                                transition={{
+                                    duration: 1.7,
+                                    repeat: Infinity,
+                                    ease: "easeInOut",
+                                }}
+                                whileTap={{
+                                    scale: 0.94,
+                                }}
+                            >
+                                Quítese 🤨
+                            </motion.button>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
             <div
                 className="intro-landscape"
                 aria-hidden="true"
@@ -31,7 +119,12 @@ function IntroScene({
                     }}
                     transition={{
                         duration: 2.5,
-                        ease: [0.22, 1, 0.36, 1],
+                        ease: [
+                            0.22,
+                            1,
+                            0.36,
+                            1,
+                        ],
                     }}
                 />
 
@@ -65,81 +158,8 @@ function IntroScene({
                         delay: 0.15,
                     }}
                 />
-
-                <motion.div
-                    className="intro-plant intro-plant--left"
-                    initial={{
-                        opacity: 0,
-                        rotate: -8,
-                        y: 25,
-                    }}
-                    animate={{
-                        opacity: 1,
-                        rotate: [-4, 1, -4],
-                        y: 0,
-                    }}
-                    transition={{
-                        opacity: {
-                            duration: 1.5,
-                            delay: 0.6,
-                        },
-
-                        y: {
-                            duration: 1.5,
-                            delay: 0.6,
-                        },
-
-                        rotate: {
-                            delay: 2,
-                            duration: 5,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                        },
-                    }}
-                >
-                    <span className="intro-plant-stem" />
-                    <span className="intro-plant-leaf intro-plant-leaf--one" />
-                    <span className="intro-plant-leaf intro-plant-leaf--two" />
-                </motion.div>
-
-                <motion.div
-                    className="intro-plant intro-plant--right"
-                    initial={{
-                        opacity: 0,
-                        rotate: 7,
-                        y: 25,
-                    }}
-                    animate={{
-                        opacity: 1,
-                        rotate: [4, -1, 4],
-                        y: 0,
-                    }}
-                    transition={{
-                        opacity: {
-                            duration: 1.5,
-                            delay: 0.75,
-                        },
-
-                        y: {
-                            duration: 1.5,
-                            delay: 0.75,
-                        },
-
-                        rotate: {
-                            delay: 2,
-                            duration: 5.6,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                        },
-                    }}
-                >
-                    <span className="intro-plant-stem" />
-                    <span className="intro-plant-leaf intro-plant-leaf--one" />
-                    <span className="intro-plant-leaf intro-plant-leaf--two" />
-                </motion.div>
             </div>
 
-            {/* Contenido */}
             <div className="intro-content">
                 <motion.span
                     className="intro-eyebrow"
@@ -171,7 +191,12 @@ function IntroScene({
                     transition={{
                         duration: 1,
                         delay: 0.85,
-                        ease: [0.22, 1, 0.36, 1],
+                        ease: [
+                            0.22,
+                            1,
+                            0.36,
+                            1,
+                        ],
                     }}
                 >
                     Hice un mini-proyectito
@@ -214,17 +239,18 @@ function IntroScene({
                         duration: 0.8,
                         delay: 2.15,
                     }}
-                    whileHover={{
-                        y: -2,
-                    }}
                     whileTap={{
-                        scale: 0.95,
+                        scale: 0.94,
                     }}
                 >
                     <motion.span
                         className="intro-enter-symbol"
                         animate={{
-                            x: [0, 4, 0],
+                            x: [
+                                0,
+                                4,
+                                0,
+                            ],
                         }}
                         transition={{
                             duration: 2,
@@ -236,22 +262,6 @@ function IntroScene({
                     </motion.span>
                 </motion.button>
             </div>
-
-            <motion.span
-                className="intro-small-note"
-                initial={{
-                    opacity: 0,
-                }}
-                animate={{
-                    opacity: 0.42,
-                }}
-                transition={{
-                    delay: 3,
-                    duration: 1,
-                }}
-            >
-                todo empieza con algo pequeño
-            </motion.span>
         </Scene>
     );
 }

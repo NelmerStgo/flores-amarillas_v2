@@ -12,6 +12,15 @@ interface RelationshipGrowthProps {
     onWater: () => void;
 }
 
+const careWords = [
+    "tiempo",
+    "confianza",
+    "cuidado",
+    "paciencia",
+    "cariño",
+    "constancia",
+] as const;
+
 function RelationshipGrowth({
     visible,
     introDone,
@@ -21,6 +30,15 @@ function RelationshipGrowth({
     onWater,
 }: RelationshipGrowthProps) {
     if (!visible) return null;
+
+    const visibleCareWords =
+        careWords.slice(
+            0,
+            Math.min(
+                careLevel * 2,
+                careWords.length,
+            ),
+        );
 
     return (
         <motion.div
@@ -69,6 +87,45 @@ function RelationshipGrowth({
                         </motion.div>
                     )}
                 </AnimatePresence>
+
+                <div
+                    className="relationship-parent-plant"
+                    aria-hidden="true"
+                >
+                    <motion.span
+                        className="relationship-parent-stem"
+                        initial={{
+                            scaleY: 0,
+                        }}
+                        animate={{
+                            scaleY: 1,
+                        }}
+                        transition={{
+                            duration: 1.2,
+                            ease: [0.22, 1, 0.36, 1],
+                        }}
+                    />
+
+                    <motion.span
+                        className="relationship-parent-flower"
+                        initial={{
+                            opacity: 0,
+                            scale: 0.6,
+                        }}
+                        animate={{
+                            opacity: 1,
+                            scale: 1,
+                        }}
+                        transition={{
+                            delay: 0.7,
+                            type: "spring",
+                            stiffness: 90,
+                            damping: 12,
+                        }}
+                    >
+                        <i />
+                    </motion.span>
+                </div>
 
                 {/* Raíces */}
                 <div
@@ -188,6 +245,41 @@ function RelationshipGrowth({
                             <span className="care-counter">
                                 {careLevel} / 3
                             </span>
+
+                            <div
+                                className="care-live-words"
+                                aria-live="polite"
+                            >
+                                <AnimatePresence>
+                                    {visibleCareWords.map(
+                                        (word, index) => (
+                                            <motion.span
+                                                key={word}
+                                                initial={{
+                                                    opacity: 0,
+                                                    scale: 0.72,
+                                                    y: 12,
+                                                }}
+                                                animate={{
+                                                    opacity: 1,
+                                                    scale: 1,
+                                                    y:
+                                                        index % 2 === 0
+                                                            ? -4
+                                                            : 4,
+                                                }}
+                                                transition={{
+                                                    type: "spring",
+                                                    stiffness: 120,
+                                                    damping: 12,
+                                                }}
+                                            >
+                                                {word}
+                                            </motion.span>
+                                        ),
+                                    )}
+                                </AnimatePresence>
+                            </div>
                         </motion.div>
                     )}
                 </AnimatePresence>
@@ -244,10 +336,6 @@ function RelationshipGrowth({
                                 duration: 1,
                             }}
                         >
-                            <span>
-                                tiempo · confianza · cuidado · paciencia · cariño · constancia
-                            </span>
-
                             <h3>
                                 ¿Podemos?
                                 <br />

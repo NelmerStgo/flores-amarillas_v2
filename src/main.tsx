@@ -10,6 +10,7 @@ import "./styles/journey.css";
 import "./styles/garden-environment.css";
 import "./styles/art.css";
 import "./styles/experience-polish.css";
+import "./styles/iphone-final.css";
 
 createRoot(
   document.getElementById("root")!,
