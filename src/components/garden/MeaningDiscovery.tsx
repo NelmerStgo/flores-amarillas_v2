@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 
-import juntosGatos from "../../assets/memories/pareja.jpg";
+import parejaImage  from "../../assets/memories/pareja.jpg";
 
 function MeaningDiscovery() {
     return (
@@ -95,7 +95,7 @@ function MeaningDiscovery() {
                     }}
                 >
                     <img
-                        src={juntosGatos}
+                        src={parejaImage}
                         alt=""
                         className="meaning-memory-image"
                         draggable={false}
