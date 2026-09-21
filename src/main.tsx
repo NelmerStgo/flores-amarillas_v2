@@ -9,6 +9,7 @@ import "./styles/intro.css";
 import "./styles/journey.css";
 import "./styles/garden-environment.css";
 import "./styles/art.css";
+import "./styles/experience-polish.css";
 
 createRoot(
   document.getElementById("root")!,

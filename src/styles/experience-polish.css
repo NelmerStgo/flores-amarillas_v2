@@ -1,0 +1,508 @@
+/* =========================================================
+   FLORES AMARILLAS — FAST EXPERIENCE POLISH
+   Se importa DESPUÉS de todos los estilos existentes.
+   ========================================================= */
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.intro-small-note {
+    display: none;
+}
+
+.intro-enter {
+    width: 58px;
+    height: 58px;
+
+    justify-content: center;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.18),
+        0 12px 40px rgba(90, 70, 54, 0.09);
+}
+
+.intro-enter-symbol {
+    font-size: 1.25rem;
+}
+
+
+/* =========================================================
+   JOURNEY — QUE LA INTERACCIÓN SE SIENTA VIVA
+   ========================================================= */
+
+.discovery-point {
+    animation:
+        discovery-wander 7s ease-in-out infinite;
+}
+
+@keyframes discovery-wander {
+    0% {
+        translate: 0 0;
+    }
+
+    22% {
+        translate: 24px -10px;
+    }
+
+    48% {
+        translate: -18px 15px;
+    }
+
+    72% {
+        translate: 15px 24px;
+    }
+
+    100% {
+        translate: 0 0;
+    }
+}
+
+.discovery-core {
+    width: 15px;
+    height: 15px;
+}
+
+.discovery-glow {
+    width: 62px;
+    height: 62px;
+}
+
+.discovery-hint {
+    margin-top: 14px;
+
+    font-size: 1.05rem;
+
+    text-transform: none;
+
+    letter-spacing: 0;
+}
+
+
+/* =========================================================
+   PRIMERA FLOR
+   Más central y mucho más evidente.
+   ========================================================= */
+
+.first-flower-wrapper {
+    right: auto;
+    left: 50%;
+
+    bottom: 5%;
+
+    width: 190px;
+    height: 270px;
+
+    transform:
+        translateX(-50%);
+}
+
+.first-flower {
+    width: 150px;
+    height: 230px;
+}
+
+.first-flower-head {
+    scale: 1.25;
+}
+
+.first-flower-glow {
+    width: 145px;
+    height: 145px;
+
+    top: -20px;
+
+    background:
+        radial-gradient(circle,
+            rgba(255, 225, 118, 0.55),
+            rgba(245, 187, 65, 0.18) 45%,
+            transparent 72%);
+
+    filter: blur(7px);
+}
+
+.first-flower--open .first-flower-glow {
+    opacity: 0.8;
+}
+
+.first-flower-copy {
+    right: auto;
+    left: 50%;
+
+    top: -25px;
+
+    width: 260px;
+
+    transform:
+        translateX(-50%);
+
+    text-align: center;
+}
+
+.first-flower-copy p {
+    padding:
+        8px 14px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(17, 27, 18, 0.42);
+
+    backdrop-filter:
+        blur(8px);
+
+    color:
+        rgba(255, 248, 218, 0.92);
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   SEÑAL DISTANTE
+   Antes se perdía demasiado.
+   ========================================================= */
+
+.distant-signal {
+    width: 105px;
+    height: 105px;
+}
+
+.distant-signal-glow {
+    scale: 1.7;
+}
+
+.distant-signal-core {
+    font-size: 2.5rem;
+
+    color: #f7d85e;
+
+    text-shadow:
+        0 0 12px rgba(247, 216, 94, 1),
+        0 0 30px rgba(247, 216, 94, 0.8),
+        0 0 65px rgba(247, 216, 94, 0.5);
+}
+
+
+/* =========================================================
+   RAÍCES / RIEGO
+   ========================================================= */
+
+.relationship-roots {
+    bottom: 0;
+
+    opacity: 0.9;
+}
+
+.relationship-roots path {
+    stroke:
+        rgba(124, 88, 42, 0.88);
+
+    stroke-width: 4;
+}
+
+.relationship-care {
+    top: 31%;
+}
+
+.relationship-care p {
+    padding:
+        8px 13px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(20, 31, 21, 0.3);
+
+    backdrop-filter:
+        blur(7px);
+
+    color:
+        rgba(255, 249, 226, 0.9);
+}
+
+.relationship-care .care-drop {
+    width: 82px;
+    height: 82px;
+
+    font-size: 2rem;
+
+    background:
+        radial-gradient(circle,
+            rgba(177, 220, 238, 0.33),
+            rgba(177, 220, 238, 0.08) 48%,
+            transparent 72%);
+
+    filter:
+        drop-shadow(0 0 12px rgba(180, 225, 247, 0.35));
+}
+
+
+/* =========================================================
+   RECUERDOS
+   Hacer obvio que hay algo que tocar.
+   ========================================================= */
+
+.memory-point {
+    width: 96px;
+    height: 96px;
+}
+
+.memory-point-glow {
+    width: 82px;
+    height: 82px;
+
+    background:
+        radial-gradient(circle,
+            rgba(248, 211, 91, 0.52),
+            rgba(248, 211, 91, 0.13) 45%,
+            transparent 72%);
+}
+
+.memory-point-core {
+    font-size: 1.45rem;
+
+    text-shadow:
+        0 0 12px rgba(255, 226, 113, 1),
+        0 0 30px rgba(244, 212, 92, 0.65);
+}
+
+
+/* =========================================================
+   CONSTELACIÓN
+   ========================================================= */
+
+.constellation-point {
+    font-size: 1.35rem;
+
+    text-shadow:
+        0 0 12px rgba(245, 219, 122, 0.9),
+        0 0 30px rgba(245, 219, 122, 0.45);
+}
+
+.constellation-line {
+    height: 2px;
+}
+
+.constellation-center {
+    width: 135px;
+    height: 135px;
+}
+
+.constellation-center-glow {
+    width: 130px;
+    height: 130px;
+
+    background:
+        radial-gradient(circle,
+            rgba(244, 218, 121, 0.38),
+            rgba(244, 218, 121, 0.08) 47%,
+            transparent 72%);
+}
+
+.constellation-center-core {
+    font-size: 2.1rem;
+}
+
+.constellation-copy p,
+.constellation-copy strong {
+    text-shadow:
+        0 2px 15px rgba(0, 0, 0, 0.65);
+}
+
+
+/* =========================================================
+   MEANING
+   Temporalmente usamos juntos-gatos en lugar de "LISS."
+   ========================================================= */
+
+.meaning-copy {
+    text-shadow:
+        0 2px 18px rgba(0, 0, 0, 0.68);
+}
+
+.meaning-copy p {
+    color:
+        rgba(255, 248, 226, 0.86);
+}
+
+.meaning-copy h3 {
+    color:
+        rgba(255, 251, 232, 0.98);
+}
+
+.meaning-name {
+    width: 112px;
+    height: 112px;
+
+    margin:
+        24px auto 0;
+
+    overflow: hidden;
+
+    border:
+        2px solid rgba(255, 238, 177, 0.42);
+
+    border-radius: 30px;
+
+    background:
+        url("../assets/memories/juntos-gatos.jpg") center / cover no-repeat;
+
+    color: transparent;
+
+    font-size: 0;
+
+    box-shadow:
+        0 16px 45px rgba(0, 0, 0, 0.25),
+        0 0 35px rgba(242, 207, 91, 0.2);
+}
+
+.meaning-continuation p,
+.meaning-continuation strong {
+    text-shadow:
+        0 2px 18px rgba(0, 0, 0, 0.68);
+}
+
+
+/* =========================================================
+   FINAL
+   ========================================================= */
+
+.final-garden::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(180deg,
+            rgba(24, 20, 21, 0.12),
+            rgba(26, 21, 18, 0.05) 40%,
+            rgba(20, 17, 15, 0.3));
+}
+
+.final-garden-copy {
+    z-index: 8;
+
+    top: 18%;
+}
+
+.final-garden-copy p,
+.final-garden-copy h2,
+.final-continuation p,
+.final-continuation strong {
+    text-shadow:
+        0 2px 18px rgba(0, 0, 0, 0.72);
+}
+
+.final-garden-copy p {
+    color:
+        rgba(255, 247, 219, 0.82);
+}
+
+.final-garden-copy h2 {
+    color:
+        rgba(255, 252, 233, 0.98);
+}
+
+.final-continuation p {
+    color:
+        rgba(255, 247, 219, 0.86);
+}
+
+.final-continuation strong {
+    color:
+        rgba(255, 236, 169, 0.98);
+}
+
+
+/* distribución menos uniforme */
+
+.final-flower--one {
+    left: 2%;
+    bottom: -10px;
+}
+
+.final-flower--two {
+    left: 18%;
+    bottom: -28px;
+
+    scale: 0.82;
+}
+
+.final-flower--three {
+    left: 35%;
+    bottom: -5px;
+
+    scale: 1.12;
+}
+
+.final-flower--four {
+    left: 53%;
+    bottom: -24px;
+
+    scale: 0.88;
+}
+
+.final-flower--five {
+    right: 15%;
+    bottom: 5px;
+
+    scale: 1.16;
+}
+
+.final-flower--six {
+    right: 0;
+    bottom: -20px;
+
+    scale: 0.78;
+}
+
+.final-flower--seven {
+    left: 45%;
+    bottom: 95px;
+
+    scale: 0.58;
+}
+
+
+/* =========================================================
+   VIGNETTE PARA UNIR EL ARTE
+   ========================================================= */
+
+.environment-stage::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: 4;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(ellipse at center,
+            transparent 38%,
+            rgba(15, 18, 14, 0.12) 72%,
+            rgba(12, 15, 12, 0.28) 100%);
+}
+
+
+/* contenido interactivo siempre encima */
+
+.first-flower-wrapper,
+.relationship-growth,
+.memories-discovery,
+.meaning-discovery,
+.final-garden {
+    z-index: 10;
+}
