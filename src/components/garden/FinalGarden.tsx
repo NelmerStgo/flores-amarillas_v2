@@ -140,7 +140,7 @@ function FinalGarden() {
                         opacity: 0,
                     }}
                     animate={{
-                        opacity: 0.55,
+                        opacity: 0.76,
                     }}
                     transition={{
                         delay: 2.4,
@@ -232,31 +232,33 @@ function FinalGarden() {
                         y un montón de cosas por florecer.
                     </motion.strong>
                 </motion.div>
+
+                <motion.p
+                    className="final-development-note"
+                    initial={{
+                        opacity: 0,
+                        y: 8,
+                    }}
+                    animate={{
+                        opacity: 0.72,
+                        y: 0,
+                    }}
+                    transition={{
+                        delay: 7,
+                        duration: 1.2,
+                    }}
+                >
+                    P.D. Este mini-proyectito todavía está
+                    <br />
+                    en desarrollo 💛
+                    <br />
+                    Dame un tiempecito...
+                    <br />
+                    después volverás y lo verás terminado :3
+                </motion.p>
             </div>
 
-            <motion.p
-                className="final-development-note"
-                initial={{
-                    opacity: 0,
-                    y: 8,
-                }}
-                animate={{
-                    opacity: 0.72,
-                    y: 0,
-                }}
-                transition={{
-                    delay: 7,
-                    duration: 1.2,
-                }}
-            >
-                P.D. Este mini-proyectito todavía está
-                <br />
-                en desarrollo 💛
-                <br />
-                Dame un tiempecito...
-                <br />
-                después volverás y lo verás terminado :3
-            </motion.p>
+
 
             {/* =====================================
           INDICIO DEL BOTÓN INICIO

@@ -102,7 +102,7 @@ function MeaningDiscovery() {
                         duration: 1,
                     }}
                 >
-                    <span>✦</span>
+                    <span>♡</span>
 
                     <p>
                         Y creo que eso es

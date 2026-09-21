@@ -6,10 +6,22 @@ export interface LightPosition {
 }
 
 const LIGHT_POSITIONS: LightPosition[] = [
-    { x: 0, y: 0 },
-    { x: 75, y: -35 },
-    { x: -65, y: -75 },
-    { x: 20, y: -125 },
+    {
+        x: -28,
+        y: -220,
+    },
+    {
+        x: 58,
+        y: -105,
+    },
+    {
+        x: -46,
+        y: 25,
+    },
+    {
+        x: 26,
+        y: 155,
+    },
 ];
 
 export function useGardenJourney() {

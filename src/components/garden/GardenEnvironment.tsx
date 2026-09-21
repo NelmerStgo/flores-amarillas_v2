@@ -477,7 +477,8 @@ function GardenEnvironment({
                                     ease: "easeInOut",
                                 }}
                             >
-                                ·
+                                {/*Esto puede ser algo más llamativo*/}
+                                ✦
                             </motion.span>
                         </motion.button>
                     )}

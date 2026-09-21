@@ -1,10 +1,64 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import Scene from "../components/Scene";
+import yellowFlower from "../assets/decor/yellow-flower.png";
 
 interface JourneySceneProps {
     onBack: () => void;
     onContinue: () => void;
+}
+
+function DiscoveryStar() {
+    return (
+        <svg
+            className="journey-discovery-star"
+            viewBox="0 0 64 64"
+            aria-hidden="true"
+        >
+            <defs>
+                <radialGradient
+                    id="journeyStarGradient"
+                    cx="50%"
+                    cy="45%"
+                    r="55%"
+                >
+                    <stop
+                        offset="0%"
+                        stopColor="#fffce8"
+                    />
+
+                    <stop
+                        offset="45%"
+                        stopColor="#f8dc73"
+                    />
+
+                    <stop
+                        offset="100%"
+                        stopColor="#d6a82d"
+                    />
+                </radialGradient>
+            </defs>
+
+            <path
+                d="
+                    M32 3
+                    C34.4 18.2 45.8 29.6 61 32
+                    C45.8 34.4 34.4 45.8 32 61
+                    C29.6 45.8 18.2 34.4 3 32
+                    C18.2 29.6 29.6 18.2 32 3
+                    Z
+                "
+                fill="url(#journeyStarGradient)"
+            />
+
+            <circle
+                cx="32"
+                cy="32"
+                r="5"
+                fill="#fff7c5"
+            />
+        </svg>
+    );
 }
 
 function JourneyScene({
@@ -290,17 +344,12 @@ function JourneyScene({
                                 />
 
                                 <motion.span
-                                    className="discovery-core"
+                                    className="discovery-core discovery-core--star"
                                     animate={{
                                         scale: [
                                             1,
-                                            1.28,
+                                            1.18,
                                             1,
-                                        ],
-                                        boxShadow: [
-                                            "0 0 8px rgba(220, 236, 255, 0.9), 0 0 20px rgba(92, 170, 213, 0.55)",
-                                            "0 0 12px rgba(255, 255, 255, 1), 0 0 32px rgba(92, 170, 213, 0.95), 0 0 65px rgba(9, 113, 166, 0.55)",
-                                            "0 0 8px rgba(220, 236, 255, 0.9), 0 0 20px rgba(92, 170, 213, 0.55)",
                                         ],
                                     }}
                                     transition={{
@@ -308,7 +357,9 @@ function JourneyScene({
                                         repeat: Infinity,
                                         ease: "easeInOut",
                                     }}
-                                />
+                                >
+                                    <DiscoveryStar />
+                                </motion.span>
                             </motion.button>
 
                             <motion.span
@@ -354,7 +405,7 @@ function JourneyScene({
                                     damping: 12,
                                 }}
                             >
-                                {/*Remplazar por una estrella bien*/}
+                                <DiscoveryStar />
                             </motion.div>
 
                             <motion.h2
@@ -385,8 +436,8 @@ function JourneyScene({
                                     delay: 0.9,
                                 }}
                             >
-                                Y sabemos que apartir de ahí, 
-                                nuestra aventuras empezaron a ser más emocionantes ;p
+                                Y sabemos que a partir de ahí,
+                                nuestras aventuras empezaron a ser más emocionantes ;p
                             </motion.p>
 
                             {/*Esta flor se puede remplazar por una mejor */}
@@ -411,14 +462,11 @@ function JourneyScene({
                                     rotate: -4,
                                 }}
                             >
-                                <span className="flower-center" />
-
-                                <span className="petal petal-1" />
-                                <span className="petal petal-2" />
-                                <span className="petal petal-3" />
-                                <span className="petal petal-4" />
-                                <span className="petal petal-5" />
-                                <span className="petal petal-6" />
+                                <img
+                                    src={yellowFlower}
+                                    className="journey-flower-image"
+                                    alt=""
+                                />
                             </motion.button>
 
 

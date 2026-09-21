@@ -4,6 +4,7 @@ import {
 } from "motion/react";
 
 import juntosIlustracion from "../../assets/memes/gato-seduction.jpg";
+import girasol from "../../assets/decor/girasol.png";
 
 interface FirstFlowerProps {
     isOpen: boolean;
@@ -18,8 +19,8 @@ function FirstFlower({
         <div className="first-flower-wrapper">
             <motion.button
                 className={`first-flower ${isOpen
-                    ? "first-flower--open"
-                    : ""
+                        ? "first-flower--open"
+                        : ""
                     }`}
                 onClick={onOpen}
                 aria-label={
@@ -30,29 +31,25 @@ function FirstFlower({
                 whileTap={
                     !isOpen
                         ? {
-                            scale: 0.94,
+                            scale: 0.95,
                         }
                         : undefined
                 }
-                animate={
-                    isOpen
-                        ? {
-                            rotate: [
-                                0,
-                                1.2,
-                                0,
-                                -1,
-                                0,
-                            ],
-                        }
-                        : {
-                            rotate: [
-                                -0.5,
-                                0.8,
-                                -0.5,
-                            ],
-                        }
-                }
+                animate={{
+                    rotate: isOpen
+                        ? [
+                            0,
+                            0.8,
+                            0,
+                            -0.8,
+                            0,
+                        ]
+                        : [
+                            -0.4,
+                            0.5,
+                            -0.4,
+                        ],
+                }}
                 transition={{
                     duration: isOpen
                         ? 6
@@ -68,74 +65,85 @@ function FirstFlower({
                         className="first-flower-glow"
                         animate={{
                             opacity: [
-                                0.12,
-                                0.38,
                                 0.15,
+                                0.48,
+                                0.18,
                             ],
+
                             scale: [
                                 0.9,
-                                1.2,
+                                1.24,
                                 0.95,
                             ],
                         }}
                         transition={{
-                            duration: 2.6,
+                            duration: 2.5,
                             repeat: Infinity,
                             ease: "easeInOut",
                         }}
                     />
                 )}
 
-                {/* Tallo */}
-                <motion.span
-                    className="first-flower-stem"
-                    initial={{
-                        scaleY: 0,
-                    }}
-                    animate={{
-                        scaleY: 1,
-                    }}
-                    transition={{
-                        duration: 1.1,
-                        delay: 0.2,
-                        ease: [0.22, 1, 0.36, 1],
-                    }}
-                >
-                    <span className="first-flower-leaf first-flower-leaf--left" />
-                    <span className="first-flower-leaf first-flower-leaf--right" />
-                </motion.span>
-
-                {/* Cabeza */}
-                <motion.span
-                    className="first-flower-head"
+                {/* Girasol */}
+                <motion.img
+                    src={girasol}
+                    alt=""
+                    className="first-flower-image"
+                    draggable={false}
                     initial={{
                         opacity: 0,
-                        scale: 0.5,
-                        y: 15,
+                        scale: 0.72,
+                        y: 16,
                     }}
-                    animate={{
-                        opacity: 1,
-                        scale: 1,
-                        y: 0,
-                    }}
-                    transition={{
-                        delay: 0.8,
-                        type: "spring",
-                        stiffness: 90,
-                        damping: 12,
-                    }}
-                >
-                    <span className="first-petal first-petal--1" />
-                    <span className="first-petal first-petal--2" />
-                    <span className="first-petal first-petal--3" />
-                    <span className="first-petal first-petal--4" />
-                    <span className="first-petal first-petal--5" />
-                    <span className="first-petal first-petal--6" />
-                    <span className="first-petal first-petal--7" />
-                    <span className="first-petal first-petal--8" />
+                    animate={
+                        isOpen
+                            ? {
+                                opacity: 1,
 
-                    <span className="first-flower-center" />
-                </motion.span>
+                                scale: [
+                                    0.84,
+                                    1.06,
+                                    1,
+                                ],
+
+                                y: [
+                                    7,
+                                    -4,
+                                    0,
+                                ],
+
+                                filter: [
+                                    "brightness(0.85) saturate(0.85)",
+                                    "brightness(1.12) saturate(1.15)",
+                                    "brightness(1) saturate(1)",
+                                ],
+                            }
+                            : {
+                                opacity: 0.94,
+                                scale: 0.84,
+                                y: 7,
+
+                                filter:
+                                    "brightness(0.86) saturate(0.88)",
+                            }
+                    }
+                    transition={
+                        isOpen
+                            ? {
+                                duration: 1.35,
+                                ease: [
+                                    0.22,
+                                    1,
+                                    0.36,
+                                    1,
+                                ],
+                            }
+                            : {
+                                duration: 1.2,
+                                ease: "easeOut",
+                            }
+                    }
+                />
 
                 {/* Pequeñas partículas al abrirse */}
                 <AnimatePresence>
@@ -165,18 +173,20 @@ function FirstFlower({
                                         animate={{
                                             opacity: [
                                                 0,
-                                                0.8,
+                                                0.9,
                                                 0,
                                             ],
+
                                             scale: [
                                                 0.5,
                                                 1,
                                                 0.7,
                                             ],
+
                                             y: [
                                                 0,
-                                                -18,
-                                                -35,
+                                                -20,
+                                                -42,
                                             ],
                                         }}
                                         transition={{
@@ -184,14 +194,19 @@ function FirstFlower({
                                                 2.8 +
                                                 particle *
                                                 0.2,
+
                                             delay:
                                                 particle *
                                                 0.16,
+
                                             repeat:
                                                 Infinity,
+
                                             repeatDelay:
                                                 1.5,
-                                            ease: "easeOut",
+
+                                            ease:
+                                                "easeOut",
                                         }}
                                     />
                                 ),
@@ -201,6 +216,7 @@ function FirstFlower({
                 </AnimatePresence>
             </motion.button>
 
+            {/* Texto después de abrir */}
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
@@ -214,11 +230,9 @@ function FirstFlower({
                             y: 0,
                         }}
                         transition={{
-                            delay: 0.8,
+                            delay: 0.75,
                             duration: 0.8,
                         }}
-
-
                     >
                         <p>
                             Curiosa, curiosa...
@@ -227,6 +241,7 @@ function FirstFlower({
                 )}
             </AnimatePresence>
 
+            {/* Easter egg */}
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
@@ -244,18 +259,21 @@ function FirstFlower({
                                 1,
                                 0,
                             ],
+
                             scale: [
                                 0.88,
                                 1,
                                 1,
                                 0.96,
                             ],
+
                             y: [
                                 12,
                                 0,
                                 0,
                                 -10,
                             ],
+
                             rotate: [
                                 -3,
                                 1,
@@ -265,12 +283,14 @@ function FirstFlower({
                         }}
                         transition={{
                             duration: 2.8,
+
                             times: [
                                 0,
                                 0.14,
                                 0.78,
                                 1,
                             ],
+
                             ease: "easeInOut",
                         }}
                     >
