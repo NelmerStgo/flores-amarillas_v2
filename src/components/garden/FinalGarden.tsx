@@ -232,8 +232,8 @@ function FinalGarden() {
                         duration: 1,
                     }}
                 >
-                    Y pensar que todo
-                    empezó tan pequeño.
+                    Y pensar que todo empezó
+                    sin que supiéramos realmente a dónde iba...
                 </motion.p>
 
                 <motion.h2
@@ -250,9 +250,9 @@ function FinalGarden() {
                         duration: 1.2,
                     }}
                 >
-                    Mira cuánto
+                    Mira todo lo que fue
                     <br />
-                    ha crecido.
+                    creciendo entre nosotros.
                 </motion.h2>
 
                 <motion.div
@@ -271,9 +271,9 @@ function FinalGarden() {
                     }}
                 >
                     <p>
-                        Y lo bonito es que
+                        ¿Y sabes qué es lo mejor?
                         <br />
-                        esto todavía no termina.
+                        Que esto todavía no termina. 🙌
                     </p>
 
                     <motion.span
@@ -312,9 +312,9 @@ function FinalGarden() {
                             duration: 1,
                         }}
                     >
-                        Todavía quedan
+                        Todavía nos quedan aventuras, recuerdos
                         <br />
-                        cosas por florecer.
+                        y un montón de cosas por florecer.
                     </motion.strong>
                 </motion.div>
             </div>

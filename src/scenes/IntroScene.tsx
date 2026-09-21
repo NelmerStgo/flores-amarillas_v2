@@ -156,7 +156,7 @@ function IntroScene({
                         delay: 0.5,
                     }}
                 >
-                    PARA LISS
+                    PARA LISS ✨
                 </motion.span>
 
                 <motion.h1
@@ -174,9 +174,9 @@ function IntroScene({
                         ease: [0.22, 1, 0.36, 1],
                     }}
                 >
-                    Encontré algo
+                    Hice un mini-proyectito
                     <br />
-                    que quería mostrarte.
+                    para ti :3
                 </motion.h1>
 
                 <motion.p
@@ -193,14 +193,15 @@ function IntroScene({
                         delay: 1.5,
                     }}
                 >
-                    No tienes que hacer mucho.
+                    Solo déjate llevar
                     <br />
-                    Solo dejarte llevar un poquito.
+                    y sigue tus instintos.
                 </motion.p>
 
                 <motion.button
                     className="intro-enter"
                     onClick={onContinue}
+                    aria-label="Comenzar"
                     initial={{
                         opacity: 0,
                         y: 14,
@@ -220,8 +221,6 @@ function IntroScene({
                         scale: 0.95,
                     }}
                 >
-                    <span>Comenzar</span>
-
                     <motion.span
                         className="intro-enter-symbol"
                         animate={{

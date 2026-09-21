@@ -126,9 +126,9 @@ function GrowthStage({
                     duration: 0.8,
                 }}
             >
-                Creo que aquí puede
+                Y de ahí empezó a crecer
                 <br />
-                crecer algo bonito.
+                una relación bonita.
             </motion.h2>
 
             <motion.p
@@ -142,7 +142,8 @@ function GrowthStage({
                     delay: 1.6,
                 }}
             >
-                Solo necesitaba un poquito de cuidado.
+                Y como una plantita,
+                necesitaba sus cuidados para crecer fuerte.
             </motion.p>
 
             <GuideLight

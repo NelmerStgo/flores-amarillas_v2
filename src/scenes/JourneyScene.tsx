@@ -181,14 +181,6 @@ function JourneyScene({
                                 y: -10,
                             }}
                         >
-                            <motion.span
-                                className="journey-number"
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 0.45 }}
-                                transition={{ delay: 0.4 }}
-                            >
-                                01
-                            </motion.span>
 
                             <motion.h2
                                 initial={{
@@ -204,9 +196,9 @@ function JourneyScene({
                                     delay: 0.5,
                                 }}
                             >
-                                Hay algo escondido
+                                ¿Te acuerdas de las
                                 <br />
-                                más adelante.
+                                visitas nocturnas?
                             </motion.h2>
 
                             <motion.p
@@ -217,8 +209,8 @@ function JourneyScene({
                                     duration: 0.8,
                                 }}
                             >
-                                A veces solo hace falta
-                                mirar un poquito más.
+                                Sin darnos cuenta,
+                                estábamos sembrando algo bonito.
                             </motion.p>
 
                             <motion.button
@@ -326,7 +318,7 @@ function JourneyScene({
                                     delay: 2.5,
                                 }}
                             >
-                                Descubre que hay aquí 👁️
+                                👁️
                             </motion.span>
                         </motion.div>
                     ) : (
@@ -378,9 +370,11 @@ function JourneyScene({
                                     duration: 0.8,
                                 }}
                             >
-                                Sabía que
+                                La curiosidad siempre ha sido lo nuestro.
                                 <br />
-                                la encontrarías.
+                                Nos hace probar, movernos y encontrar
+                                <br />
+                                cosas que ni siquiera sabíamos que estaban ahí.
                             </motion.h2>
 
                             <motion.p
@@ -390,7 +384,8 @@ function JourneyScene({
                                     delay: 0.9,
                                 }}
                             >
-                                Y apenas estamos empezando.
+                                Y desde ahí, nuestras aventuras empezaron
+                                a ponerse mucho más interesantes ;p
                             </motion.p>
 
                             <motion.button
@@ -424,16 +419,7 @@ function JourneyScene({
                                 <span className="petal petal-6" />
                             </motion.button>
 
-                            <motion.span
-                                className="discovery-hint"
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 0.4 }}
-                                transition={{
-                                    delay: 2,
-                                }}
-                            >
-                                tócala
-                            </motion.span>
+
                         </motion.div>
                     )}
                 </AnimatePresence>

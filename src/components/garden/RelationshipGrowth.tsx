@@ -52,18 +52,19 @@ function RelationshipGrowth({
                             }}
                         >
                             <span>
-                                Todo empezó pequeño.
+                                ¿Recuerdas cómo empezó todo?
                             </span>
 
                             <h3>
-                                Una conversación.
+                                Poco a poco nos fuimos
                                 <br />
-                                Luego otra.
+                                conociendo.
                             </h3>
 
                             <p>
-                                Y sin darnos cuenta,
-                                algo empezó a echar raíces.
+                                Y sin darnos cuenta, empezaron a brotar raíces:
+                                señal de que aquello que sentíamos estaba
+                                encontrando su lugar.
                             </p>
                         </motion.div>
                     )}
@@ -160,8 +161,8 @@ function RelationshipGrowth({
                             }}
                         >
                             <p>
-                                Algunas cosas solo necesitan
-                                un poquito de cuidado.
+                                Como todo lo que vale la pena,
+                                también necesitaba cuidado.
                             </p>
 
                             <motion.button
@@ -244,13 +245,13 @@ function RelationshipGrowth({
                             }}
                         >
                             <span>
-                                tiempo · cuidado · constancia
+                                tiempo · confianza · cuidado · paciencia · cariño · constancia
                             </span>
 
                             <h3>
-                                Y poco a poco,
+                                ¿Podemos?
                                 <br />
-                                empezó a crecer.
+                                Pero claaaaaaaro que podemos 🤩
                             </h3>
                         </motion.div>
                     )}

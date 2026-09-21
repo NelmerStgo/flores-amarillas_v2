@@ -20,8 +20,9 @@ const memories = [
         className: "memory-point--one",
         image: holaGato,
         eyebrow: "creo que todo empezó por algo así...",
-        title: "Hola.",
-        text: "Con intención de todo, aparentemente.",
+        title: "Quívole 🖖👽",
+        text:
+            "La verdad, ninguno de los dos tenía idea de hasta dónde iba a llegar ese saludo.",
         tone: "fun",
     },
 
@@ -30,9 +31,9 @@ const memories = [
         className: "memory-point--two",
         image: juntosIlustracion,
         eyebrow: "y poco a poco",
-        title: "Empezó a sentirse bonito.",
+        title: "Empecé a sentir que alguien me entendía.",
         text:
-            "De esas cosas que simplemente se sienten bien sin tener que explicarlas demasiado.",
+            "Todo se sentía tranquilo, abierto... como si pudiéramos ser nosotros mismos sin tener que explicar demasiado. 👀",
         tone: "warm",
     },
 
@@ -40,10 +41,11 @@ const memories = [
         id: "liss",
         className: "memory-point--three",
         image: juntosGatos,
-        eyebrow: "y entre todo eso",
-        title: "Estabas tú, LISS.",
+        eyebrow:
+            "Y al final, poco a poco, nos dimos cuenta de lo que estaba pasando...",
+        title: "Era mutuo :3",
         text:
-            "Y supongo que ahí fue cuando todo empezó a tener un significado diferente.",
+            "Y creo que ahí fue cuando todo empezó a tomar un rumbo distinto... pero de los bonitos.",
         tone: "emotional",
     },
 ] as const;

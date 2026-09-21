@@ -64,11 +64,9 @@ function MeaningDiscovery() {
                         duration: 1,
                     }}
                 >
-                    apareció alguien
+                    entendí que podía confiar
                     <br />
-                    que empezó a importar
-                    <br />
-                    más de lo esperado.
+                    en ti.
                 </motion.h3>
 
                 <motion.strong
@@ -115,7 +113,7 @@ function MeaningDiscovery() {
                     <strong>
                         Todavía nos quedan
                         <br />
-                        cosas por vivir.
+                        muchas cosas por vivir.
                     </strong>
                 </motion.div>
             </div>

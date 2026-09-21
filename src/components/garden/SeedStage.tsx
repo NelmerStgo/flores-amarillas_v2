@@ -41,7 +41,9 @@ function SeedStage({
                     delay: 0.4,
                 }}
             >
-                Creo que llegaste.
+                Y así, poco a poco, empezó
+                <br />
+                a crecer algo.
             </motion.h2>
 
             <motion.p
@@ -56,7 +58,8 @@ function SeedStage({
                     duration: 0.8,
                 }}
             >
-                Pero todavía parece que falta algo.
+                Y con eso, también empezó a surgir
+                un sentimiento más profundo.
             </motion.p>
 
             <motion.button

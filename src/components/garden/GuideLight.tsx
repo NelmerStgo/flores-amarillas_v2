@@ -176,7 +176,7 @@ function GuideLight({
                             duration: 1,
                         }}
                     >
-                        Parece que quiere mostrarte algo.
+                        Lo conseguiste jsjsjs
                     </motion.p>
                 </motion.div>
             )}

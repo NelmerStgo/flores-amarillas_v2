@@ -257,11 +257,7 @@ function GardenEnvironment({
                             duration: 1.2,
                         }}
                     >
-                        <span className="journey-number">
-                            03
-                        </span>
-
-                        <h2>Algo cambió.</h2>
+                        <h2>Seguíamos siendo nosotros mismos...</h2>
 
                         <motion.p
                             initial={{
@@ -275,7 +271,8 @@ function GardenEnvironment({
                                 duration: 1,
                             }}
                         >
-                            El camino ya no se siente igual.
+                            solo que ahora con ese sentimiento raro
+                            que sienten los enamorados 😝
                         </motion.p>
                     </motion.div>
                 )}

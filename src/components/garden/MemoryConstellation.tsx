@@ -185,8 +185,7 @@ function MemoryConstellation({
                 }}
             >
                 <p>
-                    Al final, no eran
-                    momentos aislados.
+                    A pesar de la distancia,
                 </p>
 
                 <motion.strong
@@ -200,10 +199,12 @@ function MemoryConstellation({
                         delay: 0.7,
                     }}
                 >
-                    Uno llevó a otro...
+                    siempre encontrábamos la forma
                     <br />
-                    y sin darme cuenta,
-                    ya había una historia.
+                    de estar presentes.
+                    <br />
+                    Y sin darnos cuenta, nuestra historia
+                    ya se estaba escribiendo :)
                 </motion.strong>
             </motion.div>
         </motion.div>

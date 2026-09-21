@@ -106,22 +106,6 @@ function GardenScene({
             </button>
 
             <div className="garden-content">
-                {!garden.environmentRevealed && (
-                    <motion.span
-                        className="journey-number"
-                        initial={{
-                            opacity: 0,
-                        }}
-                        animate={{
-                            opacity: 0.45,
-                        }}
-                        transition={{
-                            delay: 0.3,
-                        }}
-                    >
-                        02
-                    </motion.span>
-                )}
 
                 <AnimatePresence mode="wait">
                     {!garden.hasGrown ? (

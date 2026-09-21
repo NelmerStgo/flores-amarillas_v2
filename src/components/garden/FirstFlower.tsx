@@ -216,13 +216,8 @@ function FirstFlower({
                             duration: 0.8,
                         }}
                     >
-                        <span>
-                            La primera.
-                        </span>
-
                         <p>
-                            Parece que aquí había
-                            algo esperando.
+                            Curiosa, curiosa...
                         </p>
                     </motion.div>
                 )}
