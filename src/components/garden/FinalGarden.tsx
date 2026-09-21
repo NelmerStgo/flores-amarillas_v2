@@ -234,6 +234,30 @@ function FinalGarden() {
                 </motion.div>
             </div>
 
+            <motion.p
+                className="final-development-note"
+                initial={{
+                    opacity: 0,
+                    y: 8,
+                }}
+                animate={{
+                    opacity: 0.72,
+                    y: 0,
+                }}
+                transition={{
+                    delay: 7,
+                    duration: 1.2,
+                }}
+            >
+                P.D. Este mini-proyectito todavía está
+                <br />
+                en desarrollo 💛
+                <br />
+                Dame un tiempecito...
+                <br />
+                después volverás y lo verás terminado :3
+            </motion.p>
+
             {/* =====================================
           INDICIO DEL BOTÓN INICIO
           ===================================== */}
@@ -253,6 +277,7 @@ function FinalGarden() {
             >
                 puedes volver cuando quieras
             </motion.span>
+
         </motion.div>
     );
 }

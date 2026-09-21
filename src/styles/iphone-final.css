@@ -1696,3 +1696,47 @@ img {
     letter-spacing:
         0.01em;
 }
+
+/* ==========================================================
+   MENSAJE DE PROYECTO EN DESARROLLO
+   ========================================================== */
+
+.final-development-note {
+    position: absolute;
+
+    z-index: 10;
+
+    left: 0;
+    right: 0;
+
+    bottom:
+        max(58px,
+            calc(env(safe-area-inset-bottom) + 48px));
+
+    width:
+        min(calc(100vw - 52px),
+            320px);
+
+    margin-inline: auto;
+
+    color:
+        rgba(255, 244, 211, 0.72);
+
+    font-family:
+        var(--font-special);
+
+    font-size: 0.72rem;
+
+    font-weight: 300;
+
+    line-height: 1.5;
+
+    text-align: center;
+
+    letter-spacing: 0.015em;
+
+    text-shadow:
+        0 2px 14px rgba(0, 0, 0, 0.55);
+
+    pointer-events: none;
+}
