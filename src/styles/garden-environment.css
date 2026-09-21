@@ -1031,3 +1031,23 @@
 
     letter-spacing: 0.07em;
 }
+
+/* Compatibilidad temporal con estilos legacy */
+
+.relationship-growth {
+    overflow: visible;
+}
+
+.relationship-roots {
+    height: auto;
+}
+
+.relationship-care .care-drop {
+    position: relative;
+    top: auto;
+    left: auto;
+}
+
+.relationship-sprouts {
+    pointer-events: none;
+}

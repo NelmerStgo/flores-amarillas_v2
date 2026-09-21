@@ -10,63 +10,40 @@ import {
 
 import MemoryConstellation from "./MemoryConstellation";
 
-
+import holaGato from "../../assets/memories/hola-gato.jpg";
+import juntosIlustracion from "../../assets/memories/juntos-ilustracion.jpg";
+import juntosGatos from "../../assets/memories/juntos-gatos.jpg";
 
 const memories = [
     {
         id: "hello",
         className: "memory-point--one",
-
-        image:
-            "../../assets/memories/meme - hola-gato.jpg.jpg",
-
-        eyebrow:
-            "creo que todo empezó por algo así...",
-
-        title:
-            "Hola.",
-
-        text:
-            "Con intención de todo, aparentemente.",
-
+        image: holaGato,
+        eyebrow: "creo que todo empezó por algo así...",
+        title: "Hola.",
+        text: "Con intención de todo, aparentemente.",
         tone: "fun",
     },
 
     {
         id: "together",
         className: "memory-point--two",
-
-        image:
-            "../../assets/memories/juntos-ilustracion.jpg",
-
-        eyebrow:
-            "y poco a poco",
-
-        title:
-            "Empezó a sentirse bonito.",
-
+        image: juntosIlustracion,
+        eyebrow: "y poco a poco",
+        title: "Empezó a sentirse bonito.",
         text:
             "De esas cosas que simplemente se sienten bien sin tener que explicarlas demasiado.",
-
         tone: "warm",
     },
 
     {
         id: "liss",
         className: "memory-point--three",
-
-        image:
-            "../../assets/memories/juntos-gatos.jpg",
-
-        eyebrow:
-            "y entre todo eso",
-
-        title:
-            "Estabas tú, LISS.",
-
+        image: juntosGatos,
+        eyebrow: "y entre todo eso",
+        title: "Estabas tú, LISS.",
         text:
             "Y supongo que ahí fue cuando todo empezó a tener un significado diferente.",
-
         tone: "emotional",
     },
 ] as const;
