@@ -147,8 +147,10 @@ function FinalGarden() {
                         duration: 1,
                     }}
                 >
-                    Y pensar que todo empezó
-                    sin que supiéramos realmente a dónde iba...
+                    Y como dijo zoé:
+                    <br></br>
+                    Es raro el amor, que se te aparece, cuando
+                    menos piensas
                 </motion.p>
 
                 <motion.h2
@@ -165,9 +167,7 @@ function FinalGarden() {
                         duration: 1.2,
                     }}
                 >
-                    Mira todo lo que fue
-                    <br />
-                    creciendo entre nosotros.
+                    Mira cuánto ha crecido
                 </motion.h2>
 
                 <motion.div

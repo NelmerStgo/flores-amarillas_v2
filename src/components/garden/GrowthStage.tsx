@@ -126,9 +126,7 @@ function GrowthStage({
                     duration: 0.8,
                 }}
             >
-                Y de ahí empezó a crecer
-                <br />
-                una relación bonita.
+                Y una bonita relación comenzó a surgir
             </motion.h2>
 
             <motion.p
@@ -143,7 +141,7 @@ function GrowthStage({
                 }}
             >
                 Y como una plantita,
-                necesitaba sus cuidados para crecer fuerte.
+                requiere de sus debidos cuidados para que cresca fuerte y sana.
             </motion.p>
 
             <GuideLight

@@ -3,7 +3,7 @@ import {
     motion,
 } from "motion/react";
 
-import juntosIlustracion from "../../assets/memories/juntos-ilustracion.jpg";
+import juntosIlustracion from "../../assets/memes/gato-seduction.jpg";
 
 interface FirstFlowerProps {
     isOpen: boolean;

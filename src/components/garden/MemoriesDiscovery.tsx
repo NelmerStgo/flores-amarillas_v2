@@ -10,7 +10,7 @@ import {
 
 import MemoryConstellation from "./MemoryConstellation";
 
-import holaGato from "../../assets/memories/hola-gato.jpg";
+import holaGato from "../../assets/memes/gato-cute.jpg";
 import juntosIlustracion from "../../assets/memories/juntos-ilustracion.jpg";
 import juntosGatos from "../../assets/memories/juntos-gatos.jpg";
 

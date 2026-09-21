@@ -41,9 +41,8 @@ function SeedStage({
                     delay: 0.4,
                 }}
             >
-                Y así, poco a poco, empezó
-                <br />
-                a crecer algo.
+                Y así, poco a poco fue creciendo algo.
+
             </motion.h2>
 
             <motion.p
@@ -58,8 +57,7 @@ function SeedStage({
                     duration: 0.8,
                 }}
             >
-                Y con eso, también empezó a surgir
-                un sentimiento más profundo.
+                Un sentimiento profundo comenzó a surgir.
             </motion.p>
 
             <motion.button
@@ -96,7 +94,7 @@ function SeedStage({
                             : [0.1, 0.2, 0.1],
 
                         scale: isHolding
-                            ? [1, 1.35, 1.15]
+                            ? [1, 1.35, 1.15, 2]
                             : [1, 1.08, 1],
                     }}
                     transition={{
@@ -109,11 +107,12 @@ function SeedStage({
                     }}
                 />
 
+                {/*acá la semilla pude ser una semilla o algo que se vea presionable*/}
                 <motion.span
                     className="seed"
                     animate={{
                         scale: isHolding
-                            ? [1, 1.06, 1]
+                            ? [1, 2, 3]
                             : 1,
 
                         rotate: isHolding
@@ -142,7 +141,8 @@ function SeedStage({
                     delay: 2,
                 }}
             >
-                mantén presionado
+                {/*Puede quedar vacio, o no*/}
+                
             </motion.span>
         </motion.div>
     );

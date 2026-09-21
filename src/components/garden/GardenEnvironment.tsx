@@ -309,7 +309,7 @@ function GardenEnvironment({
                             duration: 1.2,
                         }}
                     >
-                        <h2>Seguíamos siendo nosotros mismos...</h2>
+                        <h2>Seguímos siendo nosotros mismos...</h2>
 
                         <motion.p
                             initial={{

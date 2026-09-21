@@ -1645,3 +1645,54 @@ img {
         left: 35%;
     }
 }
+
+/* ==========================================================
+   TYPOGRAPHY FINAL PASS
+   ========================================================== */
+
+.intro-content h1,
+.journey-step h2,
+.garden-stage h2,
+.environment-copy h2,
+.relationship-copy h3,
+.meaning-copy h3,
+.final-garden-copy h2 {
+    font-family:
+        var(--font-primary);
+
+    font-weight: 500;
+}
+
+.intro-content p,
+.journey-step p,
+.garden-stage p,
+.environment-copy p,
+.relationship-copy p,
+.relationship-care p,
+.constellation-copy,
+.meaning-copy p,
+.meaning-continuation,
+.final-garden-copy p,
+.final-continuation {
+    font-family:
+        var(--font-special);
+}
+
+.scene-back-button,
+.music-toggle,
+.intro-welcome-close {
+    font-family:
+        var(--font-primary);
+}
+
+.meaning-copy h3,
+.final-garden-copy h2 {
+    letter-spacing:
+        -0.025em;
+}
+
+.final-garden-copy p,
+.final-continuation {
+    letter-spacing:
+        0.01em;
+}

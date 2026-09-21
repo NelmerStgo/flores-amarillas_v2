@@ -74,9 +74,9 @@ function RelationshipGrowth({
                             </span>
 
                             <h3>
-                                Poco a poco nos fuimos
+                                Poco a poco fuimos
                                 <br />
-                                conociendo.
+                                conociendonos.
                             </h3>
 
                             <p>
@@ -219,7 +219,7 @@ function RelationshipGrowth({
                         >
                             <p>
                                 Como todo lo que vale la pena,
-                                también necesitaba cuidado.
+                                también necesita de cuidado.
                             </p>
 
                             <motion.button

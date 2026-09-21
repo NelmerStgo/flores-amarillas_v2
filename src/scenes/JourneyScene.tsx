@@ -196,9 +196,9 @@ function JourneyScene({
                                     delay: 0.5,
                                 }}
                             >
-                                ¿Te acuerdas de las
+                                ¿Te acuerdas de nuestras
                                 <br />
-                                visitas nocturnas?
+                                salidas nocturnas?
                             </motion.h2>
 
                             <motion.p
@@ -209,8 +209,9 @@ function JourneyScene({
                                     duration: 0.8,
                                 }}
                             >
-                                Sin darnos cuenta,
-                                estábamos sembrando algo bonito.
+                                Siempre nos permitió
+                                escapar de la realidad un rato,
+                                y darnos el lujo de ser quienes somos realmente.
                             </motion.p>
 
                             <motion.button
@@ -318,7 +319,7 @@ function JourneyScene({
                                     delay: 2.5,
                                 }}
                             >
-                                👁️
+                                {/*fgds*/}
                             </motion.span>
                         </motion.div>
                     ) : (
@@ -353,7 +354,7 @@ function JourneyScene({
                                     damping: 12,
                                 }}
                             >
-                                ✦
+                                {/*Remplazar por una estrella bien*/}
                             </motion.div>
 
                             <motion.h2
@@ -372,9 +373,9 @@ function JourneyScene({
                             >
                                 La curiosidad siempre ha sido lo nuestro.
                                 <br />
-                                Nos hace probar, movernos y encontrar
-                                <br />
-                                cosas que ni siquiera sabíamos que estaban ahí.
+                                Nos permite
+                                experimentar y ver que siempre hay cosas por
+                                descubrir
                             </motion.h2>
 
                             <motion.p
@@ -384,10 +385,11 @@ function JourneyScene({
                                     delay: 0.9,
                                 }}
                             >
-                                Y desde ahí, nuestras aventuras empezaron
-                                a ponerse mucho más interesantes ;p
+                                Y sabemos que apartir de ahí, 
+                                nuestra aventuras empezaron a ser más emocionantes ;p
                             </motion.p>
 
+                            {/*Esta flor se puede remplazar por una mejor */}
                             <motion.button
                                 className="flower-button"
                                 onClick={onContinue}
