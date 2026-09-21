@@ -1,15 +1,5 @@
 import { motion } from "motion/react";
 
-const flowers = [
-    "final-flower--one",
-    "final-flower--two",
-    "final-flower--three",
-    "final-flower--four",
-    "final-flower--five",
-    "final-flower--six",
-    "final-flower--seven",
-];
-
 const floatingLights = [
     {
         className: "final-light--one",
@@ -136,81 +126,6 @@ function FinalGarden() {
                         >
                             ✦
                         </motion.span>
-                    ),
-                )}
-            </div>
-
-            {/* =====================================
-          FLORES
-          ===================================== */}
-
-            <div
-                className="final-garden-flowers"
-                aria-hidden="true"
-            >
-                {flowers.map(
-                    (className, index) => (
-                        <motion.div
-                            key={className}
-                            className={`final-flower ${className}`}
-                            initial={{
-                                opacity: 0,
-                                scale: 0,
-                                y: 20,
-                            }}
-                            animate={{
-                                opacity: 1,
-                                scale: 1,
-                                y: [0, -2, 0, 2, 0],
-                                rotate: [
-                                    0,
-                                    index % 2 === 0
-                                        ? 1.5
-                                        : -1.5,
-                                    0,
-                                ],
-                            }}
-                            transition={{
-                                opacity: {
-                                    delay:
-                                        0.4 + index * 0.22,
-                                    duration: 0.8,
-                                },
-
-                                scale: {
-                                    delay:
-                                        0.4 + index * 0.22,
-
-                                    type: "spring",
-                                    stiffness: 75,
-                                    damping: 12,
-                                },
-
-                                y: {
-                                    delay: 2 + index * 0.2,
-                                    duration:
-                                        4.5 + index * 0.2,
-
-                                    repeat: Infinity,
-                                    ease: "easeInOut",
-                                },
-
-                                rotate: {
-                                    delay: 2,
-                                    duration:
-                                        5 + index * 0.25,
-
-                                    repeat: Infinity,
-                                    ease: "easeInOut",
-                                },
-                            }}
-                        >
-                            <span className="final-flower-head">
-                                <span className="final-flower-center" />
-                            </span>
-
-                            <span className="final-flower-stem" />
-                        </motion.div>
                     ),
                 )}
             </div>

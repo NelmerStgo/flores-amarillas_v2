@@ -225,7 +225,15 @@ function IntroScene({
 
                 <motion.button
                     className="intro-enter"
-                    onClick={onContinue}
+                    onClick={() => {
+                        window.dispatchEvent(
+                            new Event(
+                                "flowers:start-music",
+                            ),
+                        );
+
+                        onContinue();
+                    }}
                     aria-label="Comenzar"
                     initial={{
                         opacity: 0,

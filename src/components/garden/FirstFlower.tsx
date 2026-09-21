@@ -3,6 +3,8 @@ import {
     motion,
 } from "motion/react";
 
+import juntosIlustracion from "../../assets/memories/juntos-ilustracion.jpg";
+
 interface FirstFlowerProps {
     isOpen: boolean;
     onOpen: () => void;
@@ -215,10 +217,71 @@ function FirstFlower({
                             delay: 0.8,
                             duration: 0.8,
                         }}
+
+
                     >
                         <p>
                             Curiosa, curiosa...
                         </p>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        className="flower-surprise"
+                        initial={{
+                            opacity: 0,
+                            scale: 0.88,
+                            y: 12,
+                            rotate: -3,
+                        }}
+                        animate={{
+                            opacity: [
+                                0,
+                                1,
+                                1,
+                                0,
+                            ],
+                            scale: [
+                                0.88,
+                                1,
+                                1,
+                                0.96,
+                            ],
+                            y: [
+                                12,
+                                0,
+                                0,
+                                -10,
+                            ],
+                            rotate: [
+                                -3,
+                                1,
+                                1,
+                                2,
+                            ],
+                        }}
+                        transition={{
+                            duration: 2.8,
+                            times: [
+                                0,
+                                0.14,
+                                0.78,
+                                1,
+                            ],
+                            ease: "easeInOut",
+                        }}
+                    >
+                        <img
+                            src={juntosIlustracion}
+                            alt=""
+                        />
+
+                        <span>
+                            Mhm Mhm 👀
+                        </span>
                     </motion.div>
                 )}
             </AnimatePresence>

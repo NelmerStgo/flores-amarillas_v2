@@ -27,29 +27,19 @@ body {
     overflow: hidden;
 }
 
-
 /* ==========================================================
    SAFE AREA IPHONE
    ========================================================== */
 
 .scene {
-    padding-top:
-        max(16px,
-            env(safe-area-inset-top));
+    padding-top: max(16px, env(safe-area-inset-top));
 
-    padding-right:
-        max(16px,
-            env(safe-area-inset-right));
+    padding-right: max(16px, env(safe-area-inset-right));
 
-    padding-bottom:
-        max(20px,
-            env(safe-area-inset-bottom));
+    padding-bottom: max(20px, env(safe-area-inset-bottom));
 
-    padding-left:
-        max(16px,
-            env(safe-area-inset-left));
+    padding-left: max(16px, env(safe-area-inset-left));
 }
-
 
 /* ==========================================================
    INTRO MODAL
@@ -64,22 +54,15 @@ body {
     display: grid;
     place-items: center;
 
-    padding:
-        max(22px,
-            env(safe-area-inset-top)) 20px max(25px,
-            env(safe-area-inset-bottom));
+    padding: max(22px, env(safe-area-inset-top)) 20px max(25px, env(safe-area-inset-bottom));
 
-    background:
-        rgba(24, 20, 18, 0.52);
+    background: rgba(24, 20, 18, 0.52);
 
-    backdrop-filter:
-        blur(13px);
+    backdrop-filter: blur(13px);
 }
 
 .intro-welcome-card {
-    width:
-        min(calc(100vw - 44px),
-            330px);
+    width: min(calc(100vw - 44px), 330px);
 
     padding: 13px 13px 17px;
 
@@ -87,16 +70,13 @@ body {
     flex-direction: column;
     align-items: center;
 
-    border:
-        1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 
     border-radius: 28px;
 
-    background:
-        rgba(249, 244, 231, 0.97);
+    background: rgba(249, 244, 231, 0.97);
 
-    box-shadow:
-        0 26px 85px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 26px 85px rgba(0, 0, 0, 0.35);
 }
 
 .intro-welcome-image {
@@ -116,20 +96,17 @@ body {
 
     margin-top: 14px;
 
-    border:
-        1px solid rgba(65, 46, 35, 0.13);
+    border: 1px solid rgba(65, 46, 35, 0.13);
 
     border-radius: 999px;
 
-    background:
-        rgba(255, 255, 255, 0.94);
+    background: rgba(255, 255, 255, 0.94);
 
     color: #453528;
 
     font-size: 0.86rem;
     font-weight: 600;
 }
-
 
 /* ==========================================================
    CONTENIDO MÓVIL
@@ -140,11 +117,8 @@ body {
 .environment-copy,
 .meaning-copy,
 .final-garden-copy {
-    width:
-        min(calc(100vw - 34px),
-            368px);
+    width: min(calc(100vw - 34px), 368px);
 }
-
 
 /* ==========================================================
    JOURNEY
@@ -154,8 +128,7 @@ body {
     min-width: 96px;
     min-height: 96px;
 
-    animation:
-        iphone-wander 6.2s ease-in-out infinite;
+    animation: iphone-wander 6.2s ease-in-out infinite;
 }
 
 @keyframes iphone-wander {
@@ -185,8 +158,7 @@ body {
 }
 
 .flower-button {
-    animation:
-        journey-flower 5.4s ease-in-out infinite;
+    animation: journey-flower 5.4s ease-in-out infinite;
 }
 
 @keyframes journey-flower {
@@ -207,7 +179,6 @@ body {
         rotate: -6deg;
     }
 }
-
 
 /* ==========================================================
    FLOR PRINCIPAL
@@ -275,8 +246,7 @@ body {
 
     transform: none;
 
-    background:
-        radial-gradient(circle,
+    background: radial-gradient(circle,
             rgba(255, 225, 113, 0.65),
             rgba(245, 191, 66, 0.2) 46%,
             transparent 72%);
@@ -297,7 +267,6 @@ body {
 
     text-align: center;
 }
-
 
 /* ==========================================================
    SEÑAL SIGUIENTE
@@ -331,23 +300,18 @@ body {
         0 0 65px rgba(247, 216, 94, 0.55);
 }
 
-
 /* ==========================================================
    RELACIÓN / RAÍCES
    ========================================================== */
 
 .relationship-growth-content {
-    width:
-        min(calc(100vw - 28px),
-            390px);
+    width: min(calc(100vw - 28px), 390px);
 
     height: 76dvh;
 }
 
 .relationship-copy {
-    width:
-        min(calc(100vw - 42px),
-            340px);
+    width: min(calc(100vw - 42px), 340px);
 }
 
 .relationship-roots {
@@ -371,8 +335,7 @@ body {
 }
 
 .relationship-roots path {
-    stroke:
-        rgba(151, 104, 53, 0.88);
+    stroke: rgba(151, 104, 53, 0.88);
 
     stroke-width: 4;
 }
@@ -399,8 +362,7 @@ body {
     width: 78px;
     height: 78px;
 
-    margin:
-        13px auto 4px;
+    margin: 13px auto 4px;
 
     display: grid;
     place-items: center;
@@ -409,10 +371,8 @@ body {
 .care-live-words {
     width: 255px;
 
-    margin:
-        12px auto 0;
+    margin: 12px auto 0;
 }
-
 
 /* ==========================================================
    RECUERDOS
@@ -460,13 +420,11 @@ body {
     width: 54px;
     height: 54px;
 
-    border:
-        1px solid rgba(255, 225, 114, 0.5);
+    border: 1px solid rgba(255, 225, 114, 0.5);
 
     border-radius: 50%;
 
-    animation:
-        memory-pulse 2.1s ease-in-out infinite;
+    animation: memory-pulse 2.1s ease-in-out infinite;
 }
 
 @keyframes memory-pulse {
@@ -482,7 +440,6 @@ body {
         opacity: 0.9;
     }
 }
-
 
 /* ==========================================================
    CONSTELACIÓN
@@ -509,19 +466,15 @@ body {
 .constellation-center--button {
     padding: 0;
 
-    border:
-        1px solid rgba(255, 227, 138, 0.42);
+    border: 1px solid rgba(255, 227, 138, 0.42);
 
     border-radius: 50%;
 
-    background:
-        rgba(38, 36, 23, 0.3);
+    background: rgba(38, 36, 23, 0.3);
 
-    backdrop-filter:
-        blur(9px);
+    backdrop-filter: blur(9px);
 
-    box-shadow:
-        0 0 24px rgba(255, 221, 104, 0.27);
+    box-shadow: 0 0 24px rgba(255, 221, 104, 0.27);
 }
 
 .constellation-center-glow {
@@ -536,53 +489,39 @@ body {
 .constellation-copy {
     top: 54%;
 
-    width:
-        min(calc(100vw - 48px),
-            335px);
+    width: min(calc(100vw - 48px), 335px);
 }
 
 .constellation-copy strong {
-    font-size:
-        clamp(1.12rem,
-            5vw,
-            1.45rem);
+    font-size: clamp(1.12rem, 5vw, 1.45rem);
 }
-
 
 /* ==========================================================
    MEANING
    ========================================================== */
 
 .meaning-copy {
-    width:
-        min(calc(100vw - 40px),
-            350px);
+    width: min(calc(100vw - 40px), 350px);
 
-    padding:
-        21px 17px;
+    padding: 21px 17px;
 
     border-radius: 25px;
 
-    background:
-        linear-gradient(180deg,
+    background: linear-gradient(180deg,
             rgba(23, 25, 20, 0.17),
             rgba(21, 23, 18, 0.36));
 
-    backdrop-filter:
-        blur(4px);
+    backdrop-filter: blur(4px);
 
-    text-shadow:
-        0 2px 18px rgba(0, 0, 0, 0.72);
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.72);
 }
 
 .meaning-name {
     width: 105px;
     height: 105px;
 
-    margin:
-        17px auto 0;
+    margin: 17px auto 0;
 }
-
 
 /* ==========================================================
    FINAL
@@ -591,29 +530,21 @@ body {
 .final-garden-copy {
     top: 12%;
 
-    width:
-        min(calc(100vw - 38px),
-            355px);
+    width: min(calc(100vw - 38px), 355px);
 
-    padding:
-        18px 15px;
+    padding: 18px 15px;
 
     border-radius: 26px;
 
-    background:
-        linear-gradient(180deg,
+    background: linear-gradient(180deg,
             rgba(27, 23, 20, 0.2),
             rgba(25, 21, 18, 0.36));
 
-    backdrop-filter:
-        blur(4px);
+    backdrop-filter: blur(4px);
 }
 
 .final-garden-copy h2 {
-    font-size:
-        clamp(1.65rem,
-            7vw,
-            2.15rem);
+    font-size: clamp(1.65rem, 7vw, 2.15rem);
 }
 
 .final-garden-copy p,
@@ -679,9 +610,7 @@ body {
 .final-home-hint {
     top: auto;
 
-    bottom:
-        max(17px,
-            env(safe-area-inset-bottom));
+    bottom: max(17px, env(safe-area-inset-bottom));
 
     left: 50%;
 
@@ -691,7 +620,6 @@ body {
 
     text-align: center;
 }
-
 
 /* ==========================================================
    IPHONE 16 / 16 PRO
@@ -710,7 +638,6 @@ body {
         font-size: 2.2rem;
     }
 }
-
 
 /* ==========================================================
    REDUCED MOTION
@@ -750,21 +677,17 @@ body {
     user-select: none;
 }
 
-
 /* mariposa superior derecha */
 
 .decor-butterfly--botanical {
     width: 72px;
 
-    top:
-        max(9%,
-            calc(env(safe-area-inset-top) + 48px));
+    top: max(9%, calc(env(safe-area-inset-top) + 48px));
 
     right: -5px;
 
     opacity: 0.72;
 }
-
 
 /* mariposa superior izquierda */
 
@@ -777,7 +700,6 @@ body {
     opacity: 0.68;
 }
 
-
 /* estrellas */
 
 .decor-sparkles {
@@ -789,7 +711,6 @@ body {
     opacity: 0.7;
 }
 
-
 /* flor con catarinas */
 
 .decor-ladybug {
@@ -798,10 +719,8 @@ body {
     left: -18px;
     bottom: 1%;
 
-    transform-origin:
-        bottom center;
+    transform-origin: bottom center;
 }
-
 
 /* abejitas */
 
@@ -814,7 +733,6 @@ body {
     opacity: 0.82;
 }
 
-
 /* margaritas */
 
 .decor-daisies {
@@ -823,10 +741,8 @@ body {
     left: -30px;
     bottom: -5px;
 
-    transform-origin:
-        bottom center;
+    transform-origin: bottom center;
 }
-
 
 /* flor amarilla */
 
@@ -836,10 +752,8 @@ body {
     right: 0;
     bottom: 12%;
 
-    transform-origin:
-        bottom center;
+    transform-origin: bottom center;
 }
-
 
 /* final: girasoles protagonistas */
 
@@ -851,10 +765,8 @@ body {
 
     z-index: 4;
 
-    transform-origin:
-        bottom center;
+    transform-origin: bottom center;
 }
-
 
 /* final: flores amarillas izquierda */
 
@@ -867,7 +779,6 @@ body {
     z-index: 4;
 }
 
-
 /* casa hongo */
 
 .decor-mushroom-house {
@@ -879,20 +790,16 @@ body {
     z-index: 2;
 }
 
-
 /* caracol */
 
 .decor-snail {
     width: 72px;
 
     left: 32%;
-    bottom:
-        max(18px,
-            env(safe-area-inset-bottom));
+    bottom: max(18px, env(safe-area-inset-bottom));
 
     z-index: 5;
 }
-
 
 /* ==========================================================
    FINAL: RETIRAR PARTE DEL JARDÍN CSS ARTIFICIAL
@@ -912,7 +819,6 @@ body {
 .final-flower--six {
     display: none;
 }
-
 
 /* ==========================================================
    TARGET IPHONE 16 / PRO
@@ -972,13 +878,9 @@ body {
 
     border-radius: 999px;
 
-    transform-origin:
-        bottom center;
+    transform-origin: bottom center;
 
-    background:
-        linear-gradient(180deg,
-            #a6b760,
-            #57672f);
+    background: linear-gradient(180deg, #a6b760, #57672f);
 }
 
 .relationship-parent-flower {
@@ -992,11 +894,9 @@ body {
 
     margin-left: -33px;
 
-    border-radius:
-        55% 55% 45% 45%;
+    border-radius: 55% 55% 45% 45%;
 
-    background:
-        #f0cb4e;
+    background: #f0cb4e;
 
     box-shadow:
         -23px 9px 0 -8px #e5bb38,
@@ -1017,6 +917,731 @@ body {
 
     border-radius: 50%;
 
-    background:
-        #b87d28;
+    background: #b87d28;
+}
+
+/* === STABILIZATION V3 · IPHONE COMPOSITION === */
+
+/*
+   Esta sección corrige la composición funcional final sin
+   volver a tocar los estilos legacy. iphone-final.css es
+   la última hoja importada, por lo que estas reglas son la
+   fuente de verdad para la composición móvil.
+*/
+
+/* ==========================================================
+   LIMPIEZA DE FASES
+   ========================================================== */
+
+/*
+   La estrella guía deja de existir cuando ya cumplió
+   su función.
+*/
+
+.environment-stage--relationship .environment-guide-light,
+.environment-stage--memories .environment-guide-light,
+.environment-stage--meaning .environment-guide-light,
+.environment-stage--final .environment-guide-light {
+    display: none;
+}
+
+/*
+   Evitamos que ondas y señales antiguas ensucien
+   fases posteriores.
+*/
+
+.environment-stage--relationship .garden-ripple-origin,
+.environment-stage--memories .garden-ripple-origin,
+.environment-stage--meaning .garden-ripple-origin,
+.environment-stage--final .garden-ripple-origin,
+.environment-stage--memories .distant-signal,
+.environment-stage--meaning .distant-signal,
+.environment-stage--final .distant-signal {
+    display: none;
+}
+
+/* ==========================================================
+   RELACIÓN — UNA SOLA COMPOSICIÓN VERTICAL
+   ========================================================== */
+
+.relationship-growth-content {
+    width: min(calc(100vw - 28px), 390px);
+
+    height: min(78dvh, 680px);
+}
+
+/*
+   Antes del riego se ve únicamente:
+   narración + planta.
+*/
+
+.relationship-copy {
+    position: relative;
+
+    z-index: 12;
+
+    width: min(calc(100vw - 42px), 340px);
+}
+
+/*
+   Flor/tallo y raíces comparten un mismo ancla.
+
+   En un iPhone 16 Pro el tallo termina
+   aproximadamente al 65% del escenario.
+*/
+
+.relationship-parent-plant {
+    top: 38%;
+    bottom: auto;
+
+    z-index: 7;
+}
+
+.relationship-roots {
+    top: 65%;
+    bottom: auto;
+
+    width: min(calc(100vw - 34px), 360px);
+
+    height: 210px;
+
+    margin-left: min(-46vw, -180px);
+
+    z-index: 5;
+}
+
+/*
+   No dependemos del margin-left calculado anterior
+   en navegadores estrechos.
+*/
+
+@media (max-width: 430px) {
+    .relationship-roots {
+        left: 50%;
+
+        width: calc(100vw - 34px);
+
+        max-width: 360px;
+
+        margin-left: calc((100vw - 34px) / -2);
+    }
+}
+
+/*
+   Cuando termina la narración inicial aparece
+   el bloque de cuidado arriba de la planta,
+   no encima de la flor.
+*/
+
+.relationship-care {
+    top: 8%;
+    bottom: auto;
+
+    width: min(calc(100vw - 54px), 300px);
+
+    margin-left: max(-150px, calc((100vw - 54px) / -2));
+
+    z-index: 14;
+}
+
+.relationship-care p {
+    max-width: 278px;
+
+    margin-inline: auto;
+}
+
+.relationship-ending {
+    top: 9%;
+
+    width: min(calc(100vw - 42px), 350px);
+}
+
+.relationship-sprouts {
+    z-index: 8;
+}
+
+/* ==========================================================
+   FINAL — EL ARTE REAL ES EL JARDÍN
+   ========================================================== */
+
+/*
+   FinalGarden tenía un fondo propio que podía
+   tapar GardenDecor.
+
+   Lo hacemos transparente para conservar:
+   sunset + ilustraciones.
+*/
+
+.final-garden {
+    background: transparent;
+}
+
+/*
+   Ya hay ilustraciones reales.
+   Retiramos las flores CSS de placeholder.
+*/
+
+.final-garden-flowers {
+    display: none;
+}
+
+/*
+   Oscurecimiento suficiente para leer texto,
+   sin esconder el jardín.
+*/
+
+.final-garden::before {
+    background: linear-gradient(180deg,
+            rgba(18, 16, 17, 0.18) 0%,
+
+            rgba(18, 16, 15, 0.08) 45%,
+
+            rgba(15, 14, 12, 0.22) 100%);
+}
+
+/*
+   El final deja más aire al jardín
+   en un teléfono alto.
+*/
+
+.final-garden-copy {
+    top: 9%;
+
+    padding: 16px 15px;
+
+    background: linear-gradient(180deg,
+            rgba(25, 22, 19, 0.24),
+            rgba(25, 22, 19, 0.36));
+
+    box-shadow: 0 14px 45px rgba(0, 0, 0, 0.08);
+}
+
+.final-continuation {
+    margin-top: 22px;
+}
+
+.final-continuation-symbol {
+    margin: 14px auto;
+}
+
+/*
+   Reducimos elementos secundarios
+   para no saturar el cierre.
+*/
+
+.garden-decor--final .decor-ladybug {
+    opacity: 0.48 !important;
+}
+
+.garden-decor--final .decor-bees {
+    opacity: 0.52 !important;
+}
+
+.garden-decor--final .decor-butterfly--botanical,
+.garden-decor--final .decor-butterfly--yellow {
+    opacity: 0.56 !important;
+}
+
+.garden-decor--final .decor-sparkles {
+    opacity: 0.52 !important;
+}
+
+/* ==========================================================
+   MEANING / CONSTELACIÓN
+   ========================================================== */
+
+.meaning-copy {
+    max-height: calc(100dvh - 120px);
+}
+
+.constellation-center {
+    box-sizing: border-box;
+
+    display: grid;
+
+    place-items: center;
+}
+
+.constellation-copy {
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+/* ==========================================================
+   IPHONE 16 / IPHONE 16 PRO
+   ========================================================== */
+
+@media (min-width: 390px) and (max-width: 410px) and (min-height: 820px) {
+    .relationship-parent-plant {
+        top: 39%;
+    }
+
+    .relationship-roots {
+        top: 65%;
+    }
+
+    .relationship-care {
+        top: 7%;
+    }
+
+    .final-garden-copy {
+        top: 8%;
+    }
+
+    .decor-sunflowers {
+        width: 170px;
+    }
+
+    .decor-yellow-roses {
+        width: 116px;
+    }
+
+    .decor-daisies {
+        width: 126px;
+    }
+}
+
+/* ==========================================================
+   ACCESIBILIDAD / SAFARI
+   ========================================================== */
+
+.intro-welcome-overlay,
+.memory-overlay {
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.meaning-copy,
+.final-garden-copy,
+.constellation-center--button {
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* ==========================================================
+   MÚSICA
+   ========================================================== */
+
+.music-toggle {
+    position: fixed;
+
+    z-index: 1000;
+
+    top: max(16px, env(safe-area-inset-top));
+
+    right: max(15px, env(safe-area-inset-right));
+
+    width: 44px;
+    height: 44px;
+
+    display: grid;
+    place-items: center;
+
+    padding: 0;
+
+    border: 1px solid rgba(255, 246, 213, 0.2);
+
+    border-radius: 50%;
+
+    background: rgba(24, 25, 20, 0.24);
+
+    color: rgba(255, 238, 177, 0.9);
+
+    backdrop-filter: blur(10px);
+
+    -webkit-backdrop-filter: blur(10px);
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.09);
+
+    font-size: 1.05rem;
+
+    cursor: pointer;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* ==========================================================
+   EASTER EGG DE LA FLOR
+   ========================================================== */
+
+.flower-surprise {
+    position: absolute;
+
+    z-index: 30;
+
+    left: 50%;
+    top: -118px;
+
+    width: 112px;
+
+    margin-left: -56px;
+
+    padding: 6px 6px 8px;
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+
+    border-radius: 18px;
+
+    background: rgba(250, 245, 230, 0.96);
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+
+    pointer-events: none;
+}
+
+.flower-surprise img {
+    display: block;
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    border-radius: 13px;
+}
+
+.flower-surprise span {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #514337;
+
+    font-size: 0.66rem;
+
+    text-align: center;
+
+    letter-spacing: 0.025em;
+}
+
+/* ==========================================================
+   EVITAR CHOQUE DEL CONTROL CON VOLVER
+   ========================================================== */
+
+@media (max-width: 430px) {
+    .music-toggle {
+        width: 42px;
+        height: 42px;
+
+        right: max(13px, env(safe-area-inset-right));
+    }
+}
+
+/* ==========================================================
+   JOURNEY — COMPOSICIÓN IPHONE
+   ========================================================== */
+
+.journey-content {
+    width: min(calc(100vw - 36px), 360px);
+}
+
+.journey-step {
+    width: 100%;
+}
+
+.journey-step h2 {
+    max-width: 345px;
+
+    margin-inline: auto;
+}
+
+.journey-step p {
+    max-width: 315px;
+
+    margin-inline: auto;
+}
+
+/* ojo / descubrimiento */
+
+.discovery-point {
+    margin-top: 38px;
+}
+
+.discovery-hint {
+    margin-top: 4px;
+
+    opacity: 0.62 !important;
+
+    font-size: 1.25rem;
+
+    filter: drop-shadow(0 0 9px rgba(158, 213, 243, 0.35));
+}
+
+/* flor del journey */
+
+.discovered-flower {
+    margin-bottom: 17px;
+}
+
+.flower-button {
+    width: 105px;
+    height: 105px;
+
+    margin-top: 30px;
+}
+
+/* ==========================================================
+   IPHONE 16 PRO — JOURNEY
+   ========================================================== */
+
+@media (min-width: 390px) and (max-width: 410px) and (min-height: 820px) {
+    .journey-content {
+        transform: translateY(-1.5dvh);
+    }
+
+    .journey-step h2 {
+        font-size: 1.88rem;
+
+        line-height: 1.08;
+    }
+
+    .journey-step p {
+        font-size: 0.91rem;
+
+        line-height: 1.55;
+    }
+}
+
+.flower-surprise {
+    transform-origin: bottom center;
+}
+
+.flower-surprise::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -7px;
+
+    width: 14px;
+    height: 14px;
+
+    translate: -50% 0;
+
+    rotate: 45deg;
+
+    background: rgba(250, 245, 230, 0.96);
+}
+
+.flower-surprise span {
+    position: relative;
+
+    z-index: 2;
+
+    font-weight: 600;
+}
+
+.memory-point:not(.memory-point--found) .memory-point-core {
+    animation: memory-core-life 2.5s ease-in-out infinite;
+}
+
+@keyframes memory-core-life {
+
+    0%,
+    100% {
+        transform: scale(1);
+
+        filter: brightness(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+
+        filter: brightness(1.25);
+    }
+}
+
+.memory-point--found::after {
+    animation: none;
+
+    opacity: 0.12;
+}
+
+.memory-point--found {
+    filter: saturate(0.72);
+}
+
+.meaning-name {
+    position: relative;
+
+    border-radius: 24px 24px 30px 30px;
+
+    transform: rotate(-1.5deg);
+
+    box-shadow:
+        0 14px 42px rgba(0, 0, 0, 0.24),
+        0 0 32px rgba(242, 207, 91, 0.15);
+}
+
+.meaning-name::after {
+    content: "♡";
+
+    position: absolute;
+
+    right: -12px;
+    bottom: -12px;
+
+    width: 34px;
+    height: 34px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: rgba(249, 239, 207, 0.94);
+
+    color: #bb795b;
+
+    font-size: 0.95rem;
+
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================================
+   SAFARI / IPHONE FINAL PASS
+   ========================================================== */
+
+html {
+    height:
+        -webkit-fill-available;
+}
+
+body {
+    min-height:
+        100dvh;
+
+    min-height:
+        -webkit-fill-available;
+
+    -webkit-tap-highlight-color:
+        transparent;
+}
+
+button {
+    touch-action:
+        manipulation;
+}
+
+img {
+    -webkit-user-drag:
+        none;
+}
+
+
+/* Evita selección accidental durante la experiencia */
+
+.scene,
+.environment-stage,
+.garden-decor {
+    -webkit-user-select:
+        none;
+
+    user-select:
+        none;
+}
+
+
+/* El texto narrativo sí se mantiene seleccionable
+   si Safari lo necesita por accesibilidad */
+
+.intro-content,
+.journey-content,
+.environment-copy,
+.relationship-copy,
+.memory-card-content,
+.constellation-copy,
+.meaning-copy,
+.final-garden-copy {
+    -webkit-user-select:
+        text;
+
+    user-select:
+        text;
+}
+
+
+/* ==========================================================
+   FINAL GARDEN — COMPOSICIÓN DEFINITIVA
+   ========================================================== */
+
+.environment-stage--final .garden-decor {
+    z-index: 6;
+}
+
+.environment-stage--final .final-garden {
+    z-index: 20;
+}
+
+.environment-stage--final .final-garden::before {
+    z-index: 1;
+}
+
+.environment-stage--final .final-garden-light {
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+.environment-stage--final .final-floating-lights {
+    z-index: 3;
+}
+
+.environment-stage--final .final-garden-copy {
+    z-index: 8;
+}
+
+
+/*
+ * FinalGarden es transparente.
+ * Queremos que GardenDecor se vea a través,
+ * pero el texto siempre permanezca encima.
+ */
+
+.environment-stage--final .final-garden {
+    pointer-events: none;
+}
+
+
+/* El botón de inicio pertenece a GardenScene,
+   así que continúa siendo interactivo. */
+
+.scene-back-button--home {
+    pointer-events: auto;
+}
+
+
+/* ==========================================================
+   IPHONE 16 PRO
+   ========================================================== */
+
+@media (min-width: 390px) and (max-width: 410px) and (min-height: 820px) {
+    .final-garden-copy {
+        width:
+            min(calc(100vw - 38px),
+                354px);
+    }
+
+    .decor-sunflowers {
+        right: -34px;
+
+        bottom:
+            max(-5px,
+                calc(env(safe-area-inset-bottom) - 18px));
+    }
+
+    .decor-yellow-roses {
+        left: -18px;
+    }
+
+    .decor-mushroom-house {
+        left: 6%;
+
+        bottom: 17%;
+    }
+
+    .decor-snail {
+        left: 35%;
+    }
 }

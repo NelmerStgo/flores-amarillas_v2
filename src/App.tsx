@@ -4,6 +4,7 @@ import { AnimatePresence } from "motion/react";
 import IntroScene from "./scenes/IntroScene";
 import JourneyScene from "./scenes/JourneyScene";
 import GardenScene from "./scenes/GardenScene";
+import BackgroundMusic from "./components/BackgroundMusic";
 
 type Scene = "intro" | "journey" | "garden";
 
@@ -12,6 +13,9 @@ function App() {
 
     return (
         <main className="app">
+
+            <BackgroundMusic />
+            
             <AnimatePresence mode="wait">
                 {currentScene === "intro" && (
                     <IntroScene

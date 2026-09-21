@@ -87,7 +87,7 @@ function GardenEnvironment({
     return (
         <motion.div
             key="environment-stage"
-            className="environment-stage"
+            className={`environment-stage environment-stage--${decorPhase}`}
             initial={{
                 opacity: 0,
             }}
@@ -205,55 +205,88 @@ function GardenEnvironment({
             </div>
 
             {/* Luz que guía hasta la flor */}
-            <motion.div
-                className={`environment-guide-light ${introDone
-                    ? "environment-guide-light--flower"
-                    : ""
-                    }`}
-                initial={{
-                    opacity: 0,
-                }}
-                animate={{
-                    opacity: 1,
+            {/* Luz que guía hasta la flor */}
+            <AnimatePresence>
+                {!rootsDiscoveryOpen &&
+                    !memoriesVisible &&
+                    !meaningOpen &&
+                    !finalGardenVisible && (
+                        <motion.div
+                            className={`environment-guide-light ${introDone
+                                    ? "environment-guide-light--flower"
+                                    : ""
+                                }`}
+                            initial={{
+                                opacity: 0,
+                            }}
+                            animate={{
+                                opacity: 1,
 
-                    x: introDone
-                        ? 90
-                        : 0,
+                                x: introDone
+                                    ? 90
+                                    : 0,
 
-                    y: introDone
-                        ? 280
-                        : 0,
-                }}
-                transition={{
-                    opacity: {
-                        duration: 2,
-                    },
+                                y: introDone
+                                    ? 280
+                                    : 0,
+                            }}
+                            exit={{
+                                opacity: 0,
+                                scale: 0.6,
+                            }}
+                            transition={{
+                                opacity: {
+                                    duration: 2,
+                                },
 
-                    x: {
-                        duration: 2.6,
-                        ease: [0.22, 1, 0.36, 1],
-                    },
+                                x: {
+                                    duration: 2.6,
+                                    ease: [
+                                        0.22,
+                                        1,
+                                        0.36,
+                                        1,
+                                    ],
+                                },
 
-                    y: {
-                        duration: 2.6,
-                        ease: [0.22, 1, 0.36, 1],
-                    },
-                }}
-            >
-                <motion.span
-                    animate={{
-                        opacity: [0.55, 1, 0.65, 1],
-                        scale: [0.9, 1.1, 0.95, 1],
-                    }}
-                    transition={{
-                        duration: 2.8,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                    }}
-                >
-                    ✦
-                </motion.span>
-            </motion.div>
+                                y: {
+                                    duration: 2.6,
+                                    ease: [
+                                        0.22,
+                                        1,
+                                        0.36,
+                                        1,
+                                    ],
+                                },
+                            }}
+                        >
+                            <motion.span
+                                animate={{
+                                    opacity: [
+                                        0.55,
+                                        1,
+                                        0.65,
+                                        1,
+                                    ],
+
+                                    scale: [
+                                        0.9,
+                                        1.1,
+                                        0.95,
+                                        1,
+                                    ],
+                                }}
+                                transition={{
+                                    duration: 2.8,
+                                    repeat: Infinity,
+                                    ease: "easeInOut",
+                                }}
+                            >
+                                ✦
+                            </motion.span>
+                        </motion.div>
+                    )}
+            </AnimatePresence>
 
             {/* Texto inicial */}
             <AnimatePresence>
@@ -451,7 +484,12 @@ function GardenEnvironment({
             </AnimatePresence>
 
             <RelationshipGrowth
-                visible={rootsDiscoveryOpen}
+                visible={
+                    rootsDiscoveryOpen &&
+                    !memoriesVisible &&
+                    !meaningOpen &&
+                    !finalGardenVisible
+                }
                 introDone={rootsNarrationDone}
                 careLevel={careLevel}
                 complete={careDiscoveryComplete}

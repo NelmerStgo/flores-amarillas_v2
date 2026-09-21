@@ -50,7 +50,7 @@ function RelationshipGrowth({
             <div className="relationship-growth-content">
                 {/* Texto inicial */}
                 <AnimatePresence>
-                    {careLevel === 0 && (
+                    {careLevel === 0 && !introDone && (
                         <motion.div
                             className="relationship-copy"
                             initial={{
