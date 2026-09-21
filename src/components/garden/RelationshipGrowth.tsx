@@ -1,5 +1,8 @@
 import { AnimatePresence, motion } from "motion/react";
 
+import girasol from "../../assets/decor/girasol.png";
+import sproutTree from "../../assets/decor/sprout-tree.svg";
+
 interface RelationshipGrowthProps {
     visible: boolean;
     introDone: boolean;
@@ -76,7 +79,7 @@ function RelationshipGrowth({
                             <h3>
                                 Poco a poco fuimos
                                 <br />
-                                conociendonos.
+                                conociéndonos.
                             </h3>
 
                             <p>
@@ -88,44 +91,48 @@ function RelationshipGrowth({
                     )}
                 </AnimatePresence>
 
-                <div
+                <motion.div
                     className="relationship-parent-plant"
                     aria-hidden="true"
+                    initial={{
+                        opacity: 0,
+                        scale: 0.82,
+                        y: 18,
+                    }}
+                    animate={{
+                        opacity: 1,
+                        scale: 1,
+                        y: 0,
+                    }}
+                    transition={{
+                        duration: 1.1,
+                        ease: [
+                            0.22,
+                            1,
+                            0.36,
+                            1,
+                        ],
+                    }}
                 >
-                    <motion.span
-                        className="relationship-parent-stem"
-                        initial={{
-                            scaleY: 0,
-                        }}
+                    <motion.img
+                        src={girasol}
+                        alt=""
+                        className="relationship-parent-image"
+                        draggable={false}
                         animate={{
-                            scaleY: 1,
+                            rotate: [
+                                -0.8,
+                                0.8,
+                                -0.8,
+                            ],
                         }}
                         transition={{
-                            duration: 1.2,
-                            ease: [0.22, 1, 0.36, 1],
+                            duration: 5.5,
+                            repeat: Infinity,
+                            ease: "easeInOut",
                         }}
                     />
-
-                    <motion.span
-                        className="relationship-parent-flower"
-                        initial={{
-                            opacity: 0,
-                            scale: 0.6,
-                        }}
-                        animate={{
-                            opacity: 1,
-                            scale: 1,
-                        }}
-                        transition={{
-                            delay: 0.7,
-                            type: "spring",
-                            stiffness: 90,
-                            damping: 12,
-                        }}
-                    >
-                        <i />
-                    </motion.span>
-                </div>
+                </motion.div>
 
                 {/* Raíces */}
                 <div
@@ -310,9 +317,27 @@ function RelationshipGrowth({
                                         damping: 11,
                                     }}
                                 >
-                                    <span />
-                                    <i />
-                                    <b />
+                                    <motion.img
+                                        src={sproutTree}
+                                        alt=""
+                                        className="relationship-sprout-image"
+                                        draggable={false}
+                                        initial={{
+                                            opacity: 0,
+                                            scale: 0.55,
+                                            y: 18,
+                                        }}
+                                        animate={{
+                                            opacity: 1,
+                                            scale: 1,
+                                            y: 0,
+                                        }}
+                                        transition={{
+                                            type: "spring",
+                                            stiffness: 95,
+                                            damping: 12,
+                                        }}
+                                    />
                                 </motion.div>
                             )}
                         </AnimatePresence>

@@ -45,8 +45,8 @@ function GardenScene({
 
             <div
                 className={`garden-night-landscape ${garden.hasGrown
-                        ? "garden-night-landscape--growing"
-                        : ""
+                    ? "garden-night-landscape--growing"
+                    : ""
                     }`}
                 aria-hidden="true"
             >
@@ -83,6 +83,35 @@ function GardenScene({
                     <span />
                 </div>
             </div>
+
+            <AnimatePresence>
+                {garden.lightJourneyComplete && (
+                    <motion.div
+                        key="garden-reveal-transition"
+                        className="garden-reveal-transition"
+                        aria-hidden="true"
+                        initial={{
+                            opacity: 0,
+                        }}
+                        animate={{
+                            opacity:
+                                garden.environmentRevealed
+                                    ? 0
+                                    : 1,
+                        }}
+                        exit={{
+                            opacity: 0,
+                        }}
+                        transition={{
+                            duration:
+                                garden.environmentRevealed
+                                    ? 1.3
+                                    : 1.8,
+                            ease: "easeInOut",
+                        }}
+                    />
+                )}
+            </AnimatePresence>
 
             <button
                 className={`scene-back-button ${garden.finalGardenVisible

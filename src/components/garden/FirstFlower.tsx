@@ -4,7 +4,8 @@ import {
 } from "motion/react";
 
 import juntosIlustracion from "../../assets/memes/gato-seduction.jpg";
-import girasol from "../../assets/decor/girasol.png";
+import girasolAbierto  from "../../assets/decor/girasol.png";
+import girasolCerrado from "../../assets/decor/girasol-cerrado.png";
 
 interface FirstFlowerProps {
     isOpen: boolean;
@@ -19,8 +20,8 @@ function FirstFlower({
         <div className="first-flower-wrapper">
             <motion.button
                 className={`first-flower ${isOpen
-                        ? "first-flower--open"
-                        : ""
+                    ? "first-flower--open"
+                    : ""
                     }`}
                 onClick={onOpen}
                 aria-label={
@@ -84,66 +85,95 @@ function FirstFlower({
                     />
                 )}
 
-                {/* Girasol */}
-                <motion.img
-                    src={girasol}
-                    alt=""
-                    className="first-flower-image"
-                    draggable={false}
-                    initial={{
-                        opacity: 0,
-                        scale: 0.72,
-                        y: 16,
-                    }}
-                    animate={
-                        isOpen
-                            ? {
-                                opacity: 1,
-
-                                scale: [
-                                    0.84,
-                                    1.06,
-                                    1,
-                                ],
-
-                                y: [
-                                    7,
-                                    -4,
-                                    0,
-                                ],
-
-                                filter: [
-                                    "brightness(0.85) saturate(0.85)",
-                                    "brightness(1.12) saturate(1.15)",
-                                    "brightness(1) saturate(1)",
-                                ],
-                            }
-                            : {
-                                opacity: 0.94,
-                                scale: 0.84,
-                                y: 7,
-
-                                filter:
-                                    "brightness(0.86) saturate(0.88)",
-                            }
-                    }
-                    transition={
-                        isOpen
-                            ? {
-                                duration: 1.35,
-                                ease: [
-                                    0.22,
-                                    1,
-                                    0.36,
-                                    1,
-                                ],
-                            }
-                            : {
-                                duration: 1.2,
-                                ease: "easeOut",
-                            }
-                    }
-                />
+                {/* Girasol cerrado → abierto */}
+                <div className="first-flower-image-stage">
+                    <AnimatePresence
+                        mode="sync"
+                        initial={false}
+                    >
+                        {!isOpen ? (
+                            <motion.img
+                                key="closed"
+                                src={girasolCerrado}
+                                alt=""
+                                className="
+                    first-flower-image
+                    first-flower-image--closed
+                "
+                                draggable={false}
+                                initial={{
+                                    opacity: 0,
+                                    scale: 0.84,
+                                    y: 12,
+                                }}
+                                animate={{
+                                    opacity: 1,
+                                    scale: 0.9,
+                                    y: 6,
+                                }}
+                                exit={{
+                                    opacity: 0,
+                                    scale: 1.02,
+                                    y: -5,
+                                    filter:
+                                        "brightness(1.16) saturate(1.12)",
+                                }}
+                                transition={{
+                                    duration: 0.65,
+                                    ease: [
+                                        0.22,
+                                        1,
+                                        0.36,
+                                        1,
+                                    ],
+                                }}
+                            />
+                        ) : (
+                            <motion.img
+                                key="open"
+                                src={girasolAbierto}
+                                alt=""
+                                className="
+                    first-flower-image
+                    first-flower-image--open
+                "
+                                draggable={false}
+                                initial={{
+                                    opacity: 0,
+                                    scale: 0.74,
+                                    y: 12,
+                                }}
+                                animate={{
+                                    opacity: 1,
+                                    scale: [
+                                        0.74,
+                                        1.07,
+                                        1,
+                                    ],
+                                    y: [
+                                        12,
+                                        -4,
+                                        0,
+                                    ],
+                                    filter: [
+                                        "brightness(0.9) saturate(0.9)",
+                                        "brightness(1.15) saturate(1.16)",
+                                        "brightness(1) saturate(1)",
+                                    ],
+                                }}
+                                transition={{
+                                    duration: 1.15,
+                                    ease: [
+                                        0.22,
+                                        1,
+                                        0.36,
+                                        1,
+                                    ],
+                                }}
+                            />
+                        )}
+                    </AnimatePresence>
+                </div>
 
                 {/* Pequeñas partículas al abrirse */}
                 <AnimatePresence>

@@ -1,8 +1,9 @@
 import { motion } from "motion/react";
-
+import { Lottie } from "lottie-react";
 import GuideLight from "./GuideLight";
 
 import type { LightPosition } from "../hooks/useGardenJourney";
+import seedlingAnimation from "../../assets/animations/seedling.json";
 
 interface GrowthStageProps {
     mysteryAppeared: boolean;
@@ -34,11 +35,9 @@ function GrowthStage({
             }}
             exit={{
                 opacity: 0,
-                scale: 0.97,
-                y: 15,
             }}
             transition={{
-                duration: 1,
+                duration: 0.8,
             }}
         >
             <div className="sprout-wrapper growth-plant-wrapper">
@@ -46,18 +45,18 @@ function GrowthStage({
                     className="growth-aura"
                     initial={{
                         opacity: 0,
-                        scale: 0.5,
+                        scale: 0.6,
                     }}
                     animate={{
                         opacity: [
-                            0.12,
-                            0.3,
-                            0.15,
+                            0.1,
+                            0.28,
+                            0.14,
                         ],
 
                         scale: [
                             0.9,
-                            1.12,
+                            1.1,
                             1,
                         ],
                     }}
@@ -68,130 +67,34 @@ function GrowthStage({
                     }}
                 />
 
-                <motion.svg
-                    className="growth-plant-svg"
-                    viewBox="0 0 180 230"
+                <motion.div
+                    className="growth-seedling-lottie"
                     initial={{
                         opacity: 0,
+                        scale: 0.82,
+                        y: 16,
                     }}
                     animate={{
                         opacity: 1,
+                        scale: 1,
+                        y: 0,
                     }}
                     transition={{
-                        duration: 0.7,
+                        duration: 0.8,
+                        ease: [
+                            0.22,
+                            1,
+                            0.36,
+                            1,
+                        ],
                     }}
-                    aria-hidden="true"
                 >
-                    <motion.path
-                        className="growth-plant-stem"
-                        d="
-                M91 211
-                C90 184 94 160 91 139
-                C88 115 86 94 91 73
-                C94 57 96 44 97 28
-            "
-                        initial={{
-                            pathLength: 0,
-                        }}
-                        animate={{
-                            pathLength: 1,
-                        }}
-                        transition={{
-                            duration: 1.8,
-                            ease: [
-                                0.22,
-                                1,
-                                0.36,
-                                1,
-                            ],
-                        }}
+                    <Lottie
+                        src={seedlingAnimation}
+                        loop={false}
+                        autoplay
                     />
-
-                    <motion.path
-                        className="growth-plant-leaf growth-plant-leaf--left"
-                        d="
-                M90 132
-                C68 104 43 101 27 112
-                C46 136 67 145 90 132
-                Z
-            "
-                        initial={{
-                            opacity: 0,
-                            scale: 0.6,
-                        }}
-                        animate={{
-                            opacity: 1,
-                            scale: 1,
-                        }}
-                        transition={{
-                            delay: 0.8,
-                            duration: 0.8,
-                        }}
-                    />
-
-                    <motion.path
-                        className="growth-plant-leaf growth-plant-leaf--right"
-                        d="
-                M92 92
-                C111 66 139 64 153 77
-                C137 102 114 109 92 92
-                Z
-            "
-                        initial={{
-                            opacity: 0,
-                            scale: 0.6,
-                        }}
-                        animate={{
-                            opacity: 1,
-                            scale: 1,
-                        }}
-                        transition={{
-                            delay: 1.1,
-                            duration: 0.8,
-                        }}
-                    />
-
-                    <motion.path
-                        className="growth-plant-leaf growth-plant-leaf--small"
-                        d="
-                M96 54
-                C108 38 125 37 134 45
-                C125 61 111 66 96 54
-                Z
-            "
-                        initial={{
-                            opacity: 0,
-                        }}
-                        animate={{
-                            opacity: 0.85,
-                        }}
-                        transition={{
-                            delay: 1.45,
-                            duration: 0.7,
-                        }}
-                    />
-
-                    <motion.circle
-                        className="growth-plant-bud"
-                        cx="97"
-                        cy="27"
-                        r="9"
-                        initial={{
-                            opacity: 0,
-                            scale: 0,
-                        }}
-                        animate={{
-                            opacity: 1,
-                            scale: 1,
-                        }}
-                        transition={{
-                            delay: 1.55,
-                            type: "spring",
-                            stiffness: 100,
-                            damping: 11,
-                        }}
-                    />
-                </motion.svg>
+                </motion.div>
             </div>
 
             <motion.h2
@@ -233,6 +136,8 @@ function GrowthStage({
                 positions={lightPositions}
                 onFollow={onFollowLight}
             />
+
+            
         </motion.div>
     );
 }
