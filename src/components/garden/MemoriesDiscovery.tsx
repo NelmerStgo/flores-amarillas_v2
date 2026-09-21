@@ -11,14 +11,17 @@ import {
 import MemoryConstellation from "./MemoryConstellation";
 
 import holaGato from "../../assets/memes/gato-cute.jpg";
-import juntosIlustracion from "../../assets/memories/juntos-ilustracion.jpg";
-import juntosGatos from "../../assets/memories/juntos-gatos.jpg";
+import recuerdo1Video from "../../assets/videos/recuerdo-1.mp4";
+import recuerdo2Image from "../../assets/images/Recuerdo-2.webp";
 
 const memories = [
     {
         id: "hello",
         className: "memory-point--one",
-        image: holaGato,
+        media: {
+            type: "image",
+            src: holaGato,
+        },
         eyebrow: "creo que todo empezó por algo así...",
         title: "Quívole 🖖👽",
         text:
@@ -29,7 +32,10 @@ const memories = [
     {
         id: "together",
         className: "memory-point--two",
-        image: juntosIlustracion,
+        media: {
+            type: "video",
+            src: recuerdo1Video,
+        },
         eyebrow: "y poco a poco",
         title: "Empecé a sentir que alguien me entendía.",
         text:
@@ -40,7 +46,10 @@ const memories = [
     {
         id: "liss",
         className: "memory-point--three",
-        image: juntosGatos,
+        media: {
+            type: "image",
+            src: recuerdo2Image,
+        },
         eyebrow:
             "Y al final, poco a poco, nos dimos cuenta de lo que estaba pasando...",
         title: "Era mutuo :3",
@@ -62,6 +71,7 @@ interface MemoriesDiscoveryProps {
     onComplete: () => void;
     onOpenMeaning: () => void;
 }
+
 
 function MemoriesDiscovery({
     visible,
@@ -294,14 +304,33 @@ function MemoriesDiscovery({
                                 event.stopPropagation()
                             }
                         >
-                            <div className="memory-image-wrapper">
-                                <img
-                                    src={
-                                        currentMemory.image
-                                    }
-                                    alt=""
-                                    className="memory-image"
-                                />
+                            <div
+                                className={`memory-image-wrapper memory-image-wrapper--${currentMemory.media.type}`}
+                            >
+                                {currentMemory.media.type === "video" ? (
+                                    <video
+                                        src={currentMemory.media.src}
+                                        className="memory-video"
+                                        controls
+                                        controlsList="nodownload"
+                                        playsInline
+                                        preload="metadata"
+                                        loop
+                                        onLoadedMetadata={(event) => {
+                                            event.currentTarget.volume = 0.25;
+                                        }}
+                                        onClick={(event) =>
+                                            event.stopPropagation()
+                                        }
+                                    />
+                                ) : (
+                                    <img
+                                        src={currentMemory.media.src}
+                                        alt=""
+                                        className="memory-image"
+                                        draggable={false}
+                                    />
+                                )}
                             </div>
 
                             <div className="memory-card-content">

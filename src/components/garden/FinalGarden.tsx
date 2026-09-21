@@ -136,35 +136,45 @@ function FinalGarden() {
 
             <div className="final-garden-copy">
                 <motion.p
+                    className="final-quote"
                     initial={{
                         opacity: 0,
+                        y: 8,
                     }}
                     animate={{
-                        opacity: 0.76,
+                        opacity: 0.72,
+                        y: 0,
                     }}
                     transition={{
-                        delay: 2.4,
+                        delay: 1.3,
                         duration: 1,
                     }}
                 >
-                    Y como dijo zoé:
-                    <br></br>
-                    Es raro el amor, que se te aparece, cuando
-                    menos piensas
+                    Y como dijo Zoé:
+                    <br />
+                    Es raro el amor, que se te aparece,
+                    <br />
+                    cuando menos piensas.
                 </motion.p>
 
                 <motion.h2
                     initial={{
                         opacity: 0,
-                        y: 15,
+                        y: 18,
                     }}
                     animate={{
                         opacity: 1,
                         y: 0,
                     }}
                     transition={{
-                        delay: 3,
-                        duration: 1.2,
+                        delay: 2.1,
+                        duration: 1.1,
+                        ease: [
+                            0.22,
+                            1,
+                            0.36,
+                            1,
+                        ],
                     }}
                 >
                     Mira cuánto ha crecido
@@ -181,8 +191,8 @@ function FinalGarden() {
                         y: 0,
                     }}
                     transition={{
-                        delay: 4.5,
-                        duration: 1.2,
+                        delay: 3.2,
+                        duration: 1,
                     }}
                 >
                     <p>
@@ -199,15 +209,19 @@ function FinalGarden() {
                                 1,
                                 0.35,
                             ],
-
                             scale: [
                                 0.9,
-                                1.1,
+                                1.12,
                                 0.9,
+                            ],
+                            rotate: [
+                                0,
+                                8,
+                                0,
                             ],
                         }}
                         transition={{
-                            duration: 3,
+                            duration: 3.2,
                             repeat: Infinity,
                             ease: "easeInOut",
                         }}
@@ -218,18 +232,22 @@ function FinalGarden() {
                     <motion.strong
                         initial={{
                             opacity: 0,
+                            y: 6,
                         }}
                         animate={{
-                            opacity: 0.8,
+                            opacity: 0.9,
+                            y: 0,
                         }}
                         transition={{
-                            delay: 1.2,
+                            delay: 0.8,
                             duration: 1,
                         }}
                     >
-                        Todavía nos quedan aventuras, recuerdos
+                        Todavía nos quedan aventuras,
                         <br />
-                        y un montón de cosas por florecer.
+                        recuerdos y un montón de cosas
+                        <br />
+                        por florecer.
                     </motion.strong>
                 </motion.div>
 
@@ -240,11 +258,11 @@ function FinalGarden() {
                         y: 8,
                     }}
                     animate={{
-                        opacity: 0.72,
+                        opacity: 0.68,
                         y: 0,
                     }}
                     transition={{
-                        delay: 7,
+                        delay: 5.2,
                         duration: 1.2,
                     }}
                 >
